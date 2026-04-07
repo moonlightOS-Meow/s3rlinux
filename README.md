@@ -2,7 +2,7 @@
 
 **S3RL-themed Gentoo Stage 4 Distribution**
 
-![S3RLINUX Logo](https://github.com/moonlightOS-Meow/s3rlinux/raw/master/website-src/src/assets/s3rlinux_logo_finished.webp)
+![S3RLINUX Logo](https://github.com/moonlightOS-Meow/s3rlinux/raw/master/website-src/src/assets/s3rlinux_logo_transparent.png)
 
 ---
 
