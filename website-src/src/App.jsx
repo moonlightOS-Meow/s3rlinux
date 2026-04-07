@@ -3,7 +3,7 @@ import './App.css'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
 import raveAllNight from './assets/s3rl/rave-all-night.jpg'
 import planetRave from './assets/s3rl/planet-rave.jpg'
-import s3rlinuxLogo from './assets/s3rlinux_logo_finished.webp'
+import s3rlinuxLogo from './assets/s3rlinux_logo_transparent.png'
 
 function App() {
   const [isRaving, setIsRaving] = useState(false)
