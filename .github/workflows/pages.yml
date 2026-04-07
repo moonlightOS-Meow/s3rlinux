@@ -28,11 +28,9 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        working-directory: ./website-src
         run: npm ci
 
       - name: Build
-        working-directory: ./website-src
         run: npm run build
 
       - name: Upload artifact
