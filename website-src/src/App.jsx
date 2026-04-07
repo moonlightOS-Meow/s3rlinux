@@ -3,6 +3,7 @@ import './App.css'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
 import raveAllNight from './assets/s3rl/rave-all-night.jpg'
 import planetRave from './assets/s3rl/planet-rave.jpg'
+import s3rlinuxLogo from './assets/s3rlinux_logo_finished.webp'
 
 function App() {
   const [isRaving, setIsRaving] = useState(false)
@@ -18,7 +19,7 @@ function App() {
       <header className="header">
         <div className="header-content">
           <div className="logo-section">
-            <h1 className="title">S3RLINUX</h1>
+            <img src={s3rlinuxLogo} alt="S3RLINUX Logo" className="logo-image" />
             <p className="subtitle">🌈 RAVE ALL NIGHT 💀</p>
           </div>
           <nav className="nav">

@@ -182,3 +182,32 @@
     border-right-color: var(--border);
   }
 }
+
+
+/* S3RLINUX Logo Styling */
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8));
+  animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.9));
+  }
+}
+
+.title {
+  display: none;
+}
