@@ -118,7 +118,7 @@ function App() {
           <img src={planetRave} alt="Planet Rave" className="s3rl-image" />
         </div>
         <div className="tribute-content">
-          <p>S3RLINUX is inspired by <strong>S3RL</strong>, the legendary electronic music producer known for:</p>
+          <p>S3RLINUX is inspired by <strong>S3RL</strong>, the legendary Happy Hardcore legendary electronic music producer Frenchcore producer known for:</p>
           <ul className="tribute-list">
             <li>🎶 High-energy rave tracks</li>
             <li>🌈 Neon aesthetic and visual energy</li>

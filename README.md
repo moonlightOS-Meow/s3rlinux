@@ -99,19 +99,20 @@ $ s3rlinux
 
 ## 🎵 THE S3RL SPIRIT
 
-S3RLINUX is inspired by **S3RL**, the legendary electronic music producer known for:
+S3RLINUX is inspired by **S3RL**, the legendary Happy Hardcore & Frenchcore producer known for:
 - 🎶 High-energy rave tracks
 - 🌈 Neon aesthetic
 - 💪 Relentless optimization
 - 🔥 "RAVE ALL NIGHT" mentality
 
-**S3RL Tracks That Inspired This:**
-- "Rave All Night"
-- "Dangerous"
-- "Pika Girl"
-- "Hentai"
-- "Anime Girls"
-- And many more!
+**Real S3RL Tracks That Inspired This:**
+- "Pika Girl" ✅ (REAL)
+- "Hentai" ✅ (REAL)
+- "You Are Mine" ft. Kayliana
+- "Friendzoned" ft. Mixie Moon
+- "R4V3 B0Y" ft. Krystal
+- "All That I Need" ft. Kayliana & MC Riddle
+- "Music Is My Saviour" ft. Mixie Moon
 
 ---
 
@@ -206,13 +207,13 @@ tar --xattrs -cpf /tmp/s3rlinux-stage4.tar.xz -C / \
 ## 🎵 S3RL MUSIC RECOMMENDATIONS
 
 Listen to these while using S3RLINUX:
-- 🎶 S3RL - Rave All Night
-- 🎶 S3RL - Dangerous
-- 🎶 S3RL - Pika Girl
-- 🎶 S3RL - Hentai
-- 🎶 S3RL - Anime Girls
-- 🎶 S3RL - Kawaii
-- 🎶 S3RL - Kitty
+- 🎶 S3RL - Pika Girl ✅ (REAL)
+- 🎶 S3RL - Hentai ✅ (REAL)
+- 🎶 S3RL - You Are Mine ft. Kayliana
+- 🎶 S3RL - Friendzoned ft. Mixie Moon
+- 🎶 S3RL - R4V3 B0Y ft. Krystal
+- 🎶 S3RL - All That I Need ft. Kayliana & MC Riddle
+- 🎶 S3RL - Music Is My Saviour ft. Mixie Moon
 
 **Available on:**
 - Spotify: https://open.spotify.com/artist/s3rl
@@ -250,7 +251,7 @@ Want to contribute to S3RLINUX?
 
 ## 🌟 CREDITS
 
-- **S3RL** - Electronic music artist and inspiration
+- **S3RL** - Happy Hardcore & Frenchcore music artist and inspiration
 - **Gentoo Linux** - Base distribution
 - **Comrade Ashov** - Creator of S3RLINUX
 - **The Rave Community** - For the energy
