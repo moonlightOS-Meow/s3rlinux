@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
+import raveAllNight from './assets/s3rl/rave-all-night.jpg'
+import planetRave from './assets/s3rl/planet-rave.jpg'
 
 function App() {
   const [isRaving, setIsRaving] = useState(false)
@@ -21,6 +24,7 @@ function App() {
           <nav className="nav">
             <a href="#about" className="nav-link">ABOUT</a>
             <a href="#features" className="nav-link">FEATURES</a>
+            <a href="#s3rl" className="nav-link">S3RL</a>
             <a href="#download" className="nav-link">DOWNLOAD</a>
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="nav-link">GITHUB</a>
           </nav>
@@ -106,8 +110,13 @@ function App() {
         </div>
       </section>
 
-      <section className="s3rl-tribute">
+      <section id="s3rl" className="s3rl-tribute">
         <h2>INSPIRED BY S3RL 🎵</h2>
+        <div className="s3rl-gallery">
+          <img src={s3rlDj} alt="S3RL DJ" className="s3rl-image" />
+          <img src={raveAllNight} alt="Rave All Night" className="s3rl-image" />
+          <img src={planetRave} alt="Planet Rave" className="s3rl-image" />
+        </div>
         <div className="tribute-content">
           <p>S3RLINUX is inspired by <strong>S3RL</strong>, the legendary electronic music producer known for:</p>
           <ul className="tribute-list">
@@ -116,6 +125,25 @@ function App() {
             <li>💪 Relentless optimization mindset</li>
             <li>🔥 "RAVE ALL NIGHT" mentality</li>
           </ul>
+          <h3 className="songs-title">🎵 LISTEN TO S3RL:</h3>
+          <div className="songs-list">
+            <div className="song-item">
+              <span className="song-icon">🎶</span>
+              <a href="https://www.youtube.com/results?search_query=s3rl+pika+girl" target="_blank" rel="noopener noreferrer">S3RL - Pika Girl</a>
+            </div>
+            <div className="song-item">
+              <span className="song-icon">🎶</span>
+              <a href="https://www.youtube.com/results?search_query=s3rl+hentai" target="_blank" rel="noopener noreferrer">S3RL - Hentai</a>
+            </div>
+            <div className="song-item">
+              <span className="song-icon">🎶</span>
+              <a href="https://www.youtube.com/results?search_query=s3rl+rave+all+night" target="_blank" rel="noopener noreferrer">S3RL - Rave All Night</a>
+            </div>
+            <div className="song-item">
+              <span className="song-icon">🎶</span>
+              <a href="https://www.youtube.com/results?search_query=s3rl+dangerous" target="_blank" rel="noopener noreferrer">S3RL - Dangerous</a>
+            </div>
+          </div>
           <p className="tribute-note">
             Listen to S3RL on <a href="https://open.spotify.com/artist/s3rl" target="_blank" rel="noopener noreferrer">Spotify</a>, 
             <a href="https://www.youtube.com/@S3RLMusic" target="_blank" rel="noopener noreferrer">YouTube</a>, or 
