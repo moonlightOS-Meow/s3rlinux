@@ -146,8 +146,8 @@ function App() {
             </div>
           </div>
           <p className="tribute-note">
-            Listen to S3RL on <a href="https://open.spotify.com/artist/s3rl" target="_blank" rel="noopener noreferrer">Spotify</a>, 
-            <a href="https://www.youtube.com/@S3RLMusic" target="_blank" rel="noopener noreferrer">YouTube</a>, or 
+            Listen to S3RL on <a href="https://open.spotify.com/artist/11aa081aKYUzmeFm0yHdT2" target="_blank" rel="noopener noreferrer">Spotify</a>, 
+            <a href="https://www.youtube.com/@S3RL" target="_blank" rel="noopener noreferrer">YouTube</a>, or 
             <a href="https://soundcloud.com/s3rl" target="_blank" rel="noopener noreferrer">SoundCloud</a>
           </p>
         </div>
