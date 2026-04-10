@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
-import raveAllNight from './assets/s3rl/rave-all-night.jpg'
+import s3rlStudio from './assets/s3rl/s3rl-studio.jpg'
 import planetRave from './assets/s3rl/planet-rave.jpg'
 import s3rlinuxLogo from './assets/s3rlinux_logo_transparent.png'
 
@@ -115,7 +115,7 @@ function App() {
         <h2>INSPIRED BY S3RL 🎵</h2>
         <div className="s3rl-gallery">
           <img src={s3rlDj} alt="S3RL DJ" className="s3rl-image" />
-          <img src={raveAllNight} alt="Rave All Night" className="s3rl-image" />
+          <img src={s3rlStudio} alt="S3RL in the Studio" className="s3rl-image" />
           <img src={planetRave} alt="Planet Rave" className="s3rl-image" />
         </div>
         <div className="tribute-content">
