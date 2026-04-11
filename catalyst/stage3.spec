@@ -21,11 +21,11 @@ version_stamp: 20260411
 # stage3-amd64-openrc-YYYYMMDDTHHMMSSZ.tar.xz
 # source_subpath: default/stage3-amd64-openrc
 
-# CFLAGS optimized for Ryzen 5000 (znver3) / Ryzen 7000 (znver4)
-# Change znver3 to znver4 for Ryzen 7000 series
-cflags: -O3 -march=znver3 -pipe -fomit-frame-pointer
+# CFLAGS optimized for Ryzen 5000 (znver4) / Ryzen 7000 (znver4)
+# Change znver4 to znver4 for Ryzen 7000 series
+cflags: -O3 -march=znver4 -pipe -fomit-frame-pointer
 
-cxxflags: -O3 -march=znver3 -pipe -fomit-frame-pointer
+cxxflags: -O3 -march=znver4 -pipe -fomit-frame-pointer
 
 # LDFLAGS
 ldflags: -Wl,-O1 -Wl,--as-needed

@@ -82,12 +82,12 @@ ls /var/tmp/catalyst/builds/s3rlinux/
 
 ## CPU Architecture
 
-By default, S3RLINUX is compiled for **Ryzen 5000 series** (`znver3`).
+By default, S3RLINUX is compiled for **Ryzen 5000 series** (`znver4`).
 
 | CPU Generation | Flag |
 |---------------|------|
 | Ryzen 3000/4000 | `-march=znver2` |
-| Ryzen 5000 | `-march=znver3` |
+| Ryzen 5000 | `-march=znver4` |
 | Ryzen 7000+ | `-march=znver4` |
 | Intel 12th gen+ | `-march=alderlake` |
 

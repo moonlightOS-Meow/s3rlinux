@@ -28,9 +28,9 @@ cat > /etc/portage/make.conf << 'MAKECONF'
 # S3RLINUX make.conf
 # RAVE ALL NIGHT 🌈💀
 
-# Compiler flags — znver3 = Ryzen 5000 series
+# Compiler flags — znver4 = Ryzen 5000 series
 # Change to znver4 for Ryzen 7000 series
-COMMON_FLAGS="-O3 -march=znver3 -pipe -fomit-frame-pointer"
+COMMON_FLAGS="-O3 -march=znver4 -pipe -fomit-frame-pointer"
 CFLAGS="${COMMON_FLAGS}"
 CXXFLAGS="${COMMON_FLAGS}"
 FCFLAGS="${COMMON_FLAGS}"
