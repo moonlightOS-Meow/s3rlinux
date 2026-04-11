@@ -158,6 +158,10 @@ function App() {
         <div className="download-content">
           <p className="coming-soon">Stage 4 Tarball & ISO Coming Soon™</p>
           <p className="build-info">For now, you can build it yourself from Gentoo!</p>
+          <div className="stage4-explainer">
+            <h3>⚙️ WHAT IS A STAGE 4?</h3>
+            <p>Gentoo officially ships Stage 1, 2, and 3 tarballs. A <strong>Stage 4</strong> is a community-made extension — a fully pre-configured Stage 3 with a compiled kernel, installed packages, and custom configs already baked in. It's 100% real and valid. Just extract it, install a bootloader, and you're raving. No hours of <code>emerge</code>. No USE flag hell. Just chaos. 🌈</p>
+          </div>
           <div className="download-buttons">
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="btn btn-primary">
               VIEW ON GITHUB
