@@ -1,0 +1,550 @@
+/* S3RLINUX WIKI STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+
+.wiki-app {
+  width: 100%;
+  min-height: 100vh;
+  background: #050810;
+  color: #e0e0ff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* LAYOUT */
+.wiki-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  gap: 40px;
+  position: relative;
+  z-index: 5;
+}
+
+/* SIDEBAR */
+.wiki-sidebar {
+  position: sticky;
+  top: 90px;
+  align-self: start;
+  background: rgba(138,43,226,0.06);
+  border: 1px solid rgba(138,43,226,0.3);
+  border-radius: 12px;
+  padding: 24px 20px;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 12px;
+  color: #00ffff;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  text-shadow: 0 0 8px rgba(0,255,255,0.7);
+}
+
+.sidebar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-links li a {
+  display: block;
+  color: #9090cc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.sidebar-links li a:hover {
+  color: #00ffff;
+  border-left-color: #00ffff;
+  background: rgba(0,255,255,0.06);
+  text-shadow: 0 0 8px rgba(0,255,255,0.5);
+}
+
+/* MAIN CONTENT */
+.wiki-main {
+  min-width: 0;
+}
+
+.wiki-hero {
+  text-align: center;
+  padding: 40px 0 50px;
+  border-bottom: 1px solid rgba(138,43,226,0.3);
+  margin-bottom: 50px;
+}
+
+.wiki-hero h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: 42px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #8a2be2, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.wiki-hero p {
+  font-size: 18px;
+  color: #9090cc;
+}
+
+/* SECTIONS */
+.wiki-section {
+  margin-bottom: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(138,43,226,0.15);
+}
+
+.wiki-section h2 {
+  font-family: 'Orbitron', monospace;
+  font-size: 22px;
+  font-weight: 900;
+  color: #00ffff;
+  text-shadow: 0 0 12px rgba(0,255,255,0.6);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.wiki-section h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  color: #ff00ff;
+  text-shadow: 0 0 8px rgba(255,0,255,0.5);
+  letter-spacing: 1px;
+  margin: 28px 0 12px;
+}
+
+.wiki-section p {
+  font-size: 16px;
+  color: #b0b0d0;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.wiki-section strong {
+  color: #e0e0ff;
+  font-weight: 700;
+}
+
+.wiki-section em {
+  color: #00ffff;
+  font-style: normal;
+}
+
+.wiki-section a {
+  color: #00ffff;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,255,255,0.3);
+  transition: all 0.2s;
+}
+
+.wiki-section a:hover {
+  text-shadow: 0 0 8px rgba(0,255,255,0.8);
+  border-bottom-color: #00ffff;
+}
+
+/* CODE BLOCKS */
+.code-block {
+  background: rgba(0,0,0,0.5);
+  border: 1px solid rgba(138,43,226,0.4);
+  border-left: 3px solid #8a2be2;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  font-size: 14px;
+  overflow-x: auto;
+}
+
+.code-block span {
+  color: #c0c0ff;
+  white-space: pre;
+}
+
+.code-block .code-comment {
+  color: #6060aa;
+  font-style: italic;
+}
+
+code {
+  background: rgba(138,43,226,0.2);
+  border: 1px solid rgba(138,43,226,0.4);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  color: #c080ff;
+}
+
+/* CALLOUTS */
+.wiki-callout {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.callout-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.wiki-callout.info {
+  background: rgba(0,255,255,0.06);
+  border: 1px solid rgba(0,255,255,0.25);
+  color: #a0c0d0;
+}
+
+.wiki-callout.success {
+  background: rgba(0,255,100,0.06);
+  border: 1px solid rgba(0,255,100,0.25);
+  color: #a0d0b0;
+}
+
+.wiki-callout.warning {
+  background: rgba(255,200,0,0.06);
+  border: 1px solid rgba(255,200,0,0.25);
+  color: #d0c080;
+}
+
+.wiki-callout.rave {
+  background: rgba(255,0,255,0.06);
+  border: 1px solid rgba(255,0,255,0.3);
+  color: #d0a0d0;
+}
+
+.wiki-callout a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+/* TABLE */
+.wiki-table {
+  border: 1px solid rgba(138,43,226,0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(138,43,226,0.15);
+  gap: 16px;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row.header-row {
+  background: rgba(138,43,226,0.15);
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #00ffff;
+}
+
+.table-row.highlight-row {
+  background: rgba(0,255,255,0.06);
+  border: 1px solid rgba(0,255,255,0.2);
+  color: #e0e0ff;
+  font-weight: 700;
+}
+
+/* GRIDS */
+.wiki-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.wiki-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.wiki-card {
+  background: rgba(138,43,226,0.07);
+  border: 1px solid rgba(138,43,226,0.3);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.wiki-card h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 12px;
+  color: #00ffff;
+  margin-bottom: 14px !important;
+  margin-top: 0 !important;
+}
+
+.wiki-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wiki-card ul li {
+  font-size: 14px;
+  color: #9090cc;
+  padding-left: 14px;
+  position: relative;
+}
+
+.wiki-card ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #8a2be2;
+}
+
+.pkg-group {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(138,43,226,0.25);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.pkg-group h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 12px;
+  color: #ff00ff;
+  text-shadow: 0 0 6px rgba(255,0,255,0.5);
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+}
+
+.pkg-group ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pkg-group ul li {
+  font-size: 14px;
+  color: #9090cc;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* LORE SECTION */
+.lore-section {
+  background: rgba(138,43,226,0.04);
+  border: 1px solid rgba(255,0,255,0.2);
+  border-radius: 16px;
+  padding: 40px !important;
+  margin: 40px 0 !important;
+}
+
+.lore-section h2 {
+  text-align: center;
+  color: #ff00ff !important;
+  text-shadow: 0 0 15px rgba(255,0,255,0.8) !important;
+}
+
+.lore-section > p {
+  text-align: center;
+  font-size: 18px !important;
+  margin-bottom: 30px !important;
+}
+
+.lore-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.lore-card {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,0,255,0.25);
+  border-radius: 10px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.lore-card:hover {
+  border-color: rgba(0,255,255,0.5);
+  box-shadow: 0 0 20px rgba(0,255,255,0.15);
+  transform: translateY(-4px);
+}
+
+.lore-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.lore-card h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 11px;
+  color: #00ffff !important;
+  text-shadow: 0 0 6px rgba(0,255,255,0.6);
+  margin: 0 0 12px !important;
+  letter-spacing: 1px;
+}
+
+.lore-card p {
+  font-size: 14px !important;
+  color: #9090cc !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(138,43,226,0.25);
+  border-radius: 10px;
+  padding: 20px 24px;
+  transition: all 0.2s;
+}
+
+.faq-item:hover {
+  border-color: rgba(0,255,255,0.35);
+  background: rgba(0,255,255,0.03);
+}
+
+.faq-item h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  color: #00ffff;
+  margin: 0 0 10px !important;
+  letter-spacing: 1px;
+}
+
+.faq-item p {
+  font-size: 15px !important;
+  color: #9090cc !important;
+  margin: 0 !important;
+  line-height: 1.7 !important;
+}
+
+/* WIKI FOOTER NOTE */
+.wiki-footer-note {
+  text-align: center;
+  padding: 40px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.wiki-footer-note p {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  color: #9090cc;
+  letter-spacing: 2px;
+}
+
+/* BUTTON (reuse from App.css) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #00ffff;
+  border: 2px solid rgba(0,255,255,0.5);
+  box-shadow: 0 0 10px rgba(0,255,255,0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(0,255,255,0.08);
+  border-color: #00ffff;
+  box-shadow: 0 0 25px rgba(0,255,255,0.6);
+}
+
+/* ACTIVE NAV */
+.nav-link.active {
+  color: #00ffff;
+  border-color: rgba(0,255,255,0.4);
+  background: rgba(0,255,255,0.06);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .wiki-layout {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    gap: 0;
+  }
+
+  .wiki-sidebar {
+    position: static;
+    max-height: none;
+    margin-bottom: 30px;
+  }
+
+  .wiki-hero h1 {
+    font-size: 28px;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr 1fr;
+    font-size: 13px;
+  }
+
+  .table-row span:last-child {
+    display: none;
+  }
+
+  .table-row.header-row span:last-child {
+    display: none;
+  }
+
+  .lore-section {
+    padding: 24px !important;
+  }
+
+  .code-block {
+    font-size: 12px;
+    padding: 16px;
+  }
+}
