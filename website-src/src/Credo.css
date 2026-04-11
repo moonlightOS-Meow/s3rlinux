@@ -14,11 +14,13 @@
   background: var(--dark-void);
   color: #fff;
   font-family: 'Cinzel', serif;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* BLOOD RAIN EFFECT */
@@ -34,12 +36,16 @@
 }
 
 .credo-container {
-  max-width: 800px;
+  width: 100%;
+  max-width: 900px;
   padding: 40px;
   text-align: center;
   position: relative;
   z-index: 5;
   animation: float 6s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes float {
@@ -48,18 +54,20 @@
 }
 
 .credo-header {
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .credo-title {
-  font-size: clamp(40px, 10vw, 80px);
+  font-size: clamp(40px, 12vw, 100px);
   font-weight: 900;
   color: var(--demon-red);
   text-transform: uppercase;
   letter-spacing: 15px;
   text-shadow: var(--demon-glow), 0 0 40px rgba(255, 0, 0, 0.4);
-  margin-bottom: 10px;
+  margin: 0 0 15px;
   animation: flicker 0.2s infinite alternate;
+  line-height: 1;
 }
 
 @keyframes flicker {
@@ -69,65 +77,78 @@
 
 .credo-subtitle {
   font-family: 'Orbitron', sans-serif;
-  font-size: 14px;
+  font-size: clamp(10px, 2vw, 14px);
   letter-spacing: 5px;
   color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .credo-quote-box {
   background: rgba(139, 0, 0, 0.05);
   border: 1px solid rgba(255, 0, 0, 0.2);
-  padding: 60px;
+  padding: clamp(30px, 8vw, 80px);
   position: relative;
   box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .credo-quote-box::before, .credo-quote-box::after {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--demon-red);
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--demon-red);
 }
 
-.credo-quote-box::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
-.credo-quote-box::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+.credo-quote-box::before { top: -10px; left: -10px; border-right: 0; border-bottom: 0; }
+.credo-quote-box::after { bottom: -10px; right: -10px; border-left: 0; border-top: 0; }
 
 .credo-quote {
-  font-size: 24px;
-  line-height: 1.8;
+  font-size: clamp(18px, 4vw, 28px);
+  line-height: 1.6;
   font-style: italic;
   color: #ffcccc;
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-  margin-bottom: 40px;
+  margin: 0;
+  max-width: 100%;
 }
 
 .power-text {
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
   color: var(--demon-red);
-  font-size: 32px;
-  display: block;
-  margin: 20px 0;
+  font-size: clamp(24px, 5vw, 42px);
+  display: inline-block;
+  margin: 15px 5px;
   text-shadow: var(--demon-glow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .credo-footer {
-  margin-top: 60px;
+  margin-top: 50px;
+  width: 100%;
 }
 
 .demon-link {
   color: rgba(255, 255, 255, 0.3);
   text-decoration: none;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 14px;
+  letter-spacing: 3px;
   transition: all 0.3s;
+  text-transform: uppercase;
 }
 
 .demon-link:hover {
   color: var(--demon-red);
   text-shadow: var(--demon-glow);
+  letter-spacing: 5px;
 }
 
 /* VIGNETTE */
@@ -140,4 +161,14 @@
   box-shadow: inset 0 0 200px #000;
   z-index: 10;
   pointer-events: none;
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 600px) {
+  .credo-container {
+    padding: 20px;
+  }
+  .credo-quote-box {
+    padding: 40px 20px;
+  }
 }

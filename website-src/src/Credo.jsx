@@ -15,7 +15,9 @@ export default function Credo() {
 
         <main className="credo-quote-box">
           <p className="credo-quote">
-            "From that day forth... my arm changed... and a voice echoed, <span className="power-text">'Power. Give me more power!'</span> And if I become a demon, so be it. I will endure the exile. Anything to protect her."
+            "From that day forth... my arm changed... and a voice echoed, 
+            <span className="power-text">Power. Give me more power!</span> 
+            And if I become a demon, so be it. I will endure the exile. Anything to protect her."
           </p>
         </main>
 
