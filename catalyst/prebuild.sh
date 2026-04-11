@@ -49,7 +49,7 @@ FEATURES="parallel-fetch parallel-install candy"
 EMERGE_DEFAULT_OPTS="--jobs=4 --load-average=16"
 
 # USE flags
-USE="-gtk -gnome -kde -plasma -qt5 -qt6 -X -wayland networkmanager systemd"
+USE="-kde -plasma -qt5 -qt6 -X -wayland networkmanager systemd"
 USE="${USE} vim bash zsh curl git tmux"
 
 # No multilib (64-bit only)

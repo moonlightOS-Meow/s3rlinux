@@ -9,12 +9,11 @@
 subarch: amd64
 target: stage4
 rel_type: s3rlinux
-profile: default/linux/amd64/23.0/no-multilib/systemd
-snapshot_treeish: refs/heads/master
+profile: default/linux/amd64/23.0/desktop/systemd
+snapshot_treeish: 3b4b7b19c6e516cb055a59a794286ee8a7249b30
 
-# Source: point to your built stage3 or a downloaded Gentoo stage3
-# Change the date stamp to match your stage3 tarball
-source_subpath: s3rlinux/stage3/amd64/20260411
+# Source: the downloaded stage3 tarball
+source_subpath: default/stage3-amd64-desktop-systemd-20260405T170105Z
 
 version_stamp: 20260411
 
