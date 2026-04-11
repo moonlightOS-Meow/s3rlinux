@@ -21,7 +21,7 @@ fcflags: -O3 -march=znver4 -pipe
 fflags: -O3 -march=znver4 -pipe
 
 # Portage config dir
-portage_confdir: /var/tmp/catalyst/portage/s3rlinux/
+portage_confdir: /var/tmp/catalyst/portage/s3rlinux/portage-config/
 portage_prefix: s3rlinux
 
 # Package cache
