@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './App.css'
+import './JudgementCut.css'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
 import s3rlStudio from './assets/s3rl/s3rl-studio.jpg'
 import planetRave from './assets/s3rl/planet-rave.jpg'
@@ -8,6 +9,7 @@ import s3rlinuxLogo from './assets/s3rlinux_logo_transparent.png'
 
 function App() {
   const [isRaving, setIsRaving] = useState(false)
+  const [isShattering, setIsShattering] = useState(false)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -15,12 +17,44 @@ function App() {
   }, [])
 
   const handleSecretTrigger = () => {
-    navigate('/credo')
+    if (isShattering) return
+    setIsShattering(true)
+    
+    // JUDGEMENT CUT - THE TIME HAS COME
+    setTimeout(() => {
+      navigate('/credo')
+    }, 800)
   }
 
   return (
-    <div className="app">
+    <div className={`app ${isShattering ? 'is-shattering' : ''}`}>
       <div className="rave-background"></div>
+      
+      {isShattering && (
+        <div className="shatter-overlay">
+          <div className="judgement-slash"></div>
+          <div className="dimension-glitch"></div>
+          {/* FAKE SHARDS FOR IMPACT */}
+          {[...Array(20)].map((_, i) => (
+            <div 
+              key={i} 
+              className="shard" 
+              style={{
+                width: Math.random() * 100 + 50 + 'px',
+                height: Math.random() * 100 + 50 + 'px',
+                top: Math.random() * 100 + '%',
+                left: Math.random() * 100 + '%',
+                '--tx': (Math.random() - 0.5) * 1000 + 'px',
+                '--ty': (Math.random() - 0.5) * 1000 + 'px',
+                '--tr': (Math.random() - 0.5) * 720 + 'deg',
+                clipPath: `polygon(${Math.random()*100}% 0%, 100% ${Math.random()*100}%, ${Math.random()*100}% 100%, 0% ${Math.random()*100}%)`,
+                background: i % 2 === 0 ? 'rgba(0, 255, 255, 0.3)' : 'rgba(255, 0, 255, 0.3)',
+                backdropFilter: 'blur(5px)'
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <header className="header">
         <div className="header-content">
