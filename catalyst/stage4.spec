@@ -32,6 +32,7 @@ pkgcache_path: /var/tmp/catalyst/packages/s3rlinux/stage4/amd64/
 # ============================================================
 stage4/packages:
     sys-kernel/gentoo-sources
+    sys-kernel/linux-firmware
     sys-boot/grub
     app-editors/vim
     app-misc/tmux
