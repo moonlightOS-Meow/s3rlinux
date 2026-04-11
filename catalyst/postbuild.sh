@@ -134,11 +134,12 @@ EOF
 echo "[POST-BUILD] Neofetch configured ✅"
 
 # ============================================================
-# Enable services
+# Enable services (systemd)
 # ============================================================
-rc-update add dhcpcd default
-rc-update add sshd default
-echo "[POST-BUILD] Services enabled ✅"
+systemctl enable systemd-networkd
+systemctl enable systemd-resolved
+systemctl enable sshd
+echo "[POST-BUILD] systemd services enabled ✅"
 
 # ============================================================
 # Set root password placeholder

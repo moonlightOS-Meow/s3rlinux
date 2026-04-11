@@ -9,7 +9,7 @@
 subarch: amd64
 target: stage4
 rel_type: s3rlinux
-profile: default/linux/amd64/23.0/no-multilib
+profile: default/linux/amd64/23.0/no-multilib/systemd
 snapshot_treeish: refs/heads/master
 
 # Source: point to your built stage3 or a downloaded Gentoo stage3
@@ -52,8 +52,8 @@ packages:
     sys-devel/gcc
     sys-devel/binutils
     sys-apps/baselayout
-    sys-apps/openrc
-    sys-apps/sysvinit
+    sys-apps/systemd
+    sys-apps/systemd-utils
 
 # --- Kernel ---
     sys-kernel/gentoo-sources

@@ -10,6 +10,10 @@ catalyst_use: lvm
 profile: default/linux/amd64/23.0/no-multilib/systemd
 snapshot_treeish: refs/heads/master
 source_subpath: s3rlinux/stage1/amd64
+
+# Use systemd stage3 as base
+# Download from https://www.gentoo.org/downloads/
+# Pick: amd64 → systemd → stage3-amd64-systemd-YYYYMMDDTHHMMSSZ.tar.xz
 version_stamp: 20260411
 
 # Use a recent Gentoo stage3 as base

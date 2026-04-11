@@ -40,12 +40,12 @@ cp catalyst.conf /etc/catalyst/catalyst.conf
 
 ```bash
 # Download from https://www.gentoo.org/downloads/
-# Pick: amd64 → openrc → stage3-amd64-openrc-YYYYMMDDTHHMMSSZ.tar.xz
-wget https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-openrc/stage3-amd64-openrc-<DATE>.tar.xz
+# Pick: amd64 → systemd → stage3-amd64-systemd-YYYYMMDDTHHMMSSZ.tar.xz
+wget https://distfiles.gentoo.org/releases/amd64/autobuilds/current-stage3-amd64-systemd/stage3-amd64-systemd-<DATE>.tar.xz
 
 # Move to catalyst storedir
 mkdir -p /var/tmp/catalyst/builds/default/
-mv stage3-amd64-openrc-<DATE>.tar.xz /var/tmp/catalyst/builds/default/
+mv stage3-amd64-systemd-<DATE>.tar.xz /var/tmp/catalyst/builds/default/
 ```
 
 ### 4. Take a Portage snapshot
