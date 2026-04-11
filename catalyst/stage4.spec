@@ -81,7 +81,7 @@ packages:
     net-wireless/iw
 
 # --- S3RLINUX extras ---
-    app-misc/neofetch
+    app-misc/fastfetch
     sys-apps/bat
     sys-apps/ripgrep
     app-misc/figlet

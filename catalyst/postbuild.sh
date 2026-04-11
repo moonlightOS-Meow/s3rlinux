@@ -71,7 +71,7 @@ alias ll='lsd -la'
 alias la='lsd -a'
 alias cat='bat'
 alias grep='rg'
-alias rave='neofetch && figlet -f slant "RAVE ALL NIGHT"'
+alias rave='fastfetch && figlet -f slant "RAVE ALL NIGHT"'
 alias s3rl='echo "🌈 S3RLINUX 💀 - RAVE ALL NIGHT - Keep the energy alive"'
 alias emerge-sync='emerge --sync && emerge -avuDN @world'
 alias update='emerge -avuDN @world'
@@ -108,8 +108,8 @@ echo "[POST-BUILD] /etc/issue set ✅"
 # ============================================================
 # Neofetch config — S3RLINUX themed
 # ============================================================
-mkdir -p /etc/neofetch
-cat > /etc/neofetch/config.conf << 'EOF'
+mkdir -p /etc/fastfetch
+cat > /etc/fastfetch/config.conf << 'EOF'
 # S3RLINUX Neofetch Config
 print_info() {
     info title
