@@ -21,9 +21,10 @@ function App() {
     setIsShattering(true)
     
     // JUDGEMENT CUT - THE TIME HAS COME
+    // Increased to 1.6s for a more cinematic transition
     setTimeout(() => {
       navigate('/credo')
-    }, 800)
+    }, 1600)
   }
 
   return (
@@ -32,24 +33,26 @@ function App() {
       
       {isShattering && (
         <div className="shatter-overlay">
+          <div className="fade-overlay"></div>
           <div className="judgement-slash"></div>
           <div className="dimension-glitch"></div>
           {/* FAKE SHARDS FOR IMPACT */}
-          {[...Array(20)].map((_, i) => (
+          {[...Array(24)].map((_, i) => (
             <div 
               key={i} 
               className="shard" 
               style={{
-                width: Math.random() * 100 + 50 + 'px',
-                height: Math.random() * 100 + 50 + 'px',
+                width: Math.random() * 150 + 50 + 'px',
+                height: Math.random() * 150 + 50 + 'px',
                 top: Math.random() * 100 + '%',
                 left: Math.random() * 100 + '%',
-                '--tx': (Math.random() - 0.5) * 1000 + 'px',
-                '--ty': (Math.random() - 0.5) * 1000 + 'px',
-                '--tr': (Math.random() - 0.5) * 720 + 'deg',
+                '--tx': (Math.random() - 0.5) * 1200 + 'px',
+                '--ty': (Math.random() - 0.5) * 1200 + 'px',
+                '--tr': (Math.random() - 0.5) * 1080 + 'deg',
                 clipPath: `polygon(${Math.random()*100}% 0%, 100% ${Math.random()*100}%, ${Math.random()*100}% 100%, 0% ${Math.random()*100}%)`,
-                background: i % 2 === 0 ? 'rgba(0, 255, 255, 0.3)' : 'rgba(255, 0, 255, 0.3)',
-                backdropFilter: 'blur(5px)'
+                background: i % 3 === 0 ? 'rgba(0, 255, 255, 0.4)' : i % 3 === 1 ? 'rgba(255, 0, 255, 0.4)' : 'rgba(255, 0, 0, 0.4)',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.3)'
               }}
             />
           ))}
