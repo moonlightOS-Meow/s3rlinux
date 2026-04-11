@@ -56,7 +56,7 @@ USE="${USE} vim bash zsh curl git tmux"
 ABI_X86="64"
 
 # Licenses
-ACCEPT_LICENSE="*"
+ACCEPT_LICENSE="* -@EULA linux-fw-redistributable no-source-code"
 
 # Mirrors — change to your closest mirror
 GENTOO_MIRRORS="https://distfiles.gentoo.org"
