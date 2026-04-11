@@ -50,6 +50,9 @@ function App() {
             <button className="btn btn-primary">GET S3RLINUX</button>
             <button className="btn btn-secondary">LEARN MORE</button>
           </div>
+          <div className="stage4-hero-note">
+            ⚙️ <strong>What's a Stage 4?</strong> Gentoo officially ships Stage 1–3. A Stage 4 is a community extension — a fully pre-configured Stage 3 with compiled kernel, packages, and configs baked in. Extract it, install a bootloader, and you're raving. No USE flag hell. No 8-hour LLVM compile. Just chaos. 🌈
+          </div>
         </div>
       </section>
 
