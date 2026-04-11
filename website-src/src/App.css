@@ -104,7 +104,7 @@ body {
   display: flex;
   gap: 2px;
   align-items: center;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -114,7 +114,7 @@ body {
   font-weight: 700;
   font-size: 9px;
   letter-spacing: 1px;
-  padding: 7px 9px;
+  padding: 6px 8px;
   border-radius: 4px;
   transition: all 0.2s;
   border: 1px solid transparent;
@@ -634,16 +634,18 @@ section p {
   .header-content {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 8px;
   }
 
   .nav {
-    gap: 4px;
+    gap: 2px;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   .nav-link {
-    font-size: 10px;
-    padding: 6px 10px;
+    font-size: 9px;
+    padding: 5px 8px;
   }
 
   .hero {
