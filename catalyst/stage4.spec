@@ -38,7 +38,6 @@ stage4/packages:
     sys-apps/systemd
     sys-apps/systemd-utils
     sys-kernel/gentoo-sources
-    sys-kernel/linux-firmware
     sys-boot/grub
     app-editors/vim
     app-misc/tmux
