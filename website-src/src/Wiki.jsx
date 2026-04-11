@@ -113,7 +113,7 @@ function Wiki() {
               <div className="wiki-card">
                 <h3>🔥 Recommended</h3>
                 <ul>
-                  <li>AMD Ryzen 7000 series (znver4)</li>
+                  <li>AMD Ryzen 7000 series (znver4) ⭐</li>
                   <li>16GB+ RAM</li>
                   <li>100GB+ NVMe storage</li>
                   <li>S3RL playing in the background</li>
@@ -123,7 +123,7 @@ function Wiki() {
             </div>
             <div className="wiki-callout warning">
               <span className="callout-icon">⚠️</span>
-              <span>S3RLINUX is compiled with <code>-march=znver3</code>. It may not boot on older CPUs. If you're on Intel or older AMD, you'll need to recompile the kernel yourself.</span>
+              <span>S3RLINUX is now compiled with <code>-march=znver4</code> to target Ryzen 7000+ hardware. It may not boot on older CPUs. If you're on Intel or older AMD, you'll need to recompile the kernel yourself.</span>
             </div>
           </section>
 
@@ -240,7 +240,7 @@ function Wiki() {
                 <h3>🔧 Build Flags</h3>
                 <ul>
                   <li><code>-O3</code> optimization</li>
-                  <li><code>-march=znver3</code> (Ryzen 5000+)</li>
+                  <li><code>-march=znver4</code> (Ryzen 7000+) ⭐</li>
                   <li><code>-pipe</code> for faster builds</li>
                   <li>LTO enabled</li>
                 </ul>
@@ -293,7 +293,7 @@ function Wiki() {
               <div className="pkg-group">
                 <h3>✨ Extras</h3>
                 <ul>
-                  <li>neofetch</li>
+                  <li>neofetch / fastfetch</li>
                   <li>bat</li>
                   <li>ripgrep</li>
                   <li>python</li>
@@ -345,7 +345,7 @@ function Wiki() {
               </div>
               <div className="faq-item">
                 <h3>Will it work on my Intel CPU?</h3>
-                <p>Maybe. S3RLINUX is compiled for <code>znver3</code> (Ryzen 5000+). Intel users may need to recompile the kernel and some packages.</p>
+                <p>Maybe. S3RLINUX is now compiled for <code>znver4</code> (Ryzen 7000+). Intel users may need to recompile the kernel and some packages.</p>
               </div>
               <div className="faq-item">
                 <h3>Can I install a desktop environment?</h3>
