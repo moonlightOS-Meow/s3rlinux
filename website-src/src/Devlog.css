@@ -1,0 +1,108 @@
+/* S3RLINUX DEVLOG STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap');
+
+.devlog-app {
+  width: 100%;
+  min-height: 100vh;
+  background: #050810;
+  color: #e0e0ff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.devlog-layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  position: relative;
+  z-index: 5;
+}
+
+.devlog-header {
+  text-align: center;
+  padding: 40px 0 50px;
+  border-bottom: 1px solid rgba(138,43,226,0.3);
+  margin-bottom: 50px;
+}
+
+.devlog-header h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: 42px;
+  font-weight: 900;
+  background: linear-gradient(135deg, #8a2be2, #00ffff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.devlog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.devlog-entry {
+  background: rgba(138,43,226,0.07);
+  border: 1px solid rgba(138,43,226,0.3);
+  border-radius: 12px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.devlog-entry:hover {
+  border-color: rgba(0,255,255,0.5);
+  box-shadow: 0 0 20px rgba(0,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.devlog-date {
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  color: #00ffff;
+  text-shadow: 0 0 8px rgba(0,255,255,0.5);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.devlog-content {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b0b0d0;
+}
+
+.devlog-footer {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff00ff;
+  text-decoration: none;
+  font-family: 'Orbitron', monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.back-link:hover {
+  text-shadow: 0 0 10px rgba(255,0,255,0.8);
+  transform: translateX(-5px);
+}
+
+/* RAVE BACKGROUND EFFECT */
+.rave-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(138,43,226,0.08) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}

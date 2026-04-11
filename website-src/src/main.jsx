@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import Wiki from './Wiki.jsx'
+import Devlog from './Devlog.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/wiki" element={<Wiki />} />
+        <Route path="/devlog" element={<Devlog />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

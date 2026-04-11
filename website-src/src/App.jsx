@@ -29,6 +29,7 @@ function App() {
             <a href="#s3rl" className="nav-link">S3RL</a>
             <a href="#download" className="nav-link">DOWNLOAD</a>
             <Link to="/wiki" className="nav-link">WIKI</Link>
+            <Link to="/devlog" className="nav-link">DEVLOG</Link>
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="nav-link">GITHUB</a>
           </nav>
         </div>
@@ -50,7 +51,8 @@ function App() {
           </p>
           <div className="cta-buttons">
             <button className="btn btn-primary">GET S3RLINUX</button>
-            <Link to="/wiki" className="btn btn-secondary">LEARN MORE</Link>
+            <Link to="/devlog" className="btn btn-secondary">DEVLOG</Link>
+            <Link to="/wiki" className="btn btn-secondary">WIKI</Link>
           </div>
           <div className="stage4-hero-note">
             ⚙️ <strong>What's a Stage 4?</strong> Gentoo officially ships Stage 1–3. A Stage 4 is a community extension — a fully pre-configured Stage 3 with compiled kernel, packages, and configs baked in. Extract it, install a bootloader, and you're raving. No USE flag hell. No 8-hour LLVM compile. Just chaos. 🌈
