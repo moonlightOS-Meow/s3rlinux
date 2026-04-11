@@ -1,0 +1,143 @@
+/* PROJECT CREDO - DEMONIC OVERHAUL 👹🔥 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --demon-red: #ff0000;
+  --blood-red: #8b0000;
+  --dark-void: #020205;
+  --demon-glow: 0 0 20px rgba(255, 0, 0, 0.8);
+}
+
+.credo-app {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--dark-void);
+  color: #fff;
+  font-family: 'Cinzel', serif;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* BLOOD RAIN EFFECT */
+.blood-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.2) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.credo-container {
+  max-width: 800px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.credo-header {
+  margin-bottom: 60px;
+}
+
+.credo-title {
+  font-size: clamp(40px, 10vw, 80px);
+  font-weight: 900;
+  color: var(--demon-red);
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  text-shadow: var(--demon-glow), 0 0 40px rgba(255, 0, 0, 0.4);
+  margin-bottom: 10px;
+  animation: flicker 0.2s infinite alternate;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; text-shadow: var(--demon-glow); }
+  100% { opacity: 1; text-shadow: 0 0 30px var(--demon-red), 0 0 60px var(--blood-red); }
+}
+
+.credo-subtitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.credo-quote-box {
+  background: rgba(139, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  padding: 60px;
+  position: relative;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.credo-quote-box::before, .credo-quote-box::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--demon-red);
+}
+
+.credo-quote-box::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.credo-quote-box::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+
+.credo-quote {
+  font-size: 24px;
+  line-height: 1.8;
+  font-style: italic;
+  color: #ffcccc;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.power-text {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  color: var(--demon-red);
+  font-size: 32px;
+  display: block;
+  margin: 20px 0;
+  text-shadow: var(--demon-glow);
+}
+
+.credo-footer {
+  margin-top: 60px;
+}
+
+.demon-link {
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+}
+
+.demon-link:hover {
+  color: var(--demon-red);
+  text-shadow: var(--demon-glow);
+}
+
+/* VIGNETTE */
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 200px #000;
+  z-index: 10;
+  pointer-events: none;
+}

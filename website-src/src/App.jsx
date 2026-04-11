@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './App.css'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
 import s3rlStudio from './assets/s3rl/s3rl-studio.jpg'
@@ -8,10 +8,15 @@ import s3rlinuxLogo from './assets/s3rlinux_logo_transparent.png'
 
 function App() {
   const [isRaving, setIsRaving] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setIsRaving(true)
   }, [])
+
+  const handleSecretTrigger = () => {
+    navigate('/credo')
+  }
 
   return (
     <div className="app">
@@ -37,7 +42,7 @@ function App() {
 
       <section className="hero">
         <div className="hero-content">
-          <div className="ascii-art">
+          <div className="ascii-art" onClick={handleSecretTrigger} style={{ cursor: 'default' }}>
             {`███████╗██████╗ ██████╗ ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
 ██╔════╝╚════██╗██╔══██╗██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
 ███████╗ █████╔╝██████╔╝██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
