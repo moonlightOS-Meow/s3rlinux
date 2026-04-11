@@ -75,7 +75,7 @@ body {
 }
 
 .logo-image {
-  height: 48px;
+  height: 72px;
   width: auto;
   filter: drop-shadow(0 0 12px rgba(138,43,226,0.9));
   animation: logoGlow 3s ease-in-out infinite;
