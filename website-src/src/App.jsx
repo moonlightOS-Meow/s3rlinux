@@ -66,10 +66,10 @@ function App() {
             <p className="subtitle">🌈 RAVE ALL NIGHT 💀</p>
           </div>
           <nav className="nav">
-            <a href="#about" className="nav-link">ABOUT</a>
-            <a href="#features" className="nav-link">FEATURES</a>
-            <a href="#s3rl" className="nav-link">S3RL</a>
-            <a href="#download" className="nav-link">DOWNLOAD</a>
+            <a onClick={()=>document.getElementById('about')?.scrollIntoView({behavior:'smooth'})} className="nav-link" style={{cursor:'pointer'}}>ABOUT</a>
+            <a onClick={()=>document.getElementById('features')?.scrollIntoView({behavior:'smooth'})} className="nav-link" style={{cursor:'pointer'}}>FEATURES</a>
+            <a onClick={()=>document.getElementById('s3rl')?.scrollIntoView({behavior:'smooth'})} className="nav-link" style={{cursor:'pointer'}}>S3RL</a>
+            <a onClick={()=>document.getElementById('download')?.scrollIntoView({behavior:'smooth'})} className="nav-link" style={{cursor:'pointer'}}>DOWNLOAD</a>
             <Link to="/wiki" className="nav-link">WIKI</Link>
             <Link to="/devlog" className="nav-link">DEVLOG</Link>
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="nav-link">GITHUB</a>
