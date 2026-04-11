@@ -14,16 +14,18 @@ echo "============================================"
 # /etc/os-release — S3RLINUX identification
 # ============================================================
 cat > /etc/os-release << 'EOF'
-NAME="S3RLINUX"
-VERSION="1.0"
-VERSION_ID="1.0"
-ID=s3rlinux
-ID_LIKE=gentoo
-PRETTY_NAME="S3RLINUX 1.0 (RAVE ALL NIGHT)"
+NAME="S3RLinux"
+ID="s3rlinux"
+ID_LIKE="gentoo"
+PRETTY_NAME="S3RLinux 🌈💀"
+VERSION_ID="2026.04"
+ANSI_COLOR="1;35"
 HOME_URL="https://moonlightos-meow.github.io/s3rlinux/"
 SUPPORT_URL="https://github.com/moonlightOS-Meow/s3rlinux"
 BUG_REPORT_URL="https://github.com/moonlightOS-Meow/s3rlinux/issues"
-ANSI_COLOR="1;35"
+LOGO="s3rlinux-logo"
+VARIANT="Rave"
+VARIANT_ID="rave"
 EOF
 
 echo "[POST-BUILD] /etc/os-release set ✅"
@@ -33,23 +35,28 @@ echo "[POST-BUILD] /etc/os-release set ✅"
 # ============================================================
 cat > /etc/motd << 'MOTD'
 
- ███████╗██████╗ ██████╗ ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
- ██╔════╝╚════██╗██╔══██╗██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
- ███████╗ █████╔╝██████╔╝██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝
- ╚════██║ ╚═══██╗██╔══██╗██║     ██║██║╚██╗██║██║   ██║ ██╔██╗
- ███████║██████╔╝██║  ██║███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
- ╚══════╝╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+\e[38;5;196m  ███████╗██████╗ ██████╗ ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
+\e[38;5;196m  ██╔════╝╚════██╗██╔══██╗██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
+\e[38;5;51m  ███████╗ █████╔╝██████╔╝██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
+\e[38;5;51m  ╚════██║ ╚═══██╗██╔══██╗██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
+\e[38;5;201m  ███████║██████╔╝██║  ██║███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
+\e[38;5;201m  ╚══════╝╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+\e[0m
+\e[38;5;201m  🌈 S3RLINUX \e[38;5;51m- RAVE ALL NIGHT \e[38;5;196m💀\e[0m
+\e[38;5;93m  VERSION: 2026.04 \e[38;5;117m| ARCH: znver4 \e[38;5;207m| STATUS: RAVING\e[0m
 
- 🌈 RAVE ALL NIGHT 🌈
- Welcome to S3RLINUX — Gentoo Stage 4 Distribution
- Inspired by S3RL — Happy Hardcore with a layer of cringe
+\e[38;5;51m  Welcome back, Comrade. \e[0m
+\e[38;5;196m  Your CFLAGS are weapons. Your kernel is the drop. \e[0m
+\e[38;5;201m  KEEP THE ENERGY ALIVE. \e[0m
 
- Website : https://moonlightos-meow.github.io/s3rlinux/
- GitHub  : https://github.com/moonlightOS-Meow/s3rlinux
- Music   : https://open.spotify.com/artist/11aa081aKYUzmeFm0yHdT2
+\e[38;5;117m  [COMMANDS] \e[0m
+\e[38;5;207m  rave   \e[0m- Show system specs and rave energy
+\e[38;5;207m  s3rl   \e[0m- Check S3RL status
+\e[38;5;207m  credo  \e[0m- [REDACTED]
 
- Remember: You are legally required to listen to S3RL while using this OS.
-           This is non-negotiable. 💀
+\e[38;5;93m  [STATUS] \e[0m
+\e[38;5;117m  KDE/GNOME Bloat: \e[38;5;196m0% (PURITY MAINTAINED)\e[0m
+\e[38;5;117m  Optimization:    \e[38;5;51mznver4 (MAXIMUM POWER)\e[0m
 
 MOTD
 
@@ -60,21 +67,17 @@ echo "[POST-BUILD] /etc/motd set ✅"
 # ============================================================
 cat > /etc/profile.d/s3rlinux.sh << 'EOF'
 #!/bin/bash
-# S3RLINUX Shell Environment 🌈
+# S3RLINUX Shell Environment 🌈💀
 
-# Neon prompt — purple user, cyan path, pink $
-export PS1='\[\e[38;5;135m\]\u\[\e[0m\]@\[\e[38;5;51m\]S3RLINUX\[\e[0m\]:\[\e[38;5;201m\]\w\[\e[0m\]\$ '
+# Neon prompt — S3RL user style
+export PS1='\[\e[38;5;196m\]S3RL\[\e[0m\] \[\e[38;5;51m\]$\[\e[0m\] '
 
 # Aliases
-alias ls='lsd'
-alias ll='lsd -la'
-alias la='lsd -a'
-alias cat='bat'
-alias grep='rg'
-alias rave='fastfetch && figlet -f slant "RAVE ALL NIGHT"'
-alias s3rl='echo "🌈 S3RLINUX 💀 - RAVE ALL NIGHT - Keep the energy alive"'
-alias emerge-sync='emerge --sync && emerge -avuDN @world'
-alias update='emerge -avuDN @world'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias rave='fastfetch && echo -e "\e[38;5;201mRAVE ALL NIGHT 🌈\e[0m"'
+alias s3rl='echo -e "\e[38;5;51mS3RLINUX 💀 - Keep the energy alive\e[0m"'
+alias credo='echo -e "\e[38;5;196mFrom that day forth... my arm changed... and a voice echoed, \"Power. Give me more power!\"\e[0m"'
 
 # Colors
 export TERM="xterm-256color"
@@ -98,40 +101,20 @@ echo "[POST-BUILD] /etc/profile.d/s3rlinux.sh set ✅"
 # ============================================================
 cat > /etc/issue << 'EOF'
 
-  S3RLINUX 1.0 — RAVE ALL NIGHT 🌈💀
-  Gentoo Stage 4 Distribution
+\e[38;5;196m  ███████╗██████╗ ██████╗ ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
+\e[38;5;196m  ██╔════╝╚════██╗██╔══██╗██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
+\e[38;5;51m  ███████╗ █████╔╝██████╔╝██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
+\e[38;5;51m  ╚════██║ ╚═══██╗██╔══██╗██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
+\e[38;5;201m  ███████║██████╔╝██║  ██║███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
+\e[38;5;201m  ╚══════╝╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+\e[0m
+\e[38;5;201m  🌈 S3RLINUX \e[38;5;51m- RAVE ALL NIGHT \e[38;5;196m💀\e[0m
+\e[38;5;93m  VERSION: 2026.04 \e[38;5;117m| ARCH: znver4 \e[38;5;207m| STATUS: RAVING\e[0m
 
+\e[38;5;51m  Login: \e[0m
 EOF
 
 echo "[POST-BUILD] /etc/issue set ✅"
-
-# ============================================================
-# Neofetch config — S3RLINUX themed
-# ============================================================
-mkdir -p /etc/fastfetch
-cat > /etc/fastfetch/config.conf << 'EOF'
-# S3RLINUX Neofetch Config
-print_info() {
-    info title
-    info underline
-    info "OS" distro
-    info "Kernel" kernel
-    info "Uptime" uptime
-    info "Packages" packages
-    info "Shell" shell
-    info "CPU" cpu
-    info "Memory" memory
-    prin ""
-    prin "🌈 RAVE ALL NIGHT 💀"
-    prin "Inspired by S3RL"
-}
-
-ascii_distro="gentoo"
-ascii_colors=(5 6 5 6 5 6)
-bold="on"
-EOF
-
-echo "[POST-BUILD] Neofetch configured ✅"
 
 # ============================================================
 # Enable services (systemd)
