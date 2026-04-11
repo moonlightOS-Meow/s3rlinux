@@ -239,6 +239,135 @@ section p {
   border-bottom: 2px solid rgba(138, 43, 226, 0.5);
 }
 
+.s3rl-tribute {
+  background: rgba(138, 43, 226, 0.05);
+  border-top: 2px solid rgba(255, 0, 127, 0.4);
+  border-bottom: 2px solid rgba(255, 0, 127, 0.4);
+  border-radius: 12px;
+  padding: 60px 20px;
+}
+
+.s3rl-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.s3rl-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid rgba(138, 43, 226, 0.6);
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+  transition: all 0.3s ease;
+}
+
+.s3rl-image:hover {
+  border-color: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.7);
+  transform: scale(1.03);
+}
+
+.tribute-content {
+  margin-top: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.tribute-content p {
+  color: #d0d0ff;
+  font-size: 16px;
+}
+
+.tribute-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.tribute-list li {
+  background: rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: #e0e0ff;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.tribute-list li:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.songs-title {
+  color: #ff00ff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+  margin-top: 30px;
+}
+
+.songs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.song-item {
+  background: rgba(255, 0, 255, 0.08);
+  border: 1px solid rgba(255, 0, 255, 0.4);
+  border-radius: 8px;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.song-item:hover {
+  background: rgba(255, 0, 255, 0.15);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.song-item a {
+  color: #ff88ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.song-item a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
+}
+
+.tribute-note {
+  margin-top: 25px;
+  color: #a0a0cc !important;
+  font-size: 14px !important;
+}
+
+.tribute-note a {
+  color: #00ffff;
+  text-decoration: none;
+  margin: 0 5px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.tribute-note a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.9);
+}
+
 .s3rl-tracks {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
