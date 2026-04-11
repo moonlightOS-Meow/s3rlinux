@@ -31,23 +31,13 @@ pkgcache_path: /var/tmp/catalyst/packages/s3rlinux/stage4/amd64/
 # PACKAGES — prefix required for stage4
 # ============================================================
 stage4/packages:
-    sys-libs/glibc
-    sys-devel/gcc
-    sys-devel/binutils
-    sys-apps/baselayout
-    sys-apps/systemd
-    sys-apps/systemd-utils
     sys-kernel/gentoo-sources
     sys-boot/grub
     app-editors/vim
     app-misc/tmux
     dev-vcs/git
-    net-misc/curl
-    net-misc/wget
     sys-process/htop
-    app-shells/bash
     app-shells/zsh
-    sys-fs/e2fsprogs
     sys-fs/btrfs-progs
     sys-fs/dosfstools
     sys-block/parted
@@ -66,13 +56,6 @@ stage4/packages:
 # USE flags for stage4
 # ============================================================
 stage4/use:
-    systemd
-    -X
-    -wayland
-    -kde
-    -gnome
-    -qt5
-    -qt6
     vim
     curl
     git
