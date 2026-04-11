@@ -50,34 +50,37 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(5, 8, 16, 0.92);
+  background: rgba(5, 8, 16, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(138,43,226,0.4);
   box-shadow: 0 0 30px rgba(138,43,226,0.2);
-  padding: 16px 0;
+  padding: 10px 0;
 }
 
 .header-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .logo-section {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
 .logo-image {
-  height: 64px;
+  height: 52px;
   width: auto;
+  max-width: 180px;
+  object-fit: contain;
   filter: drop-shadow(0 0 12px rgba(138,43,226,0.9));
   animation: logoGlow 3s ease-in-out infinite;
 }
@@ -89,18 +92,19 @@ body {
 
 .subtitle {
   font-family: 'Orbitron', monospace;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--cyan);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-shadow: 0 0 8px rgba(0,255,255,0.8);
+  white-space: nowrap;
 }
 
 .nav {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -108,12 +112,13 @@ body {
   text-decoration: none;
   font-family: 'Orbitron', monospace;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 9px;
   letter-spacing: 1px;
-  padding: 8px 14px;
+  padding: 7px 9px;
   border-radius: 4px;
   transition: all 0.2s;
   border: 1px solid transparent;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
