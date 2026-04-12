@@ -22,7 +22,7 @@ export default function Credo() {
       }
     }
     // Fallback: create new audio element
-    const audio = new Audio('/s3rl-power.mp3')
+    const audio = new Audio('/s3rlinux/s3rl-power.mp3')
     audio.loop = true
     audio.play().then(() => {
       setIsPlaying(true)
@@ -88,7 +88,7 @@ export default function Credo() {
 
           <div className="meme-player">
             <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
-            <audio ref={audioRef} src="/s3rl-power.mp3" preload="auto" loop onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}></audio>
+            <audio ref={audioRef} src="/s3rlinux/s3rl-power.mp3" preload="auto" loop onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}></audio>
             <button className="meme-play-btn" onClick={playMemeMusic}>
               {isPlaying ? '🎵 PLAYING... 🎵' : '▶ PLAY MUSIC'}
             </button>
