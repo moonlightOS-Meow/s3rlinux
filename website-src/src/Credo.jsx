@@ -7,15 +7,17 @@ const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
   const [memeMode, setMemeMode] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef(null)
 
   const playMemeMusic = async () => {
     if (audioRef.current) {
       try {
         await audioRef.current.play()
-        console.log('PLAYING')
+        setIsPlaying(true)
       } catch (e) {
         console.log('ERROR:', e.message)
+        setIsPlaying(false)
       }
     }
   }
@@ -76,8 +78,10 @@ export default function Credo() {
 
           <div className="meme-player">
             <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
-            <audio ref={audioRef} src="/s3rl-power.mp3" preload="auto" loop></audio>
-            <button className="meme-play-btn" onClick={playMemeMusic}>PLAY MUSIC</button>
+            <audio ref={audioRef} src="/s3rl-power.mp3" preload="auto" loop onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}></audio>
+            <button className="meme-play-btn" onClick={playMemeMusic}>
+              {isPlaying ? '🎵 PLAYING... 🎵' : '▶ PLAY MUSIC'}
+            </button>
             <div className="meme-eq">
               <span className="eq-bar"></span>
               <span className="eq-bar"></span>
