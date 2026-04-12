@@ -75,7 +75,7 @@ export default function Credo() {
           </div>
 
           <div className="meme-player">
-            <p>NOW PLAYING: S3RL - POWER (174 BPM)</p>
+            <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
             <audio ref={audioRef} src="/s3rl-power.mp3" loop></audio>
             <button className="meme-play-btn" onClick={playMemeMusic}>PLAY MUSIC</button>
             <div className="meme-eq">
