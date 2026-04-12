@@ -394,12 +394,15 @@ export default function Credo() {
                 </div>
               </div>
 
-            </div>
-          )}
-
-          {activeTab === 'CLEARANCE' && (
-            <div className="credo-section">
-              <h2 className="section-title">🛡️ SECURITY CLEARANCE PROTOCOLS</h2>
+              <div className="test-log special-test">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-XALATATH-002</span>
+                  <span className="test-date">2026-04-12 — 22:09</span>
+                  <span className="test-result special">RESULT: WIFI INDUCED PSYCHOSIS</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> <span className="red-val">XALATATH</span> — Currently listening to NOMA - Brain Power Long Version.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject's wifi began lagging during CREDO development. Events escal
               <div className="clearance-doc">
                 <div className="clearance-warning">⚠ WARNING: THIS IS NOT A DRILL ⚠</div>
                 <p className="scp-text">Access to the CREDO kernel is strictly prohibited for those without a znver4 (Ryzen 7000+) architecture. Attempting to run on incompatible hardware will result in:</p>
