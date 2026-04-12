@@ -533,3 +533,71 @@
   .scp-field { flex-direction: column; gap: 4px; }
   .scp-label { min-width: unset; }
 }
+
+/* MEMES TAB */
+.memes-disclaimer {
+  background: rgba(255,0,0,0.04);
+  border: 1px solid rgba(255,0,0,0.2);
+  border-left: 3px solid var(--demon-red);
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.memes-disclaimer strong { color: #ffcccc; }
+
+.memes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.meme-card {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,0,0,0.2);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meme-card:hover {
+  border-color: var(--demon-red);
+  box-shadow: 0 0 20px rgba(255,0,0,0.3);
+  transform: scale(1.02);
+}
+
+.meme-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.meme-card-wide {
+  grid-column: 1 / -1;
+}
+
+/* FIX MANIFESTO GLITCH BOX */
+.manifesto-glitch-box {
+  background: rgba(255,0,0,0.04);
+  border: 1px dashed rgba(255,0,0,0.4);
+  border-left: 3px solid var(--demon-red);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  color: #ffaaaa;
+  line-height: 2.2;
+  font-style: italic;
+  position: relative;
+}
+
+.manifesto-glitch-box::before {
+  content: '// CORRUPTED FRAGMENT //';
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: rgba(255,0,0,0.5);
+  background: var(--dark-void);
+  padding: 0 6px;
+}

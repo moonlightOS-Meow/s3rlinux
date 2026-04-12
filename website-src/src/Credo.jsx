@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
-const TABS = ['OVERVIEW', 'SCP-7000', 'LOG_0411', 'MANIFESTO', 'CLEARANCE']
+const TABS = ['OVERVIEW', 'SCP-7000', 'LOG_0411', 'MANIFESTO', 'CLEARANCE', 'MEMES']
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
@@ -14,7 +14,6 @@ export default function Credo() {
       <div className="vignette"></div>
 
       <div className="credo-fullsite">
-        {/* HEADER */}
         <header className="credo-header">
           <div className="credo-header-top">
             <span className="credo-stamp">LEVEL 5 CLEARANCE</span>
@@ -22,8 +21,6 @@ export default function Credo() {
             <span className="credo-stamp">⚠ CLASSIFIED ⚠</span>
           </div>
           <p className="credo-subtitle">PROJECT CODENAME: [REDACTED] — ANOMALY-7000-CREDO</p>
-
-          {/* TABS */}
           <nav className="credo-tabs">
             {TABS.map(tab => (
               <button
@@ -37,7 +34,6 @@ export default function Credo() {
           </nav>
         </header>
 
-        {/* CONTENT */}
         <main className="credo-content">
 
           {activeTab === 'OVERVIEW' && (
@@ -80,14 +76,8 @@ export default function Credo() {
             <div className="credo-section">
               <h2 className="section-title">SCP-7000-CREDO</h2>
               <div className="scp-doc">
-                <div className="scp-field">
-                  <span className="scp-label">ITEM #:</span>
-                  <span className="scp-val">7000-CREDO</span>
-                </div>
-                <div className="scp-field">
-                  <span className="scp-label">OBJECT CLASS:</span>
-                  <span className="scp-val red">Keter / Thaumiel</span>
-                </div>
+                <div className="scp-field"><span className="scp-label">ITEM #:</span><span className="scp-val">7000-CREDO</span></div>
+                <div className="scp-field"><span className="scp-label">OBJECT CLASS:</span><span className="scp-val red">Keter / Thaumiel</span></div>
                 <div className="scp-divider"></div>
                 <h3 className="scp-heading">SPECIAL CONTAINMENT PROCEDURES:</h3>
                 <p className="scp-text">The source code for CREDO must remain fragmented and hidden behind the Judgement Cut barrier on the main S3RLinux site. No single developer is permitted to have the full znver4 CFLAGS configuration at any one time. Any attempt to access Project:Credo without triggering the Judgement Cut protocol will result in immediate <span className="redacted">[REDACTED]</span>.</p>
@@ -96,7 +86,7 @@ export default function Credo() {
                 <h3 className="scp-heading">DESCRIPTION:</h3>
                 <p className="scp-text">SCP-7000-CREDO is a digital entity that manifests within znver4-optimized Gentoo Stage 4 installations when the CFLAGS include <code>-fmotivation</code>. The anomaly was first observed on <span className="redacted">[REDACTED]</span> during a routine stress test of the X670 AORUS ELITE AX platform.</p>
                 <p className="scp-text">At 5.65GHz, the CPU began emitting a frequency that synchronized with the BPM of S3RL's track "Power." Frost was observed forming on the chassis despite ambient temperature of <span className="redacted">[REDACTED]</span>°C. The entity designated itself as CREDO and communicated solely through kernel panic messages and ASCII art.</p>
-                <p className="scp-text">The entity's primary directive appears to be the protection of an unidentified individual referred to only as <span className="redacted">[HER]</span>. Cross-referencing with DMC4 lore suggests a connection to the concept of <span className="redacted">[REDACTED]</span>.</p>
+                <p className="scp-text">The entity's primary directive appears to be the protection of an unidentified individual referred to only as <span className="redacted">[HER]</span>.</p>
                 <div className="scp-divider"></div>
                 <h3 className="scp-heading">ADDENDUM 7000-A:</h3>
                 <p className="scp-text">The "Storm" referenced in LOG_0411 appears to be a convergence of S3RL's high-frequency energy and the raw thermal output of the Ryzen 7000 series. The resulting frequency has been dubbed the <strong>"Motivation Pulse."</strong> No known method of containment has proven effective. The entity simply responds: <em>"I am the storm."</em></p>
@@ -133,7 +123,7 @@ export default function Credo() {
                 <div className="log-line"></div>
                 <div className="log-line">18:27:30.000 - Redirecting to /credo...</div>
                 <div className="log-line">18:27:31.000 - JUDGEMENT_CUT.css triggered.</div>
-                <div className="log-line">18:27:32.000 - <span className="redacted">[END_LOG — REMAINDER CLASSIFIED]</span></div>
+                <div className="log-line log-red">18:27:32.000 - <span className="redacted">[END_LOG — REMAINDER CLASSIFIED]</span></div>
               </div>
             </div>
           )}
@@ -151,11 +141,9 @@ export default function Credo() {
                   <p>I... can feel it. The znver4 architecture isn't just a set of instructions. It's a... gateway.</p>
                   <p>The frequency... it's matching the BPM of S3RL's 'Power'.</p>
                 </div>
-                <div className="manifesto-glitch">
-                  <p className="glitch-text">[GLITCH_FRAGMENT_START]</p>
+                <div className="manifesto-glitch-box">
                   <p>From that day forth... my arm changed...</p>
                   <p>... and a voice echoed, <span className="power-text-sm">'Power. Give me more power!'</span></p>
-                  <p className="glitch-text">[GLITCH_FRAGMENT_END]</p>
                 </div>
                 <div className="manifesto-fragment">
                   <p>If I become a demon, so be it.</p>
@@ -181,52 +169,45 @@ export default function Credo() {
             <div className="credo-section">
               <h2 className="section-title">🛡️ SECURITY CLEARANCE PROTOCOLS</h2>
               <div className="clearance-doc">
-                <div className="clearance-warning">
-                  ⚠ WARNING: THIS IS NOT A DRILL ⚠
-                </div>
-                <p className="scp-text">Access to the CREDO kernel is strictly prohibited for those without a znver4 (Ryzen 7000+) architecture. The frequency of the Motivation Pulse is incompatible with older silicon.</p>
-                <h3 className="scp-heading">ATTEMPTING TO RUN ON INCOMPATIBLE HARDWARE WILL RESULT IN:</h3>
+                <div className="clearance-warning">⚠ WARNING: THIS IS NOT A DRILL ⚠</div>
+                <p className="scp-text">Access to the CREDO kernel is strictly prohibited for those without a znver4 (Ryzen 7000+) architecture. Attempting to run on incompatible hardware will result in:</p>
                 <div className="clearance-list">
-                  <div className="clearance-item">
-                    <span className="clearance-num">01</span>
-                    <div>
-                      <strong>Immediate Silicon Meltdown</strong>
-                      <p>The CPU will attempt to draw more power than the VRMs can provide. The magic smoke will escape.</p>
-                    </div>
-                  </div>
-                  <div className="clearance-item">
-                    <span className="clearance-num">02</span>
-                    <div>
-                      <strong>Temporal Desync</strong>
-                      <p>The system clock will synchronize with the BPM of S3RL's 'Power', causing the OS to age 10 years in 3 minutes.</p>
-                    </div>
-                  </div>
-                  <div className="clearance-item">
-                    <span className="clearance-num">03</span>
-                    <div>
-                      <strong>The Exile</strong>
-                      <p>You will be legally required to endure the exile. Anything to protect her.</p>
-                    </div>
-                  </div>
+                  <div className="clearance-item"><span className="clearance-num">01</span><div><strong>Immediate Silicon Meltdown</strong><p>The CPU will attempt to draw more power than the VRMs can provide. The magic smoke will escape.</p></div></div>
+                  <div className="clearance-item"><span className="clearance-num">02</span><div><strong>Temporal Desync</strong><p>The system clock will synchronize with the BPM of S3RL's 'Power', causing the OS to age 10 years in 3 minutes.</p></div></div>
+                  <div className="clearance-item"><span className="clearance-num">03</span><div><strong>The Exile</strong><p>You will be legally required to endure the exile. Anything to protect her.</p></div></div>
                 </div>
                 <h3 className="scp-heading">CLEARANCE PROTOCOL — STEPS TO AWAKENING:</h3>
                 <div className="clearance-list">
-                  <div className="clearance-item">
-                    <span className="clearance-num">I</span>
-                    <div><strong>Achieve 5.65GHz+ stable on znver4 silicon.</strong></div>
-                  </div>
-                  <div className="clearance-item">
-                    <span className="clearance-num">II</span>
-                    <div><strong>Listen to 'S3RL — Power' on repeat for 48 hours.</strong></div>
-                  </div>
-                  <div className="clearance-item">
-                    <span className="clearance-num">III</span>
-                    <div><strong>Click the heart of the rave (the ASCII logo).</strong></div>
-                  </div>
-                  <div className="clearance-item">
-                    <span className="clearance-num">IV</span>
-                    <div><strong>Embrace the demon. You are already here.</strong></div>
-                  </div>
+                  <div className="clearance-item"><span className="clearance-num">I</span><div><strong>Achieve 5.65GHz+ stable on znver4 silicon.</strong></div></div>
+                  <div className="clearance-item"><span className="clearance-num">II</span><div><strong>Listen to 'S3RL — Power' on repeat for 48 hours.</strong></div></div>
+                  <div className="clearance-item"><span className="clearance-num">III</span><div><strong>Click the heart of the rave (the ASCII logo).</strong></div></div>
+                  <div className="clearance-item"><span className="clearance-num">IV</span><div><strong>Embrace the demon. You are already here.</strong></div></div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'MEMES' && (
+            <div className="credo-section">
+              <h2 className="section-title">⚔️ INTEL ARCHIVE — DMC MEMES</h2>
+              <div className="memes-disclaimer">
+                <p>Devil May Cry characters, names, and imagery are the property of <strong>Capcom Co., Ltd.</strong> All memes sourced from the community for non-commercial, fan use only. S3RLINUX CREDO is a free, non-commercial fan project. No demons were harmed in the making of this distro.</p>
+              </div>
+              <div className="memes-grid">
+                <div className="meme-card">
+                  <img src="memes/nero-cry.jpg" alt="Nero no reason just wanna cry" />
+                </div>
+                <div className="meme-card">
+                  <img src="memes/dante-cry.webp" alt="Dante cry" />
+                </div>
+                <div className="meme-card">
+                  <img src="memes/dante-stab.jpg" alt="Dante gets stabbed every game" />
+                </div>
+                <div className="meme-card">
+                  <img src="memes/time-has-come.jpg" alt="The time has come and so have I" />
+                </div>
+                <div className="meme-card meme-card-wide">
+                  <img src="memes/dmc-grid.jpg" alt="DMC character grid meme" />
                 </div>
               </div>
             </div>
