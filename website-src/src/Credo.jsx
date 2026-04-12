@@ -88,10 +88,9 @@ export default function Credo() {
 
           <div className="meme-player">
             <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
-            <audio ref={audioRef} src="/s3rlinux/s3rl-power.mp3" preload="auto" loop onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)}></audio>
-            <button className="meme-play-btn" onClick={playMemeMusic}>
-              {isPlaying ? '🎵 PLAYING... 🎵' : '▶ PLAY MUSIC'}
-            </button>
+            <p style={{fontSize: '14px', marginBottom: '15px', color: '#ff0'}}>
+              <a href="/s3rlinux/s3rl-power.mp3" download style={{color: '#0ff', fontSize: '18px'}}>⬇ CLICK TO DOWNLOAD & PLAY MP3</a>
+            </p>
             <div className="meme-eq">
               <span className="eq-bar"></span>
               <span className="eq-bar"></span>
