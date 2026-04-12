@@ -410,20 +410,22 @@ export default function Credo() {
                 <div className="test-header">
                   <span className="test-id">TEST-CREDO-BRAINPOWER-003</span>
                   <span className="test-date">2026-04-12 — 23:33</span>
-                  <span className="test-result special">RESULT: 8-BIT ENLIGHTENMENT ACHIEVED</span>
+                  <span className="test-result special">RESULT: ██████ ENLIGHTENMENT ACHIEVED</span>
                 </div>
                 <div className="test-body">
-                  <p className="scp-text"><strong>Subject:</strong> <span className="red-val">XALATATH</span> — Currently listening to NOMA - Brain Power Long Version.</p>
-                  <p className="scp-text"><strong>Procedure:</strong> Subject pressed play. The following sequence was observed:</p>
-                  <pre className="scp-text" style={{fontFamily: 'monospace', fontSize: '12px', color: '#0ff', backgroundColor: '#000', padding: '10px', borderRadius: '5px'}}>
+                  <p className="scp-text"><strong>Subject:</strong> <span className="red-val">XALATATH</span> — Currently listening to NOMA - Brain Power Long Version (174 BPM).</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject pressed play. The following sequence was documented via audio monitoring equipment:</p>
+                  <div style={{maxHeight: '150px', overflowY: 'auto', backgroundColor: '#0a0a0a', padding: '10px', border: '1px solid #00ff00', margin: '10px 0'}}>
+                    <pre style={{fontFamily: 'Courier New, monospace', fontSize: '11px', color: '#00ff00', margin: 0, whiteSpace: 'pre-wrap'}}>
 O-oooooooooo AAAAE-A-A-I-A-U- JO-oooooooooooo 
 AAE-O-A-A-U-U-A- E-eee-ee-eee 
 AAAAE-A-E-I-E-A- JO-ooo-oo-oo-oo 
 EEEEO-A-AAA-AAAA EEEEO-A-AAA-AAAA 
 O-ooo-oo-oo-oo EEEEO-A-AAA-AAAA 
 AAAEGA
-                  </pre>
-                  <p className="scp-text test-note">📝 The subject has achieved 8-bit enlightenment. The CREDO kernel now includes a secret hat. All hail the Brain Power.</p>
+                    </pre>
+                  </div>
+                  <p className="scp-text test-note">📝 <strong>ANALYSIS:</strong> Subject achieved <span className="redacted">[REDACTED]</span> state of consciousness. The CREDO kernel has been modified to include a secret hat. All test subjects who listened reported seeing geometric patterns. Recommend Class-D personnel for further testing.</p>
                 </div>
               </div>
 
