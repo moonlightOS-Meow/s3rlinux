@@ -429,6 +429,54 @@ AAAEGA
                 </div>
               </div>
 
+              <div style={{marginTop: '30px', borderTop: '2px solid #ff0000', paddingTop: '20px'}}>
+                <h3 style={{color: '#ff0000', fontSize: '18px'}}>📋 CHAPTER II — CLASS-D PERSONNEL TESTS</h3>
+              </div>
+
+              <div className="test-log special-test">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-CLASS-D-001</span>
+                  <span className="test-date">2026-04-12 — 23:45</span>
+                  <span className="test-result special">RESULT: ████ COMPLETED</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> <span className="redacted">CLASS-D-7749</span> — Convicted of excessive Gentoo use. Previous architecture: Intel i9-14900K.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject attempted to boot CREDO on incompatible hardware.</p>
+                  <p className="scp-text"><strong>Result:</strong> Subject reported "hearing colors" before the system silently rejected the CPU. No data was recovered. The i9 melted into a decorative paperweight. File <span className="redacted">[REDACTED]</span> was created on desktop.</p>
+                </div>
+              </div>
+
+              <div className="test-log special-test">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-CLASS-D-002</span>
+                  <span className="test-date">2026-04-12 — 23:50</span>
+                  <span className="test-result special">RESULT: SUCCESSFUL BOOT</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> <span className="redacted">CLASS-D-7750</span> — Volunteer with Ryzen 7 7800X3D (znver4 architecture confirmed).</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject extracted CREDO Stage 4 tarball to partition and booted.</p>
+                  <p className="scp-text"><strong>Result:</strong> System booted successfully. ZSH prompt appeared with custom S3RL-themed .bashrc. Subject wept tears of joy. WiFi firmware <span className="redacted">[REDACTED]</span> was present and functional.</p>
+                </div>
+              </div>
+
+              <div className="test-log special-test">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-CLASS-D-003</span>
+                  <span className="test-date">2026-04-12 — 23:55</span>
+                  <span className="test-result special">RESULT: AUDIO ANOMALY DETECTED</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> <span className="redacted">CLASS-D-7751</span> — Audio technician.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject played S3RL - Power while emerging neofetch.</p>
+                  <p className="scp-text"><strong>Result:</strong> The neofetch ASCII art transformed into a skull. Subject reported hearing "POWER" whispered 174 times. <span className="redacted">[REDACTED]</span> packages were installed. System now runs 40% faster. Cause unknown.</p>
+                </div>
+              </div>
+
+              <div className="credo-warning-box" style={{marginTop: '20px', borderColor: '#00ff00'}}>
+                <p>⚠ <strong>STATUS UPDATE — TARBALL COMPLETE:</strong></p>
+                <p>The CREDO Stage 4 tarball <code>stage4-amd64-20260411.tar.bz2</code> has been successfully compiled. Size: <span className="red-val">2.1 GiB</span>. Architecture: <span className="red-val">znver4 ONLY</span>. Compression: bz2. The Foundation advises extreme caution during extraction. Multiple personnel have reported hearing faint bass upon unzipping. This is normal. Probably.</p>
+              </div>
+
             </div>
           )}
 
