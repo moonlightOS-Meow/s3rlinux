@@ -867,13 +867,15 @@
   margin: 20px 0;
 }
 
-.meme-ascii pre {
-  font-size: 12px;
+.meme-ascii-text {
+  font-size: 24px;
   color: #ff00ff;
-  text-shadow: 0 0 15px #ff00ff;
+  text-shadow: 0 0 15px #ff00ff, 0 0 30px #ffff00;
   background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  border: 2px dashed #ffff00;
+  padding: 30px;
+  border: 3px dashed #ffff00;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  display: inline-block;
 }
 
 /* Music player fake */
@@ -883,6 +885,7 @@
   border-radius: 10px;
   margin: 20px 0;
   border: 2px solid #00ff00;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 .meme-player p {

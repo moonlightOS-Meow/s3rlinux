@@ -24,13 +24,18 @@ export default function Credo() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [memeMode])
 
+  // Auto-play music when meme mode activates
+  useEffect(() => {
+    if (memeMode) {
+      const audio = document.getElementById('meme-audio')
+      if (audio) {
+        audio.play().catch(() => {})
+      }
+    }
+  }, [memeMode])
+
   const activateMemeMode = () => {
     setMemeMode(true)
-    // Auto-play music when entering meme mode
-    setTimeout(() => {
-      const audio = document.getElementById('meme-audio')
-      if (audio) audio.play().catch(() => {}) // catch errors if autoplay blocked
-    }, 500)
   }
 
   if (memeMode) {
@@ -51,16 +56,17 @@ export default function Credo() {
           </div>
           
           <div className="meme-ascii">
-            <pre>
-╔═══════════════════════════════════════════════════╗
-║   ██████╗ ███████╗██████╗ ██╗     ██╗███╗   ██╗  ║
-║   ██╔════╝ ██╔════╝██╔══██╗██║     ██║████╗  ██║  ║
-║   ███████╗ ███████╗██████╔╝██║     ██║██╔██╗ ██║  ║
-║   ╚════██║ ╚════██║██╔══██╗██║     ██║██║╚██╗██║  ║
-║   ███████║███████║██║  ██║███████╗██║██║ ╚████║  ║
-║   ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝  ║
-║        RAVE ALL NIGHT 🌈💀 MAXIMUM CHAOS          ║
-╚═══════════════════════════════════════════════════╝
+            <pre className="meme-ascii-text">
+
+
+/   S3RLINUX   \
+|  CREDO EDITION |
+|  RAVE ALL   |
+|    NIGHT    |
+|  MAXIMUM   |
+|   CHAOS    |
+
+
             </pre>
           </div>
 
