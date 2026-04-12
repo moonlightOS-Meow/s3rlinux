@@ -601,3 +601,40 @@
   background: var(--dark-void);
   padding: 0 6px;
 }
+
+/* INTEL BLOCKS */
+.intel-block {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,0,0,0.15);
+  border-left: 3px solid var(--demon-red);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+
+.intel-block:hover {
+  border-color: rgba(255,0,0,0.4);
+  background: rgba(255,0,0,0.03);
+}
+
+.intel-quote {
+  background: rgba(255,0,0,0.04);
+  border-left: 2px solid rgba(255,0,0,0.3);
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-family: 'Cinzel', serif;
+  font-style: italic;
+  color: #ffcccc;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.intel-source {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-style: normal;
+  font-size: 11px;
+  color: rgba(255,100,100,0.5);
+  letter-spacing: 1px;
+}

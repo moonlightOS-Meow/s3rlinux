@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
-const TABS = ['OVERVIEW', 'SCP-7000', 'LOG_0411', 'MANIFESTO', 'CLEARANCE', 'MEMES']
+const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'CLEARANCE', 'MEMES']
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
@@ -182,6 +182,92 @@ export default function Credo() {
                   <div className="clearance-item"><span className="clearance-num">II</span><div><strong>Listen to 'S3RL — Power' on repeat for 48 hours.</strong></div></div>
                   <div className="clearance-item"><span className="clearance-num">III</span><div><strong>Click the heart of the rave (the ASCII logo).</strong></div></div>
                   <div className="clearance-item"><span className="clearance-num">IV</span><div><strong>Embrace the demon. You are already here.</strong></div></div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'INCIDENT_0411' && (
+            <div className="credo-section">
+              <h2 className="section-title">INCIDENT REPORT — STAGE4 MANIFESTATION</h2>
+              <div className="scp-doc">
+                <div className="scp-field"><span className="scp-label">INCIDENT #:</span><span className="scp-val">CREDO-0411-STAGE4</span></div>
+                <div className="scp-field"><span className="scp-label">DATE:</span><span className="scp-val">2026-04-11 / 2026-04-12</span></div>
+                <div className="scp-field"><span className="scp-label">DURATION:</span><span className="scp-val red">~6 HOURS</span></div>
+                <div className="scp-field"><span className="scp-label">STATUS:</span><span className="scp-val red blink">CONTAINMENT FAILED — STAGE4 EXISTS</span></div>
+                <div className="scp-divider"></div>
+                <h3 className="scp-heading">INCIDENT SUMMARY:</h3>
+                <p className="scp-text">At approximately 17:26 on 2026-04-11, Foundation operative <span className="redacted">[XALATATH]</span> initiated the first known successful Catalyst build of SCP-7000-CREDO. Despite 6 separate containment failures — including but not limited to: invalid TOML syntax in catalyst.conf, deprecated portdir options, linux-firmware license masking, systemd package conflicts, and incorrect spec key prefixes — the operative persisted.</p>
+                <p className="scp-text">At approximately 23:XX on 2026-04-11, the Stage 4 tarball designated <code>stage4-amd64-20260411.tar.bz2</code> was confirmed to exist. Size: <strong>1.2 GiB</strong>. Compressed. znver4-optimized. Alive.</p>
+                <div className="scp-divider"></div>
+                <h3 className="scp-heading">NOTABLE ANOMALIES DURING BUILD:</h3>
+                <p className="scp-text">1. The output directory was designated <code>S3RLINUX BULIDS/STAGE4 TARBALLS/</code> — the spelling error "BULIDS" has been confirmed intentional by the Foundation's linguistics department. <span className="redacted">[DISPUTED]</span></p>
+                <p className="scp-text">2. 105 packages were emerged simultaneously using 16 parallel jobs on the Ryzen 5 7600X platform. The thermal signature during this period matched the frequency of S3RL's track "Power" to within <span className="redacted">[REDACTED]</span> Hz.</p>
+                <p className="scp-text">3. The operative fell asleep at approximately 02:00 before witnessing the final build completion. The tarball was discovered in the morning. The entity CREDO had self-completed the process.</p>
+                <div className="scp-divider"></div>
+                <h3 className="scp-heading">FOUNDATION RESPONSE:</h3>
+                <p className="scp-text">Containment is no longer possible. The Stage 4 exists. It has been uploaded to <span className="redacted">[REDACTED HOSTING PLATFORM]</span>. The Gentoo elders have been notified. They wept.</p>
+                <div className="credo-warning-box" style={{marginTop: '20px'}}>
+                  <p>⚠ NOTE: The tarball does NOT contain a desktop environment despite being built from a <code>desktop-systemd</code> stage3. Verification confirmed zero Plasma packages. The entity CREDO rejected the desktop. As expected.</p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'INTEL' && (
+            <div className="credo-section">
+              <h2 className="section-title">🗡️ INTEL ARCHIVE — CLASSIFIED DOCUMENTS</h2>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">DOCUMENT A — ON THE NATURE OF POWER</h3>
+                <div className="intel-quote">
+                  <p>"I am the storm that is approaching."</p>
+                  <p>"Provoking black clouds in isolation."</p>
+                  <p>"I am reclaimer of my name."</p>
+                  <span className="intel-source">— Vergil, probably. Also Metallica. Same energy.</span>
+                </div>
+                <p className="scp-text">The CREDO entity has been observed reciting these lines during kernel compilation. Foundation researchers believe this is a coping mechanism for the 8-hour LLVM compile that was narrowly avoided by removing linux-firmware from the initial package list.</p>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">DOCUMENT B — THE YAMATO PROTOCOL</h3>
+                <p className="scp-text">The CREDO kernel contains a hidden module designated <code>yamato.ko</code>. When loaded, the system emits a tone matching Vergil's Devil Trigger activation sound. Foundation researchers have been unable to determine whether this is intentional or an emergent property of the znver4 optimization flags.</p>
+                <div className="intel-quote">
+                  <p>"Might controls everything."</p>
+                  <p>"And without strength, you cannot protect anything."</p>
+                  <p>"Let alone yourself."</p>
+                  <span className="intel-source">— Vergil, DMC3. Also the CREDO make.conf philosophy.</span>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">DOCUMENT C — DANTE ASSESSMENT REPORT</h3>
+                <p className="scp-text">Foundation operatives attempted to install CREDO on an Intel platform. The following kernel panic was observed:</p>
+                <div className="terminal-log" style={{marginTop: '12px'}}>
+                  <div className="log-line log-red">KERNEL PANIC: znver4 instruction on non-znver4 silicon</div>
+                  <div className="log-line log-red">THE POWER IS INCOMPATIBLE.</div>
+                  <div className="log-line log-red">YOU ARE NOT WORTHY.</div>
+                  <div className="log-line log-warn">Hint: Did you compile with -march=znver4 on an Intel CPU?</div>
+                  <div className="log-line log-warn">Hint: That was not wise.</div>
+                  <div className="log-line">"Jackpot." — The CPU, before dying.</div>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">DOCUMENT D — NERO'S ARM INCIDENT</h3>
+                <p className="scp-text">During the Stage4 build on 2026-04-11, operative <span className="redacted">[XALATATH]</span> reported that their right arm "felt different" after the 105-package emerge completed. This has been logged as <strong>CREDO-ARM-EVENT-01</strong> and cross-referenced with DMC4 lore. The arm appears to be functioning normally. For now.</p>
+                <div className="intel-quote">
+                  <p>"This arm... it just won't stop moving on its own."</p>
+                  <span className="intel-source">— Nero, DMC4. Also the operative's mouse hand after 6 hours of catalyst debugging.</span>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">DOCUMENT E — ON THE EXILE</h3>
+                <p className="scp-text">All users of CREDO are technically in exile. From sanity. From Windows. From systemd compatibility. From the concept of a normal operating system. Per the S3RL License (S3RLL), this exile must be endured while listening to S3RL. The Foundation considers this non-negotiable.</p>
+                <div className="intel-quote">
+                  <p>"I should have been the one to fill your dark soul with LIIIGHT!"</p>
+                  <span className="intel-source">— Dante, DMC1. Also every Linux user switching to Gentoo.</span>
                 </div>
               </div>
             </div>
