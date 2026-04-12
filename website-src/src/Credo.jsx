@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
-const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'CLEARANCE', 'MEMES']
+const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'TESTS', 'CLEARANCE', 'MEMES']
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
@@ -162,6 +162,121 @@ export default function Credo() {
                   <p>[REMAINDER: <span className="redacted">[REDACTED BY ORDER OF FOUNDATION]</span>]</p>
                 </div>
               </div>
+            </div>
+          )}
+
+          {activeTab === 'TESTS' && (
+            <div className="credo-section">
+              <h2 className="section-title">🧪 CLASS D PERSONNEL TEST LOGS</h2>
+              <div className="credo-warning-box" style={{marginBottom: '28px'}}>
+                <p>⚠ The following test logs document interactions between Class D personnel and SCP-7000-CREDO. All Class D subjects were informed they were "just testing a Linux distro." They were not told anything else. This was intentional.</p>
+              </div>
+
+              <div className="test-log">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-001</span>
+                  <span className="test-date">2026-04-11</span>
+                  <span className="test-result fail">RESULT: CATASTROPHIC</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> Class D-4421. Former Windows 11 user. Has never touched a terminal in his life.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject was given a laptop with CREDO installed and told to "just use it normally."</p>
+                  <div className="test-transcript">
+                    <div className="transcript-line"><span className="t-who">D-4421:</span> <span className="t-say">okay so where's the Start menu</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">there isn't one</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4421:</span> <span className="t-say">where's the desktop</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">there isn't one</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4421:</span> <span className="t-say">where's the mouse cursor</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">...there isn't one</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4421:</span> <span className="t-say">what IS there</span></div>
+                    <div className="transcript-line"><span className="t-who">CREDO MOTD:</span> <span className="t-say log-red">RAVE ALL NIGHT 🌈 — YOU ARE LEGALLY REQUIRED TO LISTEN TO S3RL</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4421:</span> <span className="t-say">i want to go home</span></div>
+                  </div>
+                  <p className="scp-text test-note">📝 Subject was later found attempting to install Windows 11 via a USB stick he had smuggled into the facility. The USB stick contained only S3RL mp3 files. We do not know how this happened.</p>
+                </div>
+              </div>
+
+              <div className="test-log">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-002</span>
+                  <span className="test-date">2026-04-11</span>
+                  <span className="test-result warn">RESULT: UNEXPECTED</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> Class D-4422. Former Arch Linux user. Extremely smug about it.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject was told CREDO is "just a Gentoo distro." Subject laughed.</p>
+                  <div className="test-transcript">
+                    <div className="transcript-line"><span className="t-who">D-4422:</span> <span className="t-say">pff Gentoo. I use Arch btw</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">noted. please begin the installation</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4422:</span> <span className="t-say">wait the CFLAGS are -march=znver4 -fmotivation what the hell is -fmotivation</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">please continue</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4422:</span> <span className="t-say">the bootloader message just says "THE TIME HAS COME AND SO HAVE I"</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">yes</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4422:</span> <span className="t-say">...this is actually kind of cool</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4422:</span> <span className="t-say">i no longer use Arch btw</span></div>
+                  </div>
+                  <p className="scp-text test-note">📝 Subject has since become a CREDO evangelist. He has been contained. He keeps whispering "power. give me more power." at meal times.</p>
+                </div>
+              </div>
+
+              <div className="test-log">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-003</span>
+                  <span className="test-date">2026-04-11</span>
+                  <span className="test-result fail">RESULT: SUBJECT BECAME THE DISTRO</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> Class D-4423. Mac user. Had never heard of Linux.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Standard CREDO exposure test.</p>
+                  <div className="test-transcript">
+                    <div className="transcript-line"><span className="t-who">D-4423:</span> <span className="t-say">is this like... a virus</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">no it's a Linux distribution</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4423:</span> <span className="t-say">why is it playing happy hardcore music at boot</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">that's S3RL. you are legally required to listen to it</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4423:</span> <span className="t-say">legally</span></div>
+                    <div className="transcript-line"><span className="t-who">RESEARCHER:</span> <span className="t-say">per the S3RL License yes</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4423:</span> <span className="t-say">...okay actually this slaps</span></div>
+                    <div className="transcript-line"><span className="t-who">[6 HOURS LATER]</span></div>
+                    <div className="transcript-line"><span className="t-who">D-4423:</span> <span className="t-say log-red">I AM THE STORM</span></div>
+                  </div>
+                  <p className="scp-text test-note">📝 Subject's MacBook was later found in the dumpster. Subject has begun compiling their own packages from source "for the performance gains." They have no idea what that means. They are thriving.</p>
+                </div>
+              </div>
+
+              <div className="test-log special-test">
+                <div className="test-header">
+                  <span className="test-id">TEST-CREDO-SPECIAL-001</span>
+                  <span className="test-date">2026-04-11 — 02:00</span>
+                  <span className="test-result special">RESULT: TARBALL ACHIEVED</span>
+                </div>
+                <div className="test-body">
+                  <p className="scp-text"><strong>Subject:</strong> <span className="red-val">XALATATH</span> — Head Researcher, Creator of SCP-7000-CREDO, 14-year-old Dark Wizard King from Puck, Poland.</p>
+                  <p className="scp-text"><strong>Procedure:</strong> Subject initiated first-ever Catalyst build of CREDO. This was not planned. This was not authorized. This happened anyway.</p>
+                  <div className="test-transcript">
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">sudo catalyst -f catalyst/stage4.spec</span></div>
+                    <div className="transcript-line"><span className="t-who">CATALYST:</span> <span className="t-say log-warn">ERROR: Invalid initial character for a key part</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">WHAT</span></div>
+                    <div className="transcript-line"><span className="t-who">[4 ERRORS LATER]</span></div>
+                    <div className="transcript-line"><span className="t-who">CATALYST:</span> <span className="t-say log-warn">ERROR: Unknown option 'portdir'</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">WHAT</span></div>
+                    <div className="transcript-line"><span className="t-who">[2 MORE ERRORS LATER]</span></div>
+                    <div className="transcript-line"><span className="t-who">CATALYST:</span> <span className="t-say log-warn">linux-firmware masked by license</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">NO!!!!!</span></div>
+                    <div className="transcript-line"><span className="t-who">CLAUDE:</span> <span className="t-say">just remove it from the packages</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">wait i need it for my wifi</span></div>
+                    <div className="transcript-line"><span className="t-who">CLAUDE:</span> <span className="t-say">...</span></div>
+                    <div className="transcript-line"><span className="t-who">[105 PACKAGES EMERGING]</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">ITS DOING 💀💀💀</span></div>
+                    <div className="transcript-line"><span className="t-who">[02:00 — XALATATH FALLS ASLEEP]</span></div>
+                    <div className="transcript-line"><span className="t-who">CREDO:</span> <span className="t-say log-red">...I will finish this myself.</span></div>
+                    <div className="transcript-line"><span className="t-who">[MORNING]</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">wait. ITS 1.2 GIGS.</span></div>
+                    <div className="transcript-line"><span className="t-who">XALATATH:</span> <span className="t-say">wait. THE FOLDER IS CALLED BULIDS.</span></div>
+                  </div>
+                  <p className="scp-text test-note">📝 The Stage4 tarball <code>stage4-amd64-20260411.tar.bz2</code> (1.2 GiB) was confirmed real. The "BULIDS" folder name has been preserved as a historical artifact. XALATATH was awarded the Foundation's Medal of Chaotic Persistence. They do not know this yet.</p>
+                </div>
+              </div>
+
             </div>
           )}
 
