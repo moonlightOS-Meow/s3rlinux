@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
-const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'TESTS', 'CLEARANCE', 'MEMES', 'FOUNDATION']
+const TABS = ['OVERVIEW', 'SCP-7000', 'LOG_0411', 'MANIFESTO', 'INTEL', 'TESTS', 'CLEARANCE', 'MEMES', 'FOUNDATION']
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
@@ -402,7 +402,16 @@ export default function Credo() {
                 </div>
                 <div className="test-body">
                   <p className="scp-text"><strong>Subject:</strong> <span className="red-val">XALATATH</span> — Currently listening to NOMA - Brain Power Long Version.</p>
-                  <p className="scp-text"><strong>Procedure:</strong> Subject's wifi began lagging during CREDO development. Events escal
+                  <p className="scp-text"><strong>Procedure:</strong> Subject's wifi began lagging during CREDO development. Events escalated rapidly.</p>
+                </div>
+              </div>
+
+            </div>
+          )}
+
+          {activeTab === 'CLEARANCE' && (
+            <div className="credo-section">
+              <h2 className="section-title">🛡️ SECURITY CLEARANCE PROTOCOLS</h2>
               <div className="clearance-doc">
                 <div className="clearance-warning">⚠ WARNING: THIS IS NOT A DRILL ⚠</div>
                 <p className="scp-text">Access to the CREDO kernel is strictly prohibited for those without a znver4 (Ryzen 7000+) architecture. Attempting to run on incompatible hardware will result in:</p>
@@ -417,33 +426,6 @@ export default function Credo() {
                   <div className="clearance-item"><span className="clearance-num">II</span><div><strong>Listen to 'S3RL — Power' on repeat for 48 hours.</strong></div></div>
                   <div className="clearance-item"><span className="clearance-num">III</span><div><strong>Click the heart of the rave (the ASCII logo).</strong></div></div>
                   <div className="clearance-item"><span className="clearance-num">IV</span><div><strong>Embrace the demon. You are already here.</strong></div></div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'INCIDENT_0411' && (
-            <div className="credo-section">
-              <h2 className="section-title">INCIDENT REPORT — STAGE4 MANIFESTATION</h2>
-              <div className="scp-doc">
-                <div className="scp-field"><span className="scp-label">INCIDENT #:</span><span className="scp-val">CREDO-0411-STAGE4</span></div>
-                <div className="scp-field"><span className="scp-label">DATE:</span><span className="scp-val">2026-04-11 / 2026-04-12</span></div>
-                <div className="scp-field"><span className="scp-label">DURATION:</span><span className="scp-val red">~6 HOURS</span></div>
-                <div className="scp-field"><span className="scp-label">STATUS:</span><span className="scp-val red blink">CONTAINMENT FAILED — STAGE4 EXISTS</span></div>
-                <div className="scp-divider"></div>
-                <h3 className="scp-heading">INCIDENT SUMMARY:</h3>
-                <p className="scp-text">At approximately 17:26 on 2026-04-11, Foundation operative <span className="redacted">[XALATATH]</span> initiated the first known successful Catalyst build of SCP-7000-CREDO. Despite 6 separate containment failures — including but not limited to: invalid TOML syntax in catalyst.conf, deprecated portdir options, linux-firmware license masking, systemd package conflicts, and incorrect spec key prefixes — the operative persisted.</p>
-                <p className="scp-text">At approximately 23:XX on 2026-04-11, the Stage 4 tarball designated <code>stage4-amd64-20260411.tar.bz2</code> was confirmed to exist. Size: <strong>1.2 GiB</strong>. Compressed. znver4-optimized. Alive.</p>
-                <div className="scp-divider"></div>
-                <h3 className="scp-heading">NOTABLE ANOMALIES DURING BUILD:</h3>
-                <p className="scp-text">1. The output directory was designated <code>S3RLINUX BULIDS/STAGE4 TARBALLS/</code> — the spelling error "BULIDS" has been confirmed intentional by the Foundation's linguistics department. <span className="redacted">[DISPUTED]</span></p>
-                <p className="scp-text">2. 105 packages were emerged simultaneously using 16 parallel jobs on the Ryzen 5 7600X platform. The thermal signature during this period matched the frequency of S3RL's track "Power" to within <span className="redacted">[REDACTED]</span> Hz.</p>
-                <p className="scp-text">3. The operative fell asleep at approximately 02:00 before witnessing the final build completion. The tarball was discovered in the morning. The entity CREDO had self-completed the process.</p>
-                <div className="scp-divider"></div>
-                <h3 className="scp-heading">FOUNDATION RESPONSE:</h3>
-                <p className="scp-text">Containment is no longer possible. The Stage 4 exists. It has been uploaded to <span className="redacted">[REDACTED HOSTING PLATFORM]</span>. The Gentoo elders have been notified. They wept.</p>
-                <div className="credo-warning-box" style={{marginTop: '20px'}}>
-                  <p>⚠ NOTE: The tarball does NOT contain a desktop environment despite being built from a <code>desktop-systemd</code> stage3. Verification confirmed zero Plasma packages. The entity CREDO rejected the desktop. As expected.</p>
                 </div>
               </div>
             </div>
