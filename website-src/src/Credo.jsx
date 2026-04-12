@@ -38,6 +38,10 @@ export default function Credo() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [memeMode])
 
+  const activateMemeMode = () => {
+    setMemeMode(true)
+  }
+
   if (memeMode) {
     return (
       <div className="meme-mode">
