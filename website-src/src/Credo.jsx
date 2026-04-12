@@ -88,8 +88,11 @@ export default function Credo() {
 
           <div className="meme-player">
             <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
-            <p style={{fontSize: '14px', marginBottom: '15px', color: '#ff0'}}>
-              <a href="/s3rlinux/s3rl-power.mp3" download style={{color: '#0ff', fontSize: '18px'}}>⬇ CLICK TO DOWNLOAD & PLAY MP3</a>
+            <p style={{fontSize: '14px', marginBottom: '10px', color: '#ff0'}}>
+              <a href="https://www.youtube.com/watch?v=vhZfEU-FR9s" target="_blank" style={{color: '#f00', fontSize: '20px'}}>▶ PLAY ON YOUTUBE</a>
+            </p>
+            <p style={{fontSize: '14px', marginBottom: '15px', color: '#0ff'}}>
+              <a href="/s3rlinux/s3rl-power.mp3" download style={{color: '#0ff', fontSize: '18px'}}>⬇ DOWNLOAD MP3</a>
             </p>
             <div className="meme-eq">
               <span className="eq-bar"></span>
