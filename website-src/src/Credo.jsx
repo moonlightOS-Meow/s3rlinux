@@ -11,15 +11,25 @@ export default function Credo() {
   const audioRef = useRef(null)
 
   const playMemeMusic = async () => {
+    // Try ref first
     if (audioRef.current) {
       try {
         await audioRef.current.play()
         setIsPlaying(true)
+        return
       } catch (e) {
-        console.log('ERROR:', e.message)
-        setIsPlaying(false)
+        console.log('ref failed:', e.message)
       }
     }
+    // Fallback: create new audio element
+    const audio = new Audio('/s3rl-power.mp3')
+    audio.loop = true
+    audio.play().then(() => {
+      setIsPlaying(true)
+    }).catch(e => {
+      console.log('new audio failed:', e.message)
+      setIsPlaying(false)
+    })
   }
 
   // No autoplay - user must click the button to comply with browser policies
