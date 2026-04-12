@@ -9,17 +9,21 @@ export default function Credo() {
   const [memeMode, setMemeMode] = useState(false)
   const audioRef = useRef(null)
 
-  const playMemeMusic = () => {
+  const playMemeMusic = async () => {
     if (audioRef.current) {
-      audioRef.current.play().catch(e => console.log('_play_error:', e))
+      try {
+        await audioRef.current.play()
+        console.log('PLAYING')
+      } catch (e) {
+        console.log('ERROR:', e.message)
+      }
     }
   }
 
-  const activateMemeMode = () => {
-    setMemeMode(true)
-  }
+  // No autoplay - user must click the button to comply with browser policies
+  // autoplay is blocked by modern browsers without user interaction
 
-  // Key combo
+  // Key combo for meme mode
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'M') {
@@ -32,27 +36,6 @@ export default function Credo() {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [memeMode])
-
-  // Play music after meme mode renders with user interaction fallback
-  useEffect(() => {
-    if (memeMode) {
-      // Try immediately first
-      const tryPlay = () => {
-        if (audioRef.current) {
-          audioRef.current.play()
-            .then(() => console.log('PLAY_SUCCESS'))
-            .catch(e => console.log('AUTOPLAY_BLOCKED_NEED_CLICK'))
-        }
-      }
-      
-      // Try instantly
-      tryPlay()
-      
-      // Also try after delay
-      const timer = setTimeout(tryPlay, 1500)
-      return () => clearTimeout(timer)
-    }
   }, [memeMode])
 
   if (memeMode) {
