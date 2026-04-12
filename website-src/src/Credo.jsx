@@ -11,7 +11,7 @@ export default function Credo() {
 
   const playMemeMusic = () => {
     if (audioRef.current) {
-      audioRef.current.play().catch(() => {})
+      audioRef.current.play().catch(e => console.log('_play_error:', e))
     }
   }
 
@@ -24,7 +24,7 @@ export default function Credo() {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'M') {
         e.preventDefault()
-        activateMemeMode()
+        setMemeMode(true)
       }
       if (e.key === 'Escape' && memeMode) {
         setMemeMode(false)
@@ -34,10 +34,23 @@ export default function Credo() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [memeMode])
 
-  // Play music AFTER meme mode activates (gives time for DOM to render)
+  // Play music after meme mode renders with user interaction fallback
   useEffect(() => {
     if (memeMode) {
-      const timer = setTimeout(playMemeMusic, 1000)
+      // Try immediately first
+      const tryPlay = () => {
+        if (audioRef.current) {
+          audioRef.current.play()
+            .then(() => console.log('PLAY_SUCCESS'))
+            .catch(e => console.log('AUTOPLAY_BLOCKED_NEED_CLICK'))
+        }
+      }
+      
+      // Try instantly
+      tryPlay()
+      
+      // Also try after delay
+      const timer = setTimeout(tryPlay, 1500)
       return () => clearTimeout(timer)
     }
   }, [memeMode])
@@ -76,7 +89,7 @@ export default function Credo() {
 
           <div className="meme-player">
             <p>NOW PLAYING: S3RL - AND I'M LIKE (174 BPM)</p>
-            <audio ref={audioRef} src="/s3rl-power.mp3" loop></audio>
+            <audio ref={audioRef} src="/s3rl-power.mp3" preload="auto" loop></audio>
             <button className="meme-play-btn" onClick={playMemeMusic}>PLAY MUSIC</button>
             <div className="meme-eq">
               <span className="eq-bar"></span>
