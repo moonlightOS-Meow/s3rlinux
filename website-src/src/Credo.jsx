@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
@@ -7,15 +7,25 @@ const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
   const [memeMode, setMemeMode] = useState(false)
+  const audioRef = useRef(null)
 
-  // Key combo to activate meme mode (Ctrl+Shift+M)
+  const playMemeMusic = () => {
+    if (audioRef.current) {
+      audioRef.current.play().catch(() => {})
+    }
+  }
+
+  const activateMemeMode = () => {
+    setMemeMode(true)
+  }
+
+  // Key combo
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === 'M') {
         e.preventDefault()
-        setMemeMode(true)
+        activateMemeMode()
       }
-      // ESC to exit
       if (e.key === 'Escape' && memeMode) {
         setMemeMode(false)
       }
@@ -24,19 +34,13 @@ export default function Credo() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [memeMode])
 
-  // Auto-play music when meme mode activates
+  // Play music AFTER meme mode activates (gives time for DOM to render)
   useEffect(() => {
     if (memeMode) {
-      const audio = document.getElementById('meme-audio')
-      if (audio) {
-        audio.play().catch(() => {})
-      }
+      const timer = setTimeout(playMemeMusic, 1000)
+      return () => clearTimeout(timer)
     }
   }, [memeMode])
-
-  const activateMemeMode = () => {
-    setMemeMode(true)
-  }
 
   if (memeMode) {
     return (
@@ -71,12 +75,9 @@ export default function Credo() {
           </div>
 
           <div className="meme-player">
-            <p>🎶 NOW PLAYING: S3RL - POWER (174 BPM) 🎶</p>
-            <audio id="meme-audio" src="/s3rl-power.mp3" loop></audio>
-            <div className="meme-play-btn" onClick={() => {
-              const audio = document.getElementById('meme-audio')
-              audio.play()
-            }}>▶ PLAY MUSIC</div>
+            <p>NOW PLAYING: S3RL - POWER (174 BPM)</p>
+            <audio ref={audioRef} src="/s3rl-power.mp3" loop></audio>
+            <button className="meme-play-btn" onClick={playMemeMusic}>PLAY MUSIC</button>
             <div className="meme-eq">
               <span className="eq-bar"></span>
               <span className="eq-bar"></span>
