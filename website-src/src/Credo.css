@@ -746,3 +746,23 @@
   margin-top: 12px !important;
   font-style: italic;
 }
+
+/* Foundation Personnel Section */
+.credo-footer-note {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid rgba(255,0,0,0.3);
+  color: rgba(255,200,200,0.5);
+  font-size: 12px;
+}
+
+.credo-footer-note p {
+  margin: 8px 0;
+}
+
+.scp-note {
+  color: rgba(255,200,200,0.5);
+  font-size: 12px;
+  margin-left: 10px;
+}

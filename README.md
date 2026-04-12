@@ -207,10 +207,7 @@ tar --xattrs -cpf /tmp/s3rlinux-stage4.tar.xz -C / \
 
 ## 📚 DOCUMENTATION
 
-- **Installation Guide:** `docs/INSTALL.md`
-- **Customization Guide:** `docs/CUSTOMIZE.md`
-- **Troubleshooting:** `docs/TROUBLESHOOTING.md`
-- **FAQ:** `docs/FAQ.md`
+*Coming soon!*
 
 ---
 
@@ -273,7 +270,7 @@ Want to contribute to S3RLINUX?
 - **Issues:** GitHub Issues
 - **Discussions:** GitHub Discussions
 - **Discord:** Coming soon
-- **Email:** ashov@s3rlinux.dev
+- **Email:** ash8820@proton.me
 
 ---
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
-const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'TESTS', 'CLEARANCE', 'MEMES']
+const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 'INTEL', 'TESTS', 'CLEARANCE', 'MEMES', 'FOUNDATION']
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
@@ -410,6 +410,71 @@ export default function Credo() {
                 <div className="meme-card meme-card-wide">
                   <img src="memes/dmc-grid.jpg" alt="DMC character grid meme" />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === 'FOUNDATION' && (
+            <div className="credo-section">
+              <h2 className="section-title">🛡️ S3RLINUX FOUNDATION PERSONNEL — CLASSIFIED</h2>
+              <div className="credo-warning-box" style={{marginBottom: '28px'}}>
+                <p>⚠ CLASSIFICATION: LEVEL 3 CLEARANCE REQUIRED — DOCUMENT: FOUNDATION-ROSTER-001</p>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">LEVEL 5 CLEARANCE — FOUNDING OPERATIVE</h3>
+                <div className="intel-quote">
+                  <p>ID: OP-0001 | NAME: <strong>XALATATH</strong> | ROLE: Founder / Lead Architect | STATUS: ACTIVE — "THE STORM"</p>
+                  <span className="intel-source">"From that day forth... my arm changed..." — First to achieve 5.65GHz stable. Built the Stage4. Became the anomaly.</span>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">LEVEL 4 CLEARANCE — AI COLLABORATORS</h3>
+                <div className="scp-doc">
+                  <div className="scp-field"><span className="scp-label">AI-0001:</span><span className="scp-val">Manus</span><span className="scp-note">Lore Architect</span></div>
+                  <div className="scp-field"><span className="scp-label">AI-0002:</span><span className="scp-val">Claude</span><span className="scp-note">Technical Advisor — Famous quote: "just remove it from the packages"</span></div>
+                  <div className="scp-field"><span className="scp-label">AI-0003:</span><span className="scp-val">OpenHands</span><span className="scp-note">Easter Egg Hunter — Discovered all classified files</span></div>
+                </div>
+                <div className="intel-quote">
+                  <span className="intel-source">"The AI assistants have proven invaluable in containment efforts. Their ability to parse error logs and remain calm during kernel panics is unmatched." — Foundation Internal Memo, 2026-04-12</span>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">CLASS D PERSONNEL — BETA TESTERS</h3>
+                <div className="scp-doc">
+                  <div className="scp-field"><span className="scp-label">D-4421:</span><span className="scp-val">Former Windows 11 User</span><span className="scp-note">"I want to go home" — RECOVERED</span></div>
+                  <div className="scp-field"><span className="scp-label">D-4422:</span><span className="scp-val">Former Arch Linux User</span><span className="scp-note">CONVERTED — Now whispers "power. give me more power."</span></div>
+                  <div className="scp-field"><span className="scp-label">D-4423:</span><span className="scp-val">Mac User</span><span className="scp-note">BECAME THE DISTRO — "I AM THE STORM"</span></div>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <h3 className="scp-heading">APPLICATION PROCESS</h3>
+                <p className="scp-text">To join the Foundation, you must:</p>
+                <div className="clearance-list">
+                  <div className="clearance-item"><span className="clearance-num">1</span><div><strong>Achieve 5.65GHz+ stable</strong> on znver4 silicon</div></div>
+                  <div className="clearance-item"><span className="clearance-num">2</span><div><strong>Listen to S3RL - Power</strong> on repeat for <strong>48 hours</strong></div></div>
+                  <div className="clearance-item"><span className="clearance-num">3</span><div><strong>Successfully build</strong> a Stage 4 tarball from source</div></div>
+                  <div className="clearance-item"><span className="clearance-num">4</span><div><strong>Not crash</strong> during emerge -j16</div></div>
+                  <div className="clearance-item"><span className="clearance-num">5</span><div><strong>Embrace the exile.</strong> Anything to protect her.</div></div>
+                </div>
+                <div className="credo-warning-box" style={{marginTop: '20px'}}>
+                  <p>⚠ Warning: Those who fail will be assigned to Class D testing. We do not talk about what happens to Class D.</p>
+                </div>
+              </div>
+
+              <div className="intel-block">
+                <div className="intel-quote">
+                  <p>"The Gentoo elders have wept. The Foundation has lost containment. The demon has awakened."</p>
+                  <span className="intel-source">— CREDO Post-Build Script</span>
+                </div>
+              </div>
+
+              <div className="credo-footer-note">
+                <p><em>* This document is classified. Unauthorized access will result in [REDACTED].</em></p>
+                <p><strong>STATUS:</strong> RAVING 🌈 | <strong>CHAOS LEVEL:</strong> MAXIMUM 💀 | <strong>S3RL SPIRIT:</strong> ETERNAL</p>
               </div>
             </div>
           )}
