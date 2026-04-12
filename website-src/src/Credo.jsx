@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Credo.css'
 
@@ -6,6 +6,100 @@ const TABS = ['OVERVIEW', 'SCP-7000', 'INCIDENT_0411', 'LOG_0411', 'MANIFESTO', 
 
 export default function Credo() {
   const [activeTab, setActiveTab] = useState('OVERVIEW')
+  const [memeMode, setMemeMode] = useState(false)
+
+  // Key combo to activate meme mode (Ctrl+Shift+M)
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'M') {
+        e.preventDefault()
+        setMemeMode(true)
+      }
+      // ESC to exit
+      if (e.key === 'Escape' && memeMode) {
+        setMemeMode(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [memeMode])
+
+  const activateMemeMode = () => {
+    setMemeMode(true)
+    // Auto-play music when entering meme mode
+    setTimeout(() => {
+      const audio = document.getElementById('meme-audio')
+      if (audio) audio.play().catch(() => {}) // catch errors if autoplay blocked
+    }, 500)
+  }
+
+  if (memeMode) {
+    return (
+      <div className="meme-mode">
+        <div className="meme-chaos-bg"></div>
+        
+        {/* Flying S3RL text */}
+        <div className="flying-s3rl s3rl-1">🎵 S3RL 🎵</div>
+        <div className="flying-s3rl s3rl-2">🌈 RAVE 🌈</div>
+        <div className="flying-s3rl s3rl-3">💀 SKULL 💀</div>
+        
+        <div className="meme-content">
+          <button className="meme-exit" onClick={() => setMemeMode(false)}>[ ESC TO EXIT ]</button>
+          
+          <div className="meme-spin-text">
+            <h1 className="meme-title-chaos">S3RLINUX CREDO EDITION</h1>
+          </div>
+          
+          <div className="meme-ascii">
+            <pre>
+╔═══════════════════════════════════════════════════╗
+║   ██████╗ ███████╗██████╗ ██╗     ██╗███╗   ██╗  ║
+║   ██╔════╝ ██╔════╝██╔══██╗██║     ██║████╗  ██║  ║
+║   ███████╗ ███████╗██████╔╝██║     ██║██╔██╗ ██║  ║
+║   ╚════██║ ╚════██║██╔══██╗██║     ██║██║╚██╗██║  ║
+║   ███████║███████║██║  ██║███████╗██║██║ ╚████║  ║
+║   ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝  ╚═══╝  ║
+║        RAVE ALL NIGHT 🌈💀 MAXIMUM CHAOS          ║
+╚═══════════════════════════════════════════════════╝
+            </pre>
+          </div>
+
+          <div className="meme-player">
+            <p>🎶 NOW PLAYING: S3RL - POWER (174 BPM) 🎶</p>
+            <audio id="meme-audio" src="/s3rl-power.mp3" loop></audio>
+            <div className="meme-play-btn" onClick={() => {
+              const audio = document.getElementById('meme-audio')
+              audio.play()
+            }}>▶ PLAY MUSIC</div>
+            <div className="meme-eq">
+              <span className="eq-bar"></span>
+              <span className="eq-bar"></span>
+              <span className="eq-bar"></span>
+              <span className="eq-bar"></span>
+              <span className="eq-bar"></span>
+            </div>
+          </div>
+          
+          <div className="meme-buttons">
+            <a href="https://open.spotify.com/artist/s3rl" target="_blank" className="meme-btn meme-btn-green">SPOTIFY</a>
+            <a href="https://www.youtube.com/@S3RLMusic" target="_blank" className="meme-btn meme-btn-red">YOUTUBE</a>
+            <button className="meme-btn meme-btn-purple" onClick={() => setMemeMode(false)}>JOIN THE RAVE</button>
+          </div>
+          
+          <div className="meme-counters">
+            <div className="counter">RAVERS ONLINE: 420</div>
+            <div className="counter">ENERGY: MAXIMUM</div>
+            <div className="counter">CHAOS LEVEL: ∞</div>
+          </div>
+          
+          <div className="meme-easter-egg">
+            <p>🎉 ERROR: MEME_MODE_ACTIVATED 🎉</p>
+            <p>YOU HAVE ACHIEVED TRUE RAVE ENLIGHTENMENT</p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="credo-app">
@@ -17,7 +111,7 @@ export default function Credo() {
         <header className="credo-header">
           <div className="credo-header-top">
             <span className="credo-stamp">LEVEL 5 CLEARANCE</span>
-            <h1 className="credo-title">CREDO</h1>
+            <h1 className="credo-title" onClick={activateMemeMode} style={{cursor: 'pointer'}}>CREDO</h1>
             <span className="credo-stamp">⚠ CLASSIFIED ⚠</span>
           </div>
           <p className="credo-subtitle">PROJECT CODENAME: [REDACTED] — ANOMALY-7000-CREDO</p>
