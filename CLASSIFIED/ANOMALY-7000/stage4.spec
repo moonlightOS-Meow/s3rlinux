@@ -19,8 +19,8 @@ profile: default/linux/amd64/23.0/desktop/systemd
 snapshot_treeish: 3b4b7b19c6e516cb055a59a794286ee8a7249b30
 source_subpath: default/stage3-amd64-desktop-systemd-20260405T170105Z
 # VERSION STAMP - Change this to today's date before building!
-# Format: YYYYMMDD-CREDO (e.g., 20260412-CREDO)
-version_stamp: 20260412-CREDO
+# Format: YYYYMMDD-CREDO (e.g., 20260413-CREDO)
+version_stamp: 20260413-CREDO
 
 # ============================================================
 # COMPRESSION — ZSTD FOR GITHub
