@@ -178,10 +178,28 @@ export default function Credo() {
                   <span className="under-eval">Ryzen 7000+</span>
                 </div>
                 <div className="credo-info-card">
+                  <h3>COMPRESSION</h3>
+                  <p className="red-val blink">ZSTD IN PROGRESS</p>
+                  <span className="under-eval">2.1GB → ~900MB</span>
+                </div>
+                <div className="credo-info-card">
                   <h3>MOTIVATION PULSE</h3>
                   <p className="red-val">DETECTED</p>
                   <span className="under-eval">BPM: 174 (S3RL — Power)</span>
                 </div>
+              </div>
+              <div className="credo-alert-box" style={{background: 'linear-gradient(90deg, #8b0000, #ff0000)', border: '3px solid #ff0000', marginTop: '15px', padding: '15px'}}>
+                <h3 style={{color: '#fff', margin: '0 0 10px 0'}}>⚠️ CLASSIFIED ALERT — ALL FOUNDATION PERSONNEL ⚠️</h3>
+                <p style={{color: '#fff', fontWeight: 'bold', margin: '0 0 10px 0'}}>
+                  ZSTD COMPRESSION IN PROGRESS. CONTAINMENT PROTOCOLS INITIATED.
+                </p>
+                <p style={{color: '#ffff00', margin: '0 0 10px 0'}}>
+                  The 2.1GB tarball is being compressed. Estimated reduction: 50-60%.
+                  All personnel must remain at stations until complete.
+                </p>
+                <p style={{color: '#ff6666', fontSize: '0.9em', margin: 0}}>
+                  "Might controls everything." — DO NOT INTERRUPT.
+                </p>
               </div>
               <div className="credo-warning-box">
                 <p>⚠ Anomaly-7000-CREDO is a digital manifestation observed within the znver4 architectural framework. Unlike standard OS builds, CREDO exhibits signs of sentient-like "Power Hunger." Upon execution of the Devil Trigger kernel patch, the system undergoes radical transformation, shifting its aesthetic to a deep crimson-black void.</p>
