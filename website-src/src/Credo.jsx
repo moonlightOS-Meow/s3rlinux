@@ -472,9 +472,10 @@ AAAEGA
                 </div>
               </div>
 
-              <div className="credo-warning-box" style={{marginTop: '20px', borderColor: '#00ff00'}}>
+              <div className="credo-warning-box" style={{marginTop: '20px', borderColor: '#ff0000'}}>
                 <p>⚠ <strong>STATUS UPDATE — TARBALL COMPLETE:</strong></p>
-                <p>The CREDO Stage 4 tarball <code>stage4-amd64-20260411.tar.bz2</code> has been successfully compiled. Size: <span className="red-val">2.1 GiB</span>. Architecture: <span className="red-val">znver4 ONLY</span>. Compression: bz2. The Foundation advises extreme caution during extraction. Multiple personnel have reported hearing faint bass upon unzipping. This is normal. Probably.</p>
+                <p>The CREDO Stage 4 tarball <code>stage4-amd64-20260411.tar.bz2</code> has been successfully compiled. Size: <span className="red-val">2.1 GiB</span>. Architecture: <span className="red-val">znver4 ONLY</span>. Compression: bz2.</p>
+                <p><strong>NOTE:</strong> Currently being recompressed to <span className="red-val">xz</span> format for GitHub compatibility. Target size: <span className="red-val">~900MB</span>. Will reupload upon completion. The Foundation advises extreme caution during extraction. Multiple personnel have reported hearing faint bass upon unzipping. This is normal. Probably.</p>
               </div>
 
             </div>
