@@ -21,11 +21,11 @@ echo "============================================"
 # ============================================================
 cat > /etc/os-release << 'EOF'
 NAME="S3RLINUX CREDO"
-VERSION="1.0-CREDO"
-VERSION_ID="1.0"
+VERSION="1.0.1-CREDO"
+VERSION_ID="1.0.1"
 ID=credo
 ID_LIKE=gentoo
-PRETTY_NAME="S3RLINUX CREDO 1.0 — THE TIME HAS COME AND SO HAVE I."
+PRETTY_NAME="S3RLINUX CREDO 1.0.1 — THE TIME HAS COME AND SO HAVE I."
 HOME_URL="https://moonlightos-meow.github.io/s3rlinux/"
 SUPPORT_URL="https://github.com/moonlightOS-Meow/s3rlinux"
 BUG_REPORT_URL="https://github.com/moonlightOS-Meow/s3rlinux/issues"
@@ -47,7 +47,9 @@ cat > /etc/motd << 'MOTD'
   ╚═════╝╚═╝  ╚═╝╚══════╝╚═════╝  ╚═════╝
 
  PROJECT:CREDO — S3RLINUX DMC EDITION
- "The time has come... and so have I." 🗡️
+ "The time has come... and so have I." 🗡
+ hi this is the creator i've come to say to you
+ that you need to suck balls :3
 
  Anomaly: 7000-CREDO | Class: Keter/Thaumiel
  Status : DEVIL TRIGGER ACTIVE
@@ -199,6 +201,7 @@ DEVIL_TRIGGER=ACTIVE
 ARCHITECT=znver4
 MOTIVATION_PULSE=DETECTED
 S3RL_LICENSE=ACTIVE
+YEET_COMMAND=NOT YET. I WISH TO ADD AM RM -RF ALIAS XD JOKING
 # ============================================================
 EOF
 
