@@ -24,11 +24,13 @@ version_stamp: 20260413-CREDO
 
 # ============================================================
 # COMPRESSION — ZSTD FOR GITHub
-# zstd levels 1-19, higher = more compression but slower
-# Level 9 is balanced (good ratio, moderate speed)
-# Level 19 is max compression (best ratio, slowest)
+# NOTE: Catalyst uses snapshot_treeish to determine compression
+# zstd is NOT natively supported in catalyst spec
+# Instead, use post-build compression script
+# After build completes, run:
+#   zstd -19 stage4-amd64-*.tar -o stage4-amd64-*.tar.zst
 # ============================================================
-compress: zstd:9
+# compress: zstd:9  # NOT SUPPORTED - use post-build!
 
 # ============================================================
 # COMPILER FLAGS — DEVIL TRIGGER ACTIVE
