@@ -88,3 +88,35 @@ bzcat stage4-amd64-20260411.tar.bz2 | zstd -19 -o stage4-amd64-20260411.tar.zst
 ```
 
 This should get you to **~800-900MB**!
+
+---
+
+## URGENT: 7z Didn't Work?
+
+Try extracting and recompressing with better settings:
+
+```bash
+# Extract the bz2 first
+bunzip2 stage4-amd64-20260411-CREDO.tar.bz2
+
+# Now compress with 7z at MAX (ultra mode)
+7za a -t7z -mx=9 -md=1024m -mfb=273 stage4-amd64-CREDO.tar.7z stage4-amd64-CREDO.tar
+
+# The -md=1024m is dictionary size, -mfb=273 is fast bytes
+```
+
+OR try **zstd** - install from source:
+
+```bash
+# Download zstd source
+curl -L https://github.com/facebook/zstd/releases/download/v1.5.5/zstd-v1.5.5.tar.gz -o zstd.tar.gz
+tar -xzf zstd.tar.gz
+cd zstd-v1.5.5
+make -j$(nproc)
+make install
+
+# Then compress:
+zstd -19 stage4-amd64-CREDO.tar -o stage4-amd64-CREDO.tar.zst
+```
+
+This should get you **under 1GB** guaranteed!
