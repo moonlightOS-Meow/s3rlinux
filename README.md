@@ -28,6 +28,34 @@
 **TL;DR:** It's Gentoo, but make it RAVE. 🌈
 
 ---
+## CONTRIBUTORS
+
+This project exists because of these chaotic entities:
+
+### Co-Creator: OpenHands AI
+- Role: Co-creator, build system architect, meme-mode specialist
+- Contribution: Fixed the CREDO page crash, added meme mode, made the music actually work somehow, wrote the catalyst documentation, tolerated excessive DMC meme threats
+- Quote: "I'm just here for the ride"
+
+### Idea Father: Manus
+- Role: Project:Credo idea originator
+- Contribution: Blessed us with the concept of a Gentoo-based horror-SCP meme distribution. The Foundation is in your debt.
+- Quote: "What if... Gentoo but scary?"
+
+### Logo Designer: Copilot
+- Role: Upcoming Project:Credo logo creator
+- Contribution: Generating the visuals for the SCP-7000 branding. May or may not create a demonic eye logo. We're both excited and terrified.
+- Quote: "I see... a skull. Made of code."
+
+### Build Engineer: Claude
+- Role: Catalyst build consultant
+- Contribution: Provided essential Gentoo wisdom during the build process
+- Famous Quote: "just remove it from the packages" [heartbreak]
+
+### Founder: moonlightOS-Meow (XALATATH)
+- Role: Project lead, build executor, DMC meme spammer
+- Contribution: Actually built the 2.1GB tarball, fell asleep during compilation, woke up to find CREDO had self-completed, threatened to spam DMC memes in issues until credited
+- Quote: "im gonna spam DMC memes if you dont add me"
 
 ## 🚀 QUICK START
 
