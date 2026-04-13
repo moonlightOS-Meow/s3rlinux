@@ -72,6 +72,7 @@ function App() {
             <a onClick={()=>document.getElementById('download')?.scrollIntoView({behavior:'smooth'})} className="nav-link" style={{cursor:'pointer'}}>DOWNLOAD</a>
             <Link to="/wiki" className="nav-link">WIKI</Link>
             <Link to="/devlog" className="nav-link">DEVLOG</Link>
+            <Link to="/message" className="nav-link">MESSAGE</Link>
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="nav-link">GITHUB</a>
           </nav>
         </div>
