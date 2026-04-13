@@ -43,6 +43,31 @@ body {
     radial-gradient(ellipse at 50% 90%, rgba(255,0,128,0.08) 0%, transparent 50%),
     var(--dark);
   pointer-events: none;
+  animation: backgroundShift 8s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    background:
+      radial-gradient(ellipse at 15% 50%, rgba(138,43,226,0.15) 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 20%, rgba(0,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 90%, rgba(255,0,128,0.08) 0%, transparent 50%),
+      var(--dark);
+  }
+  33% {
+    background:
+      radial-gradient(ellipse at 20% 40%, rgba(138,43,226,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(0,255,255,0.1) 0%, transparent 55%),
+      radial-gradient(ellipse at 45% 85%, rgba(255,0,128,0.1) 0%, transparent 55%),
+      var(--dark);
+  }
+  66% {
+    background:
+      radial-gradient(ellipse at 10% 60%, rgba(138,43,226,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 15%, rgba(0,255,255,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 55% 95%, rgba(255,0,128,0.06) 0%, transparent 45%),
+      var(--dark);
+  }
 }
 
 /* HEADER */
@@ -53,7 +78,7 @@ body {
   background: rgba(5, 8, 16, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(138,43,226,0.4);
-  box-shadow: 0 0 30px rgba(138,43,226,0.2);
+  box-shadow: 0 0 30px rgba(138,43,226,0.2), 0 4px 20px rgba(0,0,0,0.3);
   padding: 10px 0;
 }
 
@@ -142,6 +167,15 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
+  padding: 40px;
+  background: rgba(5, 8, 16, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(138, 43, 226, 0.2);
+  box-shadow: 
+    0 0 60px rgba(138, 43, 226, 0.1),
+    inset 0 0 60px rgba(138, 43, 226, 0.03);
+  backdrop-filter: blur(4px);
 }
 
 .ascii-art {
@@ -210,6 +244,23 @@ body {
   background: linear-gradient(135deg, #8a2be2 0%, #00c8ff 100%);
   color: #fff;
   box-shadow: 0 0 20px rgba(138,43,226,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
@@ -249,6 +300,28 @@ section h2 {
   margin-bottom: 48px;
   letter-spacing: 3px;
   text-align: center;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+section h2::before,
+section h2::after {
+  content: '◈';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--purple);
+  opacity: 0.7;
+}
+
+section h2::before {
+  left: calc(50% - 200px);
+}
+
+section h2::after {
+  right: calc(50% - 200px);
 }
 
 section p {
@@ -270,6 +343,24 @@ section p {
   border-radius: 10px;
   padding: 28px 24px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.about-card:hover::before {
+  transform: translateX(100%);
 }
 
 .about-card:hover {
@@ -343,6 +434,18 @@ section p {
   border-top: 1px solid rgba(255,0,128,0.3);
   border-bottom: 1px solid rgba(255,0,128,0.3);
   padding: 70px 24px;
+  position: relative;
+}
+
+.s3rl-tribute::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--hot-pink), transparent);
 }
 
 .s3rl-tribute > * {
@@ -354,6 +457,17 @@ section p {
 .s3rl-tribute h2 {
   color: var(--hot-pink);
   text-shadow: 0 0 15px rgba(255,0,128,0.8);
+  position: relative;
+  display: inline-block;
+}
+
+.s3rl-tribute h2::after {
+  content: '⚡';
+  position: absolute;
+  right: -35px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
 }
 
 .s3rl-gallery {
@@ -587,6 +701,21 @@ section p {
   border-top: 1px solid rgba(138,43,226,0.4);
   padding: 40px 24px;
   text-align: center;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+.footer-content {
+  position: relative;
 }
 
 .footer-content p {
