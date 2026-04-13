@@ -21,6 +21,14 @@ source_subpath: default/stage3-amd64-desktop-systemd-20260405T170105Z
 version_stamp: 20260411-CREDO
 
 # ============================================================
+# COMPRESSION — ZSTD FOR GITHub
+# zstd levels 1-19, higher = more compression but slower
+# Level 9 is balanced (good ratio, moderate speed)
+# Level 19 is max compression (best ratio, slowest)
+# ============================================================
+compress: zstd:9
+
+# ============================================================
 # COMPILER FLAGS — DEVIL TRIGGER ACTIVE
 # znver4 = Ryzen 7000+ ONLY
 # Attempting to compile on Intel will result in [REDACTED]
