@@ -232,3 +232,51 @@ echo "  DEVIL TRIGGER: ACTIVE."
 echo ""
 echo "  'The time has come... and so have I.'"
 echo "============================================"
+
+# ============================================================
+# ZSTD COMPRESSION - For GitHub
+# ============================================================
+echo ""
+echo "============================================"
+echo "  COMPRESSING TO ZSTD FOR GITHub..."
+echo "============================================"
+
+# Find the stage4 tarball
+STAGE4_TAR=$(ls -1 stage4-amd64-*.tar.bz2 2>/dev/null | head -1)
+
+if [ -n "$STAGE4_TAR" ]; then
+    echo "Found: $STAGE4_TAR"
+    
+    # Extract bz2
+    echo "Extracting bz2..."
+    bunzip2 -k "$STAGE4_TAR"
+    
+    # Get the extracted tar name
+    EXTRACTED_TAR="${STAGE4_TAR%.bz2}"
+    
+    # Compress with zstd level 19 (max compression)
+    echo "Compressing with zstd -19..."
+    if command -v zstd &> /dev/null; then
+        zstd -19 "$EXTRACTED_TAR" -o "${EXTRACTED_TAR%.tar}.tar.zst"
+        
+        # Get sizes
+        ORIG_SIZE=$(du -h "$STAGE4_TAR" | cut -f1)
+        NEW_SIZE=$(du -h "${EXTRACTED_TAR%.tar}.tar.zst" | cut -f1)
+        
+        echo ""
+        echo "============================================"
+        echo "  COMPRESSION COMPLETE!"
+        echo "  Original: $ORIG_SIZE"
+        echo "  New: $NEW_SIZE"
+        echo "  Output: ${EXTRACTED_TAR%.tar}.tar.zst"
+        echo "============================================"
+        
+        # Clean up extracted tar (keep bz2 and zst)
+        rm -f "$EXTRACTED_TAR"
+    else
+        echo "WARNING: zstd not found! Skipping compression."
+        echo "Install zstd: emerge app-arch/zstd"
+    fi
+else
+    echo "ERROR: No stage4 tarball found!"
+fi
