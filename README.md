@@ -50,12 +50,12 @@ This project exists because of these chaotic entities:
 ### Build Engineer: Claude
 - Role: Catalyst build consultant
 - Contribution: Provided essential Gentoo wisdom during the build process
-- Famous Quote: "just remove it from the packages" [heartbreak]
+- Famous Quote: "just remove it from the packages" 💔 
 
-### Founder: moonlightOS-Meow (XALATATH)
+### Founder: moonlightOS-Meow (xalatath)
 - Role: Project lead, build executor, DMC meme spammer
 - Contribution: Actually built the 2.1GB tarball, fell asleep during compilation, woke up to find CREDO had self-completed, threatened to spam DMC memes in issues until credited
-- Quote: "im gonna spam DMC memes if you dont add me"
+- Quote: "im gonna spam DMC memes if you dont add me" (and i already did.)
 
 ## 🚀 QUICK START
 
@@ -68,9 +68,7 @@ This project exists because of these chaotic entities:
 
 ### Installation
 
-**Coming Soon™** - Stage 4 tarball and ISO
-
-For now, you can build it yourself from the Gentoo installation guide.
+**RELEASED** - A version of S3RLINUX is released called pRoJeCt:CrEdO 1.0.1
 
 ---
 
@@ -304,14 +302,15 @@ Want to contribute to S3RLINUX?
 
 ## 🚀 ROADMAP
 
-- [ ] Stage 4 tarball release
-- [ ] ISO image release
-- [ ] Custom installer script
-- [ ] Documentation expansion
-- [ ] Community packages
-- [ ] S3RLINUX branding assets
-- [ ] Official website
-- [ ] Discord community
+- [✅] Stage 4 tarball release
+- [❌] ISO image release
+- [❓] Custom installer script
+- [❓] Documentation expansion
+- [❌] Community packages
+- [❓] S3RLINUX branding assets
+- [✅] Official website
+- [❌] Discord community
+- [⚠️] SPOILER ALERT! 
 
 ---
 
