@@ -23,7 +23,7 @@ This wiki contains **CLASSIFIED INFORMATION** about Project CREDO.
 
 ## 🎵 REQUIRED LISTENING
 
-**S3RL — Power** (174 BPM)
+**S3RL — Power** (174 BPM) (imagine its real xd)
 
 Playing this song is **LEGALLY REQUIRED** by all Foundation personnel.
 
@@ -31,7 +31,7 @@ Playing this song is **LEGALLY REQUIRED** by all Foundation personnel.
 
 ## 🎵 Music
 
-### S3RL — Spoiler Alert (2:31)
+### S3RL — Spoiler Alert (2:31) (OH MY FAV SONG.)
 
 ```
 Spoiler alert! 
