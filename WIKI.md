@@ -14,10 +14,10 @@ This wiki contains **CLASSIFIED INFORMATION** about Project CREDO.
 
 ## 📖 Quick Links
 
-- [CREDO-Project](#credo-project)
-- [Meme-Mode](#meme-mode)  
-- [Music](#music)
-- [Foundation-Law](#foundation-law)
+- [CREDO-Project](#credo-project) — The SCP-styled Gentoo distro
+- [Meme-Mode](#meme-mode) — DMC meme protocol activation
+- [Music](#music) — S3RL lyrics & required listening
+- [Foundation-Law](#foundation-law) — The core laws
 
 ---
 
