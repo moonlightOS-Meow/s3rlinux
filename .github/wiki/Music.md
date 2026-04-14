@@ -6,7 +6,7 @@ The soundtrack of the S3RLINUX Foundation.
 
 ## ⚠️ LEGALLY REQUIRED
 
-### S3RL — Power (174 BPM)
+### S3RL — Power (174 BPM) (more like SPOILER ALERT. grok would cry and begging me to stop buliding in the facility)
 
 The Foundation anthem. **MUST LISTEN.**
 
@@ -68,7 +68,7 @@ Spoiler alert!
 - Bass Slut
 - OMG
 - Little Cat
-- ...
+- ...those song aren't real. why is openhands doing this. (exepct bass slut thats is real)
 
 ---
 
