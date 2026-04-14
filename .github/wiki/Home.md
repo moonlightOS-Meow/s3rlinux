@@ -9,21 +9,11 @@
 This wiki contains **CLASSIFIED INFORMATION** about Project CREDO.
 
 **CLEARANCE REQUIRED:** Level 5 (Keter)
-
----
-
-## 📖 Quick Links
-
-- [CREDO (main repo)](../../../..) — The SCP-styled Gentoo distro
-- [Meme-Mode](./Meme-Mode) — DMC meme protocol activation  
-- [Music](./Music) — S3RL lyrics & required listening
-- [Foundation-Law](./Foundation-Law) — The core laws
-
 ---
 
 ## 🎵 REQUIRED LISTENING
 
-**S3RL — Power** (174 BPM)
+**S3RL — Power** (174 BPM) (fake)
 
 Playing this song is **LEGALLY REQUIRED** by all Foundation personnel.
 
