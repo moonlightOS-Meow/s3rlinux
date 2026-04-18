@@ -22,7 +22,7 @@ S3RLINUX is an Arch Linux distribution themed around **S3RL** — the legendary 
 
 - 🌈 Custom MOTD with S3RL ASCII art
 - 🎵 Per the S3RL License (S3RLL): you MUST listen to S3RL while using this OS
-- 💀 Terminal-first, no desktop by default
+- 💀 KDE Plasma desktop environment - ricing paradise
 - ⚡ Optimized for modern hardware
 - 🔧 paru pre-installed, full AUR access
 - 🗡️ PROJECT:CREDO easter egg (classified)
