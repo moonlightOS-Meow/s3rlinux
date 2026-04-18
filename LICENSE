@@ -1,6 +1,6 @@
 # S3RL LICENSE (S3RLL)
 
-**Version 1.0 - "RAVE ALL NIGHT"**
+**Version 2.0 - "PEAR OS SWITCH"**
 
 ---
 
@@ -9,6 +9,8 @@
 This is the S3RL License (S3RLL), a free and open-source license inspired by the chaotic energy of electronic music, the spirit of the rave, and the uncompromising dedication to optimization.
 
 If you're reading this, you're already part of the S3RL movement. Welcome.
+
+**Version 2.0 Update:** S3RLINUX has moved from Gentoo to Arch Linux. The corrupt NVMe has been avenged. The pearOS era begins.
 
 ---
 
@@ -29,7 +31,7 @@ You may modify the source code, kernel, configs, and branding to suit your needs
 - Credit S3RL (the artist) and the original creators
 
 ### 3. FREEDOM TO DISTRIBUTE
-You may distribute S3RLINUX in any form: source code, binaries, ISO, Stage 4 tarball, etc.
+You may distribute S3RLINUX in any form: source code, binaries, ISO, archiso, chroot, etc.
 
 **REQUIREMENT:** You MUST include:
 - This license file
