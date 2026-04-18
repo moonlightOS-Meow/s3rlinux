@@ -1,3 +1,0 @@
-# Node.js version manager config
-# Run `nvm use` to activate the correct version
-node 22

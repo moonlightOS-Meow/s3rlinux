@@ -15,23 +15,19 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Setup Node.js
+    - name: Setup Node
       uses: actions/setup-node@v4
       with:
         node-version: '22'
     
-    - name: Install dependencies
-      run: |
-        cd website-v2
-        npm install
+    - name: Install
+      run: cd website && npm install
     
     - name: Build
-      run: |
-        cd website-v2
-        npm run build
+      run: cd website && npm run build
     
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist-v2
+        publish_dir: ./website/dist
