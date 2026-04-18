@@ -2,7 +2,7 @@
   "name": "s3rlinux-v2",
   "description": "S3RLINUX v2 - Arch Edition - RAVE ALL NIGHT 💀",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0",
   "type": "module",
   "homepage": "https://moonlightos-meow.github.io/s3rlinux",
   "scripts": {
