@@ -46,7 +46,12 @@ website-v2/
 | `npm run lint` | Run ESLint |
 | `npm run preview` | Preview build |
 
+## Browser Support
+
+- Chrome/Edge >= 108
+- Firefox >= 109
+- Safari >= 15.4
+
 ## License
 
 S3RLL v2.0 "PEAR OS SWITCH"
-
