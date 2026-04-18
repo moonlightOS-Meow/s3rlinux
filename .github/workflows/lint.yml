@@ -1,0 +1,26 @@
+name: Lint
+
+on:
+  pull_request:
+    paths:
+      - 'website-v2/**'
+      - '.github/workflows/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+    
+    - name: Install
+      run: cd website-v2 && npm ci
+    
+    - name: ESLint
+      run: cd website-v2 && npm run lint
