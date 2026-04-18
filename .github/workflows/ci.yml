@@ -20,15 +20,15 @@ jobs:
     
     - name: Install dependencies
       run: |
-        cd website-v2
+        cd website
         npm install
     
     - name: Lint
       run: |
-        cd website-v2
+        cd website
         npm run lint
     
     - name: Build
       run: |
-        cd website-v2
+        cd website
         npm run build

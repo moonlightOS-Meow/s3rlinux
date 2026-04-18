@@ -20,15 +20,15 @@ jobs:
         node-version: '22'
     
     - name: Install
-      run: cd website-v2 && npm install
+      run: cd website && npm install
     
     - name: Build
-      run: cd website-v2 && npm run build
+      run: cd website && npm run build
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v2
       with:
         files: |
-          website-v2/dist/**
+          website/dist/**
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

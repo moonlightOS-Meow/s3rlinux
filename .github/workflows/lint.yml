@@ -3,7 +3,7 @@ name: Lint
 on:
   pull_request:
     paths:
-      - 'website-v2/**'
+      - 'website/**'
       - '.github/workflows/**'
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
         node-version: '22'
     
     - name: Install
-      run: cd website-v2 && npm install
+      run: cd website && npm install
     
     - name: ESLint
-      run: cd website-v2 && npm run lint
+      run: cd website && npm run lint
