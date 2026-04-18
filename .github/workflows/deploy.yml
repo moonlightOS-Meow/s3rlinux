@@ -17,12 +17,11 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: '22'
-        cache: 'npm'
     
     - name: Install dependencies
       run: |
         cd website-v2
-        npm ci
+        npm install
     
     - name: Build
       run: |
