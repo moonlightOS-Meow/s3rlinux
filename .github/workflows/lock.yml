@@ -1,0 +1,16 @@
+name: Lock Issues
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  lock:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: dessant/lock-threads@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-lock-message: 'Locking due to inactivity'
+        pr-lock-message: 'Locking due to inactivity'
+        days-before-lock: 30
