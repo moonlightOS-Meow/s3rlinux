@@ -31,6 +31,7 @@ S3RLINUX is an Arch Linux distribution themed around **S3RL** — the legendary 
 
 ## 🚀 STATUS
 
+- [x] Switch from Gentoo to Arch (done, with emotional damage)
 - [ ] archiso profile in progress
 - [ ] ISO coming soon™
 - [ ] Website live at moonlightos-meow.github.io/s3rlinux
