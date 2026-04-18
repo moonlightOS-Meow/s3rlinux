@@ -202,3 +202,34 @@ h2 { font-size: 2rem; margin-bottom: 60px; text-align: center; }
 .footer-links a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--cyan); }
 .copy { color: var(--text-dim); font-size: 0.85rem; }
+
+/* LANG SWITCHER */
+.lang-switcher {
+  position: fixed; bottom: 24px; right: 24px; z-index: 200;
+  display: flex; gap: 8px;
+}
+.lang-btn {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--bg-card); border: 1px solid var(--border);
+  font-size: 1.2rem; cursor: pointer;
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+}
+.lang-btn:hover { border-color: var(--cyan); transform: scale(1.1); }
+.lang-btn.active { border-color: var(--cyan); background: var(--cyan-dim); }
+
+/* PAGE */
+.page { min-height: 100vh; }
+.page .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; }
+
+/* NAV ACTIVE */
+.nav a.active { color: var(--cyan); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--bg); flex-direction: column; padding: 20px; gap: 16px; border-bottom: 1px solid var(--border); }
+  .nav.open { display: flex; }
+  .hero, .section { padding: 80px 20px; }
+  .stats { gap: 20px; }
+  .lang-switcher { bottom: 12px; right: 12px; }
+}
