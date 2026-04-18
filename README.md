@@ -42,7 +42,7 @@ S3RLINUX is an Arch Linux distribution themed around **S3RL** — the legendary 
 
 ## 📜 LICENSE
 
-**S3RL LICENSE (S3RLL) v2.0 - "PEAR OS SWITCH"**
+**S3RL License (S3RLL) v2.0 - "PEAR OS SWITCH"**
 
 Key terms:
 - ✅ Free to use, modify, distribute
