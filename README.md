@@ -10,7 +10,7 @@
 
 S3RLINUX v2 ditches the Gentoo Stage 4 approach in favor of **Arch Linux** as the base. Rolling release. AUR support. Way less crying at 3am over USE flags and LLVM compiling for 8 hours.
 
-The S3RL spirit remains. The chaos remains. The linux-firmware license hell does not.
+The real reason? Gentoo finally told me "fuck you" and corrupted my NVMe, refusing to let me save it. So I said "fuck you too" and installed pearOS — a macOS clone (looks like macOS, but runs Arch under the hood). The S3RL spirit remains. The chaos remains. The linux-firmware license hell does not.
 
 ---
 
