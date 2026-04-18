@@ -56,3 +56,4 @@ Key terms:
 *The Arch wiki has blessed you. The S3RL spirit flows through your kernel. Your pacman commands are weapons.*
 
 *Sorry Gentoo elders... RAVE ALL NIGHT. 🌈💀*
+<!-- rebuild -->
