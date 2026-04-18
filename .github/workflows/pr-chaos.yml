@@ -1,0 +1,33 @@
+name: PR CHAOS 🌀
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pr-welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR WELCOME
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            
+            const welcomes = [
+              "🎉 MUAHAHAHAHA! A PULL REQUEST! The Foundation is pleased... for now. 🗡️",
+              "📝 PR #${pr.number} received. VERIL demands you explain your changes. 💪",
+              "🗿 Another mortal seeks to contribute! We will review your code... eventually. 🌀",
+              "⚠️ WARNING: This PR has been flagged for 'excessive usefulness'. Investigating. 🤡",
+              "🎵 Your PR has been noted in the Foundation database. All S3RLINUX agents to listening stations! 🎶",
+              "📦 We accept your PR. The demon approves. Or doesn't. RNG says: " + (Math.random() > 0.5 ? 'APPROVED' : 'PENDING') + " 🏳️"
+            ];
+            
+            const random = welcomes[Math.floor(Math.random() * welcomes.length)];
+            
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              body: random + '\n\n---\n*This PR was auto-greeted by S3RLINUX Foundation Bot. Might controls everything.*'
+            });
