@@ -41,6 +41,26 @@ const resources = {
       download: { title: 'OBTENIR S3RLINUX', stable: 'STABLE', beta: 'BETA', v: 'v2.0', nightly: 'NIGHTLY', arch: 'Base Arch', latest: 'Derniers builds', maybreak: 'Peut casser', size: '~2.5GB', sizeN: '~2.6GB' },
       footer: { tagline: 'RAVE ALL NIGHT 🌈💀', github: 'GitHub', wiki: 'Wiki', discord: 'Discord', copy: '© 2026 S3RLINUX PROJECT' }
     }
+  },
+  au: {
+    translation: {
+      nav: { about: 'About', features: 'Features', download: 'Download', github: 'GitHub' },
+      hero: { badge: 'ARCH LINUX BASED • pearOS ERA', tagline: 'RAVE ALL NIGHT 🌈💀', desc: 'The fair dinkum RAVE-themed Arch Linux distro. Custom branding, neon aesthetics, pure chaos. No handholding. Just vibes, mate.', download: 'DOWNLOAD', explore: 'EXPLORE', version: 'Version', base: 'Base', theme: 'Theme' },
+      about: { title: 'WAT IS S3RLINUX?', cards: { 1: { title: 'RAVE AESTHETICS', desc: 'Neon colours, cyberpunk vibes, terminal with personality. Your system should feel like a festival, yeah?' }, 2: { title: 'ARCH POWER', desc: 'Built on Arch Linux. Rolling release, bleeding edge, complete control. No bloat, no worries.' }, 3: { title: 'CHAOS MODE', desc: 'For those who break systems to fix em. Custom DE, terminal configs, and memes. Absolute chaos.' } } },
+      features: { title: 'FEATURES', list: [{ title: 'KDE Plasma Desktop', desc: 'S3RL-themed KDE Plasma with custom widgets, ricing paradise, fair dinkum' }, { title: 'Neon Terminal', desc: 'Zsh with powerlevel10k, S3RL theme, custom aliases and functions, yeah nah' }, { title: 'pearOS Integration', desc: 'Latest pearOS apps and utilities, seamless system integration, no worries' }, { title: 'AUR Support', desc: 'Full access to AUR with custom S3RL package repo, chuck it on mate' }] },
+      download: { title: 'GET S3RLINUX', stable: 'STABLE', beta: 'BETA', v: 'v2.0', nightly: 'NIGHTLY', arch: 'Arch-based', latest: 'Latest builds', maybreak: 'Might break', size: '~2.5GB', sizeN: '~2.6GB' },
+      footer: { tagline: 'RAVE ALL NIGHT 🌈💀', github: 'GitHub', wiki: 'Wiki', discord: 'Discord', copy: '© 2026 S3RLINUX PROJECT • S3RLL v2.0' }
+    }
+  },
+  pl: {
+    translation: {
+      nav: { about: 'O nas', features: 'Funkcje', download: 'Pobierz', github: 'GitHub' },
+      hero: { badge: 'OPARTY NA ARCH LINUX • ERA pearOS', tagline: 'RAVE ALL NIGHT 🌈💀', desc: 'Dystrybucja Arch Linux w stylu RAVE. Własne branding, neonowa estetyka, czysty chaos. Bez trzymania za rękę. Same viby.', download: 'POBIERZ', explore: 'EXPLORUJ', version: 'Wersja', base: 'Baza', theme: 'Motyw' },
+      about: { title: 'CO TO JEST S3RLINUX?', cards: { 1: { title: 'RAVE ESTETYKA', desc: 'Neonowe kolory, vibes cyberpunk, terminal z charakterem. Twój system powinien czuć się jak festiwal.' }, 2: { title: 'MOC ARCH', desc: 'Zbudowane na Arch Linux. Rolling release, bleeding edge, pełna kontrola. Bez bloatu.' }, 3: { title: 'TRYB CHAOSU', desc: 'Dla tych, co psują systemy, żeby je naprawić. Własne DE, konfiguracje terminala i memy.' } } },
+      features: { title: 'FUNKCJE', list: [{ title: 'Pulpit KDE Plasma', desc: 'S3RL-themed KDE Plasma z własnymi widgetami, raj dla ricingu' }, { title: 'Neonowy Terminal', desc: 'Zsh z powerlevel10k, motyw S3RL, własne aliasy i funkcje' }, { title: 'Integracja pearOS', desc: 'Najnowsze aplikacje i narzędzia pearOS, płynna integracja' }, { title: 'Wsparcie AUR', desc: 'Pełny dostęp do AUR z własnym repozytorium pakietów S3RL' }] },
+      download: { title: 'POBIERZ S3RLINUX', stable: 'STABILNA', beta: 'BETA', v: 'v2.0', nightly: 'NIGHTLY', arch: 'Oparte na Arch', latest: 'Najnowsze buildy', maybreak: 'Może się zepsuć', size: '~2.5GB', sizeN: '~2.6GB' },
+      footer: { tagline: 'RAVE ALL NIGHT 🌈💀', github: 'GitHub', wiki: 'Wiki', discord: 'Discord', copy: '© 2026 S3RLINUX PROJECT • S3RLL v2.0' }
+    }
   }
 }
 

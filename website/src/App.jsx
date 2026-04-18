@@ -9,6 +9,8 @@ const languages = [
   { code: 'ja', flag: '🇯🇵' },
   { code: 'de', flag: '🇩🇪' },
   { code: 'fr', flag: '🇫🇷' },
+  { code: 'au', flag: '🇦🇺' },
+  { code: 'pl', flag: '🇵🇱' },
 ]
 
 function App() {
