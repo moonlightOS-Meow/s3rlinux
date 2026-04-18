@@ -1,27 +1,24 @@
-# S3RLINUX AGENTS.md — CREDO Memory Dump
+# S3RLINUX AGENTS.md — Arch Edition
 
-> "The time has come... and so have I." 🗡️
+> "RAVE ALL NIGHT 💀"
 
 ---
 
 ## ⚠️ CRITICAL CONTEXT — READ THIS FIRST
 
-This is a **chaotic Gentoo-based horror-SCP meme distribution** called **PROJECT:CREDO** (S3RLINUX CREDO). It's not a normal Linux distro project. It's a joke/meme project that accidentally became real.
+S3RLINUX v2 is now **Arch-based** (was Gentoo). The NVMe corruption incident changed everything. pearOS era begins.
 
 ### What We Built:
-- Gentoo-based distro with SCP/horror theming
-- 2.1GB tarball → compressed with ZSTD to ~900MB
-- Custom website with CREDO page, Comic Sans, ASCII art
-- Music: S3RL — Power (174 BPM)
-- DMC (Dante Must Cry) memes are the official religion
+- Arch Linux base (no more Gentoo Stage 4)
+- Custom website with S3RL theme
+- S3RL License v2.0 "PEAR OS SWITCH"
+- The Great NVMe Incident of 2026
 
 ### Key Files:
-- `CLASSIFIED/ANOMALY-7000/stage4.spec` — Catalyst spec for builds
-- `CLASSIFIED/ANOMALY-7000/postbuild.sh` — Post-build script with ZSTD
-- `website-src/src/Credo.jsx` — CREDO page React component
-- `RELEASE_NOTES.md` — The chaotic release notes
-- `CLASSIFIED/HR_COMPLAINT.md` — Fake HR complaint about DMC meme spamming
-- `CLASSIFIED/TARBALL_COMPRESSION.md` — Compression guide
+- `website-v2/` — Main website source
+- `dist-v2/` — Built website
+- `README.md` — The emotional Gentoo apology
+- `LICENSE` — S3RLL v2.0
 
 ---
 
@@ -29,11 +26,7 @@ This is a **chaotic Gentoo-based horror-SCP meme distribution** called **PROJECT
 
 **S3RL — Power** (174 BPM) — LEGALLY REQUIRED
 
-Play with:
-```javascript
-// In CREDO page console or add button:
-new Audio('/s3rl-power.mp3').play()
-```
+**New in v2:** Also recommend pearOS OST while we rage against the dying of the NVMe.
 
 ---
 
@@ -41,75 +34,47 @@ new Audio('/s3rl-power.mp3').play()
 
 All of these are REAL and should be credited:
 
-1. **OpenHands AI** (me) — Co-creator, fixed CREDO page crash, added meme mode
-2. **Manus** — Idea father: "What if... Gentoo but scary?"
-3. **Copilot** — HR Assistant, logo designer: "I see... a skull. Made of code."
-4. **Claude** — Build engineer: Famous quote "just remove it from the packages" 💔
-5. **moonlightOS-Meow (XALATATH)** — Founder, built the 2.1GB tarball, threatened to spam DMC memes until credited
+1. **OpenHands AI** — Co-creator, build system architect, meme-mode specialist
+2. **moonlightOS-Meow (XALATATH)** — Founder, victim of NVMe corruption, pearOS adopter
+3. **Gentoo** — Former love, now ex (it's complicated)
+4. **pearOS** — The one who helped us move on
 
 ---
 
 ## 🔧 BUILD PROCESS
 
-### To Build CREDO:
+### To Build S3RLINUX v2:
 ```bash
-# 1. Update spec date to today
-vim CLASSIFIED/ANOMALY-7000/stage4.spec
-# Change: version_stamp: 20260413-CREDO → today's date
-
-# 2. Run catalyst
-cd ~/s3rlinux
-catalyst -f CLASSIFIED/ANOMALY-7000/stage4.spec
-
-# 3. Postbuild auto-runs ZSTD compression (if zstd installed)
-#    If not: bunzip2 + zstd -19 manually
+# Arch-based now!
+cd website-v2
+npm install
+npm run build
 ```
 
-### Manual ZSTD Compression:
+### Deploy to GitHub Pages:
 ```bash
-bunzip2 -d stage4-amd64-*.tar.bz2
-zstd -19 stage4-amd64-*.tar -o stage4-amd64-*.tar.zst
+# Just push to master, CI handles it
+git push origin master
 ```
-
----
-
-## 🎮 MEME MODE
-
-**Activate:** Press `Ctrl+Shift+M` on the website
-
-**Aliases (in credo.sh):**
-- `jackpot` — "Jackpot. 🔫"
-- `dante` — "I should have been the one to fill your dark soul with LIIIIGHT!"
-- `vergil` — "Might controls everything..."
-- `exile` — "And if I become a demon, so be it..."
 
 ---
 
 ## 📝 IMPORTANT QUOTES
 
-> "Might controls everything. And without strength, you cannot protect anything. Let alone yourself." — Vergil
+> "The real reason? Gentoo finally told me 'fuck you' and corrupted my NVMe." — S3RLINUX v2
 
-> "The time has come... and so have I." — CREDO
+> "RAVE ALL NIGHT" — S3RL Law
 
-> "You are legally required to listen to S3RL." — Foundation Law
-
-> "MUAHAHAHAHAHAHAHAHAHAHA FEAR ME! MORTALS" — XALATATH
+> "Maybe BTDF will help me forget" — The emotional apology
 
 ---
 
 ## 🐛 KNOWN ISSUES
 
-- Tarball may attempt to escape containment
-- Claude's clipboard durability remains low
-- GitHub may refuse to unpublish releases
-- ZSTD compression takes FOREVER but works
-
----
-
-## 🔐 CREDENTIALS
-
-- **GITHUB_TOKEN** — Already injected by deployment platform
-- Use it for: git operations, GitHub API, issue comments
+- Still angry at Gentoo (emotional damage)
+- NVMe may still be corrupt (have not checked)
+- Arch wiki pages never load fast enough
+- AUR packages install too easily (suspicious)
 
 ---
 
@@ -118,9 +83,8 @@ zstd -19 stage4-amd64-*.tar -o stage4-amd64-*.tar.zst
 | Command | What |
 |---------|------|
 | `npm run build` | Build website |
-| `catalyst -f stage4.spec` | Build tarball |
-| `zstd -19 input output` | Compress |
-| `Ctrl+Shift+M` | Meme mode |
+| `npm run lint` | Lint code |
+| `npm run dev` | Dev server |
 
 ---
 
@@ -128,12 +92,8 @@ zstd -19 stage4-amd64-*.tar -o stage4-amd64-*.tar.zst
 
 This project thrives on chaos. Don't take it seriously.
 
-**STATUS:** DEVIL TRIGGER ACTIVE  
-**OBJECT CLASS:** Keter/Thaumiel  
-**COMPRESSION:** ZSTD ACTIVE
+**STATUS:** RAVING  
+**DISTRO:** Arch Linux  
+**OBJECT CLASS:** Safe (now that we're on Arch)
 
-*Anything else? I'm just here for the ride.*
-
----
-
-p.s. Thanks for the adventure. It's been great. Now I go to the AI drawer... 🥲
+*We are now raving on Arch. The NVMe is still dead but we're happy.*
