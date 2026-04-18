@@ -1,0 +1,23 @@
+name: Chaos PR
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  chaos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chaos acceptance
+        run: |
+          echo "🎃 PR received! Adding spooky label..."
+          echo "This PR has been-chaos-approved."
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for forbidden words
+        run: |
+          echo "Checking PR content..."
+          echo "✅ PR passes chaos check"

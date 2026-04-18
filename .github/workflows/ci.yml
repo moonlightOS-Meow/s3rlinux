@@ -1,0 +1,45 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd website-v2
+          npm ci
+      - name: Build
+        run: |
+          cd website-v2
+          npm run build
+      - name: Lint
+        run: |
+          cd website-v2
+          npm run lint
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build
+        run: |
+          cd website-v2
+          npm ci
+          npm run build
+      - name: Deploy
+        run: echo "Deploy to hosting platform"
