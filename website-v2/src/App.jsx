@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import './App.css'
 import s3rlinuxLogo from './assets/s3rlinux_logo_transparent.png'
 import s3rlDj from './assets/s3rl/s3rl-dj.jpg'
 import s3rlStudio from './assets/s3rl/s3rl-studio.jpg'
 import planetRave from './assets/s3rl/planet-rave.jpg'
-import s3rlFace from './assets/s3rl/s3rl-face-3.jpg'
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -30,7 +28,7 @@ function App() {
             <a href="#features" className="nav-link" onClick={e => { e.preventDefault(); document.getElementById('features')?.scrollIntoView({behavior:'smooth'}) }}>FEATURES</a>
             <a href="#s3rl" className="nav-link" onClick={e => { e.preventDefault(); document.getElementById('s3rl')?.scrollIntoView({behavior:'smooth'}) }}>S3RL</a>
             <a href="#download" className="nav-link" onClick={e => { e.preventDefault(); document.getElementById('download')?.scrollIntoView({behavior:'smooth'}) }}>DOWNLOAD</a>
-            <Link to="/wiki" className="nav-link">WIKI</Link>
+            <a href="https://github.com/moonlightOS-Meow/s3rlinux/wiki" className="nav-link" target="_blank" rel="noopener noreferrer">WIKI</a>
             <a href="https://github.com/moonlightOS-Meow/s3rlinux" className="nav-link nav-link-github" target="_blank" rel="noopener noreferrer">GITHUB</a>
           </nav>
         </div>
