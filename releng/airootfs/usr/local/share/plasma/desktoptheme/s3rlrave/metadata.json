@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Name": "S3RL RAVE",
+        "Description": "S3RLINUX v2 Rave Theme - RAVE ALL NIGHT 🌈💀",
+        "Category": "Style",
+        "Version": "2.0",
+        "KDEVersion": "6.0",
+        "Authors": [
+            {
+                "Name": "moonlightOS-Meow",
+                "Email": "ash8820@proton.me"
+            }
+        ],
+        "Website": "https://github.com/moonlightOS-Meow/s3rlinux"
+    },
+    "theme": {
+        "themeName": "S3RL RAVE",
+        "fallbackTheme": "breeze-dark"
+    }
+}
