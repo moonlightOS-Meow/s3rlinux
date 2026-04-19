@@ -33,26 +33,36 @@ function App() {
   const { i18n } = useTranslation()
   const [showIntro, setShowIntro] = useState(true)
   const [introDone, setIntroDone] = useState(false)
-  const [glassBroken, setGlassBroken] = useState(false)
+  const [shatter, setShatter] = useState(false)
   const device = useDevice()
 
   useEffect(() => {
     const timer = setTimeout(() => { 
-      setGlassBroken(true)
-      setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 600) }, 800) 
-    }, 3200)
+      setShatter(true)
+      setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 700) }, 1200) 
+    }, 3000)
     return () => clearTimeout(timer)
   }, [])
 
-  // Glass shard pieces
-  const shards = Array.from({ length: 12 }, (_, i) => ({
-    id: i,
-    x: (i % 4) * 25 - 37.5,
-    y: Math.floor(i / 4) * 33 - 33,
-    rotate: (Math.random() - 0.5) * 60,
-    scaleX: [0.8, 1.2, 1],
-    duration: 0.4 + Math.random() * 0.3
-  }))
+  // Triangular glass shard pieces - realistic glass breaks
+  const shards = [
+    { id: 1, points: '0,0 80,20 60,80', x: '10%', y: '10%', rotate: -25, vx: -200, vy: 50 },
+    { id: 2, points: '80,20 100,0 100,60 60,80', x: '25%', y: '5%', rotate: 15, vx: -150, vy: 80 },
+    { id: 3, points: '0,0 60,80 0,100', x: '5%', y: '30%', rotate: -40, vx: -180, vy: 120 },
+    { id: 4, points: '60,80 100,60 100,100 40,100', x: '30%', y: '25%', rotate: 30, vx: -100, vy: 100 },
+    { id: 5, points: '0,100 40,100 60,160', x: '15%', y: '50%', rotate: -20, vx: -220, vy: 180 },
+    { id: 6, points: '100,0 100,60 160,20', x: '60%', y: '10%', rotate: 45, vx: 200, vy: 60 },
+    { id: 7, points: '100,60 160,20 180,80 100,100', x: '65%', y: '25%', rotate: -35, vx: 180, vy: 90 },
+    { id: 8, points: '100,60 100,100 180,80', x: '55%', y: '35%', rotate: 25, vx: 150, vy: 110 },
+    { id: 9, points: '40,100 100,100 80,160', x: '35%', y: '55%', rotate: -30, vx: -80, vy: 150 },
+    { id: 10, points: '100,100 180,80 180,140 80,160', x: '60%', y: '50%', rotate: 40, vx: 200, vy: 170 },
+    { id: 11, points: '80,160 180,140 160,200', x: '50%', y: '70%', rotate: -15, vx: 100, vy: 200 },
+    { id: 12, points: '0,100 0,160 40,200', x: '10%', y: '80%', rotate: -50, vx: -250, vy: 250 },
+    { id: 13, points: '180,80 180,140 220,100', x: '80%', y: '40%', rotate: 55, vx: 280, vy: 130 },
+    { id: 14, points: '180,140 220,100 200,180 160,200', x: '75%', y: '65%', rotate: -45, vx: 220, vy: 220 },
+    { id: 15, points: '0,160 40,200 20,250', x: '5%', y: '90%', rotate: -60, vx: -180, vy: 300 },
+    { id: 16, points: '80,160 160,200 100,250', x: '45%', y: '85%', rotate: 20, vx: 50, vy: 280 },
+  ]
 
   return (
     <BrowserRouter basename="/s3rlinux">
@@ -61,32 +71,59 @@ function App() {
           <motion.div key="intro" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:0}}
             style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, overflow: 'hidden' }}>
             
-            {/* GLASS SHARDS FOR BREAKING EFFECT */}
+            {/* GLASS CRACK LINES - appear before shatter */}
+            <svg style={{ position: 'absolute', inset: 0, zIndex: 45, width: '100%', height: '100%', pointerEvents: 'none' }}>
+              <motion.path d="M0,0 L300,400" stroke="rgba(255,255,255,0.5)" strokeWidth="2" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.8, 0] }} transition={{ duration: 0.3 }} />
+              <motion.path d="M400,0 L100,300" stroke="rgba(255,255,255,0.5)" strokeWidth="2" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.8, 0] }} transition={{ duration: 0.3, delay: 0.1 }} />
+              <motion.path d="M100,100 L300,200 L200,400" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" fill="none" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.7, 0] }} transition={{ duration: 0.4, delay: 0.15 }} />
+            </svg>
+            
+            {/* REAL GLASS SHARDS - triangular, like real broken glass */}
             {shards.map((shard) => (
               <motion.div
                 key={shard.id}
-                initial={{ 
-                  left: '50%', top: '50%', 
-                  width: device === 'mobile' ? '60px' : '90px',
-                  height: device === 'mobile' ? '50px' : '70px',
-                  background: 'rgba(255,255,255,0.15)',
-                  border: '1px solid rgba(255,255,255,0.3)',
-                  backdropFilter: 'blur(2px)',
+                style={{
                   position: 'absolute',
-                  zIndex: 50
+                  left: shard.x,
+                  top: shard.y,
+                  zIndex: 50,
+                  width: device === 'mobile' ? '50px' : '80px',
+                  height: device === 'mobile' ? '60px' : '100px',
                 }}
-                animate={glassBroken ? {
-                  x: [0, shard.x * (device === 'mobile' ? 1.5 : 2) + (Math.random() - 0.5) * 100],
-                  y: [0, 200 + Math.random() * 150],
-                  rotate: [0, shard.rotate * 3],
-                  opacity: [1, 0],
-                  scaleX: shard.scaleX,
-                  transition: { duration: shard.duration, delay: 0.1, ease: 'easeIn' }
-                } : {}}
-              />
+                initial={{ 
+                  opacity: 0.9,
+                  rotate: 0,
+                  scale: 1
+                }}
+                animate={shatter ? {
+                  x: shard.vx * (device === 'mobile' ? 1.2 : 1.5),
+                  y: shard.vy * (device === 'mobile' ? 1.5 : 2),
+                  rotate: shard.rotate * 4,
+                  opacity: [0.9, 0],
+                  scale: [1, 0.5],
+                  transition: { duration: 0.5 + Math.random() * 0.3, ease: 'easeIn' }
+                } : {
+                  rotate: shard.rotate,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                  <polygon 
+                    points={shard.points} 
+                    fill="rgba(255,255,255,0.15)" 
+                    stroke="rgba(255,255,255,0.4)" 
+                    strokeWidth="1"
+                  />
+                </svg>
+              </motion.div>
             ))}
             
-            {/* SLASH 1 - through glass */}
+            {/* GLASS SHINE REFLECTION */}
+            <motion.div style={{ position: 'absolute', left: '20%', top: '20%', width: '30%', height: '60%', background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%)', zIndex: 46 }}
+              animate={shatter ? { opacity: [0.5, 0], x: [0, -50], y: [0, 100], transition: { duration: 0.4 } } : { opacity: 0.5 }}
+            />
+            
+            {/* SLASH 1 */}
             <motion.div style={{ position: 'absolute', left: -100, right: -100, height: device === 'mobile' ? '4px' : '10px', background: '#00f0ff', top: '33%', margin: '0 auto', boxShadow: '0 0 80px #00f0ff' }}
               animate={{ x: [0, 100], opacity: [1, 1, 0], transition: { duration: 0.25, ease: 'linear' } }}
             />
@@ -107,9 +144,7 @@ function App() {
             <motion.div style={{
               position: 'absolute',
               top: device === 'mobile' ? '48%' : '50%',
-              left: 0,
-              right: 0,
-              margin: 'auto',
+              left: 0, right: 0, margin: 'auto',
               transform: 'translateY(-50%)',
               textAlign: 'center',
               zIndex: 10,
@@ -146,24 +181,6 @@ function App() {
             >
               JUDGEMENT
             </motion.div>
-
-            {/* GLASS PANE THAT FALLS */}
-            <motion.div 
-              style={{ 
-                position: 'absolute', inset: 0, 
-                background: 'rgba(0,0,0,0.3)',
-                border: '2px solid rgba(255,255,255,0.1)',
-                zIndex: 40,
-                backdropFilter: 'blur(1px)'
-              }}
-              initial={{ opacity: 1 }}
-              animate={glassBroken ? {
-                y: [0, 500],
-                rotate: [0, 5 + Math.random() * 5],
-                opacity: [1, 0],
-                transition: { duration: 0.6, delay: 0.1, ease: 'easeIn' }
-              } : {}}
-            />
           </motion.div>
         )}
       </AnimatePresence>
