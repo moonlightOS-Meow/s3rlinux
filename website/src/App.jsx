@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { AnimatePresence } from 'framer-motion'
 import Home from './pages/Home'
@@ -17,7 +17,8 @@ function App() {
   const { i18n } = useTranslation()
 
   return (
-    <div className="app">
+    <BrowserRouter basename="/s3rlinux">
+      <div className="app">
       <div className="grid-bg"></div>
       <div className="glow glow-1"></div>
       <div className="glow glow-2"></div>
@@ -39,6 +40,7 @@ function App() {
         <Route path="/download" element={<Download />} />
       </Routes>
     </div>
+    </BrowserRouter>
   )
 }
 
