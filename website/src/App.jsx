@@ -14,30 +14,44 @@ const languages = [
   { code: 'pl', flag: '🇵🇱' },
 ]
 
-// Judgement Cut style intro
-const introVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5 } },
-  exit: { opacity: 0, scale: 1.1, transition: { duration: 0.3 } }
+// INTENSE JUDGEMENT CUT
+const slash1 = {
+  hidden: { x: '-110%' },
+  visible: { x: ['-110%', '110%', '110%'], opacity: [0, 1, 0], transition: { duration: 0.25, times: [0, 0.3, 1] } }
 }
 
-const slashVariants = {
-  hidden: { scaleX: 0, opacity: 1 },
-  visible: { 
-    scaleX: [0, 1.2, 1.2],
-    opacity: [1, 1, 0],
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
+const slash2 = {
+  hidden: { x: '110%' },
+  visible: { x: ['110%', '-110%', '-110%'], opacity: [0, 1, 0], transition: { duration: 0.2, delay: 0.08, times: [0, 0.35, 1] } }
 }
 
-const titleVariants = {
-  hidden: { opacity: 0, y: 80, filter: "blur(30px)" },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.6, delay: 0.3, ease: "easeOut" }
-  }
+const slashV = {
+  hidden: { scaleY: 0 },
+  visible: { scaleY: [0, 2, 2], opacity: [0, 1, 0], transition: { duration: 0.15, delay: 0.15, times: [0, 0.4, 1] } }
+}
+
+const slashDiag1 = {
+  hidden: { scaleX: 0 },
+  visible: { scaleX: [0, 1.8, 1.8], opacity: [0, 1, 0], transition: { duration: 0.2, delay: 0.03 }, rotate: '28deg' } 
+}
+
+const slashDiag2 = {
+  hidden: { scaleX: 0 },
+  visible: { scaleX: [0, 1.8, 1.8], opacity: [0, 1, 0], transition: { duration: 0.18, delay: 0.12 }, rotate: '-28deg' }
+}
+
+const titleSlam = {
+  hidden: { scale: 4, opacity: 0, filter: 'blur(40px)', y: -150 },
+  visible: { scale: [4, 0.8, 1.15, 1], opacity: 1, filter: ['blur(40px)', 'blur(8px)', 'blur(2px)', 'blur(0px)'], y: 0, transition: { duration: 0.5, delay: 0.25, times: [0, 0.4, 0.7, 1] } }
+}
+
+const subtitleSlam = {
+  hidden: { opacity: 0, y: 40, scale: 0.6 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.3, delay: 0.55 } }
+}
+
+const introExit = {
+  exit: { opacity: 0, scale: 1.05, transition: { duration: 0.25 } }
 }
 
 function App() {
@@ -46,10 +60,7 @@ function App() {
   const [introDone, setIntroDone] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowIntro(false)
-      setTimeout(() => setIntroDone(true), 400)
-    }, 1800)
+    const timer = setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 400) }, 2500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -57,86 +68,45 @@ function App() {
     <BrowserRouter basename="/s3rlinux">
       <AnimatePresence mode="wait">
         {showIntro && (
-          <motion.div
-            key="intro"
-            variants={introVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{
-              position: 'fixed', inset: 0, background: '#06060a', zIndex: 9999,
-              display: 'flex', alignItems: 'center', justifyContent: 'center'
-            }}
-          >
-            {/* Main slash - Judgement Cut style */}
-            <motion.div
-              variants={slashVariants}
-              style={{
-                position: 'absolute', width: '150%', height: '3px',
-                background: 'linear-gradient(90deg, transparent, #00f0ff, #ff2d6a, #a855f7, transparent)',
-                boxShadow: '0 0 50px #00f0ff, 0 0 100px #ff2d6a',
-                rotate: '-12deg'
-              }}
-            />
-            {/* Slower slash */}
-            <motion.div
-              variants={slashVariants}
-              transition={{ delay: 0.15 }}
-              style={{
-                position: 'absolute', top: '52%', width: '150%', height: '2px',
-                background: 'linear-gradient(90deg, transparent, #a855f7, transparent)',
-                rotate: '-12deg'
-              }}
-            />
-            {/* Title */}
-            <motion.div variants={titleVariants} style={{
-              fontSize: 'clamp(2.5rem, 10vw, 6rem)', fontWeight: 900,
-              background: 'linear-gradient(135deg, #00f0ff, #a855f7, #ff2d6a)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              fontFamily: 'Outfit, sans-serif'
-            }}>
-              S3RLINUX
-              <motion.span
-                animate={{ opacity: [0.3, 1, 0.3] }}
-                transition={{ duration: 0.8, repeat: Infinity }}
-                style={{
-                  display: 'block', fontSize: 'clamp(0.8rem, 2vw, 1.2rem)',
-                  color: '#ff2d6a', letterSpacing: '0.3em', marginTop: '0.5em',
-                  WebkitTextFillColor: '#ff2d6a'
-                }}
-              >
+          <motion.div key="intro" variants={introExit} initial="hidden" animate="visible" exit="exit"
+            style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            
+            <motion.div variants={slash1} style={{ position: 'absolute', width: '100%', height: '6px', background: 'linear-gradient(90deg, transparent, #00f0ff, #fff, #00f0ff)', boxShadow: '0 0 40px #00f0ff, 0 0 80px #00f0ff, 0 0 120px #ff2d6a', top: '43%' }} />
+            <motion.div variants={slash2} style={{ position: 'absolute', width: '100%', height: '4px', background: 'linear-gradient(90deg, #ff2d6a, #fff, #a855f7)', boxShadow: '0 0 30px #ff2d6a, 0 0 60px #a855f7', top: '50%' }} />
+            <motion.div variants={slashDiag1} style={{ position: 'absolute', width: '160%', height: '3px', background: 'linear-gradient(90deg, transparent, #00f0ff, #fff)', boxShadow: '0 0 25px #00f0ff', rotate: '28deg' }} />
+            <motion.div variants={slashDiag2} style={{ position: 'absolute', width: '160%', height: '2px', background: 'linear-gradient(90deg, #a855f7, #fff)', boxShadow: '0 0 25px #a855f7', rotate: '-28deg' }} />
+            <motion.div variants={slashV} style={{ position: 'absolute', width: '4px', height: '160%', background: 'linear-gradient(180deg, transparent, #ff2d6a, #fff, #ff2d6a)', boxShadow: '0 0 40px #ff2d6a', left: '48%' }} />
+            
+            <motion.div variants={titleSlam} style={{ position: 'relative', zIndex: 10 }}>
+              <motion.div style={{ fontSize: 'clamp(3rem, 16vw, 12rem)', fontWeight: 900, fontFamily: 'Outfit, sans-serif', textShadow: '4px 0 0 #00f0ff, -4px 0 0 #ff2d6a, 8px 0 0 #00f0ff, -8px 0 0 #ff2d6a, 0 0 50px #00f0ff, 0 0 100px #00f0ff', color: '#fff' }}>
+                S3RLINUX
+              </motion.div>
+              <motion.div variants={subtitleSlam} style={{ fontSize: 'clamp(1rem, 3vw, 1.8rem)', fontWeight: 700, color: '#ff2d6a', letterSpacing: '0.3em', textAlign: 'center', marginTop: '0.3em', textShadow: '0 0 25px #ff2d6a, 0 0 50px #ff2d6a' }}>
                 RAVE ALL NIGHT 🌈💀
-              </motion.span>
+              </motion.div>
+            </motion.div>
+            
+            <motion.div initial={{ opacity: 0, scale: 6 }} animate={{ opacity: [0, 1, 1, 0], scale: [6, 1], transition: { duration: 0.7, delay: 0.2 } }}
+              style={{ position: 'absolute', fontSize: 'clamp(5rem, 25vw, 18rem)', fontWeight: 900, color: '#fff', textShadow: '0 0 60px #fff, 0 0 120px #00f0ff', zIndex: 100 }}>
+              JUDGEMENT
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
       {introDone && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4 }}
-          className="app"
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="app">
           <div className="grid-bg"></div>
           <div className="glow glow-1"></div>
           <div className="glow glow-2"></div>
-
           <div className="lang-switcher">
             {languages.map((lang) => (
-              <motion.button
-                key={lang.code}
-                className={`lang-btn ${i18n.language === lang.code ? 'active' : ''}`}
-                onClick={() => i18n.changeLanguage(lang.code)}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.button key={lang.code} className={`lang-btn ${i18n.language === lang.code ? 'active' : ''}`} onClick={() => i18n.changeLanguage(lang.code)}
+                whileHover={{ scale: 1.25, rotate: 8 }} whileTap={{ scale: 0.85 }}>
                 {lang.flag}
               </motion.button>
             ))}
           </div>
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/download" element={<Download />} />
