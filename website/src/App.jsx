@@ -34,17 +34,41 @@ function App() {
   const [showIntro, setShowIntro] = useState(true)
   const [introDone, setIntroDone] = useState(false)
   const [shatter, setShatter] = useState(false)
+  const [slashPhase, setSlashPhase] = useState(0)
+  const [shake, setShake] = useState(0)
   const device = useDevice()
 
   useEffect(() => {
-    const timer = setTimeout(() => { 
+    const slashTimers = []
+    for (let i = 0; i < 12; i++) {
+      slashTimers.push(setTimeout(() => {
+        setSlashPhase(i + 1)
+        setShake(15)
+        setTimeout(() => setShake(0), 50)
+      }, 800 + i * 80))
+    }
+    slashTimers.push(setTimeout(() => { 
       setShatter(true)
       setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 700) }, 1200) 
-    }, 3000)
-    return () => clearTimeout(timer)
+    }, 800 + 12 * 80 + 200))
+    return () => slashTimers.forEach(t => clearTimeout(t))
   }, [])
 
-  // Triangular glass shard pieces - realistic glass breaks
+  const slashes = [
+    { angle: -30, y: '25%', color: '#00f0ff', delay: 0 },
+    { angle: 25, y: '35%', color: '#ff2d6a', delay: 80 },
+    { angle: -60, y: '45%', color: '#a855f7', delay: 160 },
+    { angle: 45, y: '30%', color: '#00f0ff', delay: 240 },
+    { angle: -15, y: '55%', color: '#ff2d6a', delay: 320 },
+    { angle: 70, y: '40%', color: '#a855f7', delay: 400 },
+    { angle: -45, y: '50%', color: '#00f0ff', delay: 480 },
+    { angle: 10, y: '65%', color: '#ff2d6a', delay: 560 },
+    { angle: -80, y: '60%', color: '#a855f7', delay: 640 },
+    { angle: 30, y: '70%', color: '#00f0ff', delay: 720 },
+    { angle: -25, y: '75%', color: '#ff2d6a', delay: 800 },
+    { angle: 55, y: '80%', color: '#fff', delay: 880, final: true },
+  ]
+
   const shards = [
     { id: 1, points: '0,0 80,20 60,80', x: '10%', y: '10%', rotate: -25, vx: -200, vy: 50 },
     { id: 2, points: '80,20 100,0 100,60 60,80', x: '25%', y: '5%', rotate: 15, vx: -150, vy: 80 },
@@ -69,13 +93,57 @@ function App() {
       <AnimatePresence mode="wait">
         {showIntro && (
           <motion.div key="intro" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:0}}
-            style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, overflow: 'hidden' }}>
+            style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, overflow: 'hidden', transform: `translate(${shake}px, ${shake}px)` }}>
             
-            {/* GLASS CRACK LINES - appear before shatter */}
-            <svg style={{ position: 'absolute', inset: 0, zIndex: 45, width: '100%', height: '100%', pointerEvents: 'none' }}>
-              <motion.path d="M0,0 L300,400" stroke="rgba(255,255,255,0.5)" strokeWidth="2" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.8, 0] }} transition={{ duration: 0.3 }} />
-              <motion.path d="M400,0 L100,300" stroke="rgba(255,255,255,0.5)" strokeWidth="2" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.8, 0] }} transition={{ duration: 0.3, delay: 0.1 }} />
-              <motion.path d="M100,100 L300,200 L200,400" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" fill="none" initial={{ opacity: 0 }} animate={{ opacity: [0, 0.7, 0] }} transition={{ duration: 0.4, delay: 0.15 }} />
+            {/* DMC JUDGEMENT CUT LINE EFFECTS */}
+            <svg style={{ position: 'absolute', inset: 0, zIndex: 40, width: '100%', height: '100%', pointerEvents: 'none', overflow: 'visible' }}>
+              <defs>
+                <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#00f0ff" />
+                  <stop offset="50%" stopColor="#fff" />
+                  <stop offset="100%" stopColor="#ff2d6a" />
+                </linearGradient>
+                <filter id="neonGlow">
+                  <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              {/* DIAGONAL CUT LINES */}
+              {[...Array(12)].map((_, i) => (
+                <motion.line
+                  key={i}
+                  x1="0%" y1={10 + i * 7 + '%'}
+                  x2="100%" y2={15 + i * 7 + '%'}
+                  stroke={slashes[i]?.color || '#00f0ff'}
+                  strokeWidth={i < 11 ? (device === 'mobile' ? 2 : 4) : (device === 'mobile' ? 6 : 12)}
+                  filter="url(#neonGlow)"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  animate={slashPhase > i ? { 
+                    pathLength: [0, 1.2, 1],
+                    opacity: [0, 1, 0],
+                    x: [0, i % 2 === 0 ? 100 : -100]
+                  } : { opacity: 0 }}
+                  transition={{ duration: 0.15, ease: 'easeOut' }}
+                />
+              ))}
+              {/* VERTICAL CUT */}
+              <motion.line
+                x1="50%" y1="0%"
+                x2="50%" y2="100%"
+                stroke="#fff"
+                strokeWidth={device === 'mobile' ? 4 : 8}
+                filter="url(#neonGlow)"
+                initial={{ pathLength: 0, opacity: 0 }}
+                animate={slashPhase >= 10 ? {
+                  pathLength: [0, 1],
+                  opacity: [0, 1, 0],
+                  strokeWidth: [2, 12, 20]
+                } : { opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              />
             </svg>
             
             {/* REAL GLASS SHARDS - triangular, like real broken glass */}
@@ -121,23 +189,6 @@ function App() {
             {/* GLASS SHINE REFLECTION */}
             <motion.div style={{ position: 'absolute', left: '20%', top: '20%', width: '30%', height: '60%', background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%)', zIndex: 46 }}
               animate={shatter ? { opacity: [0.5, 0], x: [0, -50], y: [0, 100], transition: { duration: 0.4 } } : { opacity: 0.5 }}
-            />
-            
-            {/* SLASH 1 */}
-            <motion.div style={{ position: 'absolute', left: -100, right: -100, height: device === 'mobile' ? '4px' : '10px', background: '#00f0ff', top: '33%', margin: '0 auto', boxShadow: '0 0 80px #00f0ff' }}
-              animate={{ x: [0, 100], opacity: [1, 1, 0], transition: { duration: 0.25, ease: 'linear' } }}
-            />
-            {/* SLASH 2 */}
-            <motion.div style={{ position: 'absolute', left: -100, right: -100, height: device === 'mobile' ? '3px' : '8px', background: '#ff2d6a', top: '38%', margin: '0 auto', boxShadow: '0 0 60px #ff2d6a' }}
-              animate={{ x: [0, -100], opacity: [1, 1, 0], transition: { duration: 0.2, delay: 0.1, ease: 'linear' } }}
-            />
-            {/* SLASH 3 */}
-            <motion.div style={{ position: 'absolute', left: -100, right: -100, height: device === 'mobile' ? '2px' : '6px', background: '#a855f7', top: '43%', margin: '0 auto', boxShadow: '0 0 50px #a855f7' }}
-              animate={{ x: [0, 100], opacity: [1, 1, 0], transition: { duration: 0.15, delay: 0.2, ease: 'linear' } }}
-            />
-            {/* VERTICAL */}
-            <motion.div style={{ position: 'absolute', left: '50%', marginLeft: device === 'mobile' ? '-2px' : '-3px', top: 0, bottom: 0, width: device === 'mobile' ? '4px' : '6px', background: '#fff', boxShadow: '0 0 60px #fff, 0 0 100px #00f0ff' }}
-              animate={{ y: [0, 50], opacity: [1, 1, 0], transition: { duration: 0.15, delay: 0.15 } }}
             />
             
             {/* TITLE */}
