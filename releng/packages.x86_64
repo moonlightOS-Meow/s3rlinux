@@ -126,3 +126,62 @@ xdg-utils
 xfsprogs
 xl2tpd
 zsh
+
+# KDE Plasma Desktop - RAVE EDITION 🌈💀
+plasma
+plasma-meta
+plasma-desktop
+plasma-workspace
+plasma-workspace-wallpapers
+kde-systemsettings
+dolphin
+konsole
+kate
+ark
+gwenview
+spectacle
+okular
+bluedevil
+bluez-qt
+breeze
+breeze-gtk
+kde-gtk-config
+kdeplasma-addons
+kgamma5
+kinfocenter
+krfb
+kscreen
+ksshaskpass
+kwalletmanager
+powerdevil
+sddm
+sddm-kcm
+
+# Extra Rave/Neon theming
+nordic-theme
+catppuccin-gtk-theme-mocha
+bibata-cursor-theme
+google Fonts
+adobe-source-code-pro-fonts
+adobe-source-sans-pro-fonts
+adobe-source-serif-pro-fonts
+ttf-jetbrains-mono
+ttf-fantasque-sans-mono
+ttf-anonymous-pro
+ttf-inconsolata
+ttf-droid
+ttf-nerd-fonts-symbols
+
+# Rave必需的 (REQUIRED FOR RAVE)
+players
+cmus
+mpd
+mpc
+ffmpeg
+pulseaudio
+pulseaudio-alsa
+playerctl
+
+# Visualizers
+cava
+glava
