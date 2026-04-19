@@ -14,53 +14,13 @@ const languages = [
   { code: 'pl', flag: '🇵🇱' },
 ]
 
-// INTENSE JUDGEMENT CUT
-const slash1 = {
-  hidden: { x: '-110%' },
-  visible: { x: ['-110%', '110%', '110%'], opacity: [0, 1, 0], transition: { duration: 0.25, times: [0, 0.3, 1] } }
-}
-
-const slash2 = {
-  hidden: { x: '110%' },
-  visible: { x: ['110%', '-110%', '-110%'], opacity: [0, 1, 0], transition: { duration: 0.2, delay: 0.08, times: [0, 0.35, 1] } }
-}
-
-const slashV = {
-  hidden: { scaleY: 0 },
-  visible: { scaleY: [0, 2, 2], opacity: [0, 1, 0], transition: { duration: 0.15, delay: 0.15, times: [0, 0.4, 1] } }
-}
-
-const slashDiag1 = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: [0, 1.8, 1.8], opacity: [0, 1, 0], transition: { duration: 0.2, delay: 0.03 }, rotate: '28deg' } 
-}
-
-const slashDiag2 = {
-  hidden: { scaleX: 0 },
-  visible: { scaleX: [0, 1.8, 1.8], opacity: [0, 1, 0], transition: { duration: 0.18, delay: 0.12 }, rotate: '-28deg' }
-}
-
-const titleSlam = {
-  hidden: { scale: 4, opacity: 0, filter: 'blur(40px)', y: -150 },
-  visible: { scale: [4, 0.8, 1.15, 1], opacity: 1, filter: ['blur(40px)', 'blur(8px)', 'blur(2px)', 'blur(0px)'], y: 0, transition: { duration: 0.5, delay: 0.25, times: [0, 0.4, 0.7, 1] } }
-}
-
-const subtitleSlam = {
-  hidden: { opacity: 0, y: 40, scale: 0.6 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.3, delay: 0.55 } }
-}
-
-const introExit = {
-  exit: { opacity: 0, scale: 1.05, transition: { duration: 0.25 } }
-}
-
 function App() {
   const { i18n } = useTranslation()
   const [showIntro, setShowIntro] = useState(true)
   const [introDone, setIntroDone] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 400) }, 2500)
+    const timer = setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 400) }, 2000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -68,26 +28,55 @@ function App() {
     <BrowserRouter basename="/s3rlinux">
       <AnimatePresence mode="wait">
         {showIntro && (
-          <motion.div key="intro" variants={introExit} initial="hidden" animate="visible" exit="exit"
-            style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+          <motion.div key="intro" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:0}}
+            style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, overflow: 'hidden' }}>
             
-            <motion.div variants={slash1} style={{ position: 'absolute', width: '100%', height: '6px', background: 'linear-gradient(90deg, transparent, #00f0ff, #fff, #00f0ff)', boxShadow: '0 0 40px #00f0ff, 0 0 80px #00f0ff, 0 0 120px #ff2d6a', top: '43%' }} />
-            <motion.div variants={slash2} style={{ position: 'absolute', width: '100%', height: '4px', background: 'linear-gradient(90deg, #ff2d6a, #fff, #a855f7)', boxShadow: '0 0 30px #ff2d6a, 0 0 60px #a855f7', top: '50%' }} />
-            <motion.div variants={slashDiag1} style={{ position: 'absolute', width: '160%', height: '3px', background: 'linear-gradient(90deg, transparent, #00f0ff, #fff)', boxShadow: '0 0 25px #00f0ff', rotate: '28deg' }} />
-            <motion.div variants={slashDiag2} style={{ position: 'absolute', width: '160%', height: '2px', background: 'linear-gradient(90deg, #a855f7, #fff)', boxShadow: '0 0 25px #a855f7', rotate: '-28deg' }} />
-            <motion.div variants={slashV} style={{ position: 'absolute', width: '4px', height: '160%', background: 'linear-gradient(180deg, transparent, #ff2d6a, #fff, #ff2d6a)', boxShadow: '0 0 40px #ff2d6a', left: '48%' }} />
+            {/* MASSIVE SLASHES */}
+            <motion.div style={{ position: 'absolute', width: '200%', height: '10px', background: '#00f0ff', top: '40%', boxShadow: '0 0 80px #00f0ff, 0 0 150px #fff' }}
+              animate={{ x: ['-50%', '50%'], opacity: [1, 1, 0], transition: { duration: 0.15, ease: 'linear' } }}
+            />
+            <motion.div style={{ position: 'absolute', width: '200%', height: '8px', background: '#ff2d6a', top: '47%', boxShadow: '0 0 60px #ff2d6a' }}
+              animate={{ x: ['50%', '-50%'], opacity: [1, 1, 0], transition: { duration: 0.12, delay: 0.05, ease: 'linear' } }}
+            />
+            <motion.div style={{ position: 'absolute', width: '200%', height: '6px', background: '#a855f7', top: '54%', boxShadow: '0 0 50px #a855f7' }}
+              animate={{ x: ['-50%', '50%'], opacity: [1, 1, 0], transition: { duration: 0.1, delay: 0.1, ease: 'linear' } }}
+            />
+            <motion.div style={{ position: 'absolute', width: '200%', height: '4px', background: '#fff', top: '61%', boxShadow: '0 0 40px #fff' }}
+              animate={{ x: ['50%', '-50%'], opacity: [1, 1, 0], transition: { duration: 0.08, delay: 0.15, ease: 'linear' } }}
+            />
+            <motion.div style={{ position: 'absolute', width: '8px', height: '200%', background: '#fff', left: '48%', boxShadow: '0 0 60px #fff, 0 0 100px #00f0ff' }}
+              animate={{ y: ['-50%', '50%'], opacity: [1, 1, 0], transition: { duration: 0.1, delay: 0.08 } }}
+            />
             
-            <motion.div variants={titleSlam} style={{ position: 'relative', zIndex: 10 }}>
-              <motion.div style={{ fontSize: 'clamp(3rem, 16vw, 12rem)', fontWeight: 900, fontFamily: 'Outfit, sans-serif', textShadow: '4px 0 0 #00f0ff, -4px 0 0 #ff2d6a, 8px 0 0 #00f0ff, -8px 0 0 #ff2d6a, 0 0 50px #00f0ff, 0 0 100px #00f0ff', color: '#fff' }}>
+            {/* TITLE */}
+            <motion.div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', zIndex: 10 }}
+              initial={{ scale: 4, opacity: 0, filter: 'blur(30px)' }}
+              animate={{ scale: [4, 0.9, 1.1, 1], opacity: 1, filter: 'blur(0px)', transition: { duration: 0.4, delay: 0.15 } }}
+            >
+              <div style={{ fontSize: 'clamp(3rem, 14vw, 10rem)', fontWeight: 900, color: '#fff', textShadow: '0 0 30px #00f0ff, 0 0 60px #00f0ff, 0 0 100px #ff2d6a' }}>
                 S3RLINUX
-              </motion.div>
-              <motion.div variants={subtitleSlam} style={{ fontSize: 'clamp(1rem, 3vw, 1.8rem)', fontWeight: 700, color: '#ff2d6a', letterSpacing: '0.3em', textAlign: 'center', marginTop: '0.3em', textShadow: '0 0 25px #ff2d6a, 0 0 50px #ff2d6a' }}>
+              </div>
+              <div style={{ fontSize: 'clamp(1rem, 2.5vw, 1.5rem)', color: '#ff2d6a', letterSpacing: '0.15em', marginTop: '0.2em', textShadow: '0 0 20px #ff2d6a' }}>
                 RAVE ALL NIGHT 🌈💀
-              </motion.div>
+              </div>
             </motion.div>
             
-            <motion.div initial={{ opacity: 0, scale: 6 }} animate={{ opacity: [0, 1, 1, 0], scale: [6, 1], transition: { duration: 0.7, delay: 0.2 } }}
-              style={{ position: 'absolute', fontSize: 'clamp(5rem, 25vw, 18rem)', fontWeight: 900, color: '#fff', textShadow: '0 0 60px #fff, 0 0 120px #00f0ff', zIndex: 100 }}>
+            {/* MEME BUBBLE */}
+            <motion.div style={{ position: 'absolute', top: '12%', right: '8%', background: '#fff', color: '#000', padding: '15px 25px', borderRadius: '25px', zIndex: 100 }}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: [0, 1.15, 1], opacity: 1, transition: { duration: 0.3, delay: 0.5 } }}
+            >
+              <div style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', fontWeight: 700 }}>
+                XDDDDD DANTE MUST CRY!
+              </div>
+              <div style={{ position: 'absolute', bottom: '-12px', left: '25px', width: '0', height: '0', borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #fff' }} />
+            </motion.div>
+            
+            {/* JUDGEMENT TEXT */}
+            <motion.div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(5rem, 22vw, 18rem)', fontWeight: 900, color: '#fff', textShadow: '0 0 50px #fff, 0 0 100px #00f0ff', zIndex: 99 }}
+              initial={{ opacity: 0, scale: 6 }}
+              animate={{ opacity: [0, 1, 1, 0], scale: [6, 1.1], transition: { duration: 0.5, delay: 0.12 } }}
+            >
               JUDGEMENT
             </motion.div>
           </motion.div>
