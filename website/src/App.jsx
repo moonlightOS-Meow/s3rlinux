@@ -33,13 +33,26 @@ function App() {
   const { i18n } = useTranslation()
   const [showIntro, setShowIntro] = useState(true)
   const [introDone, setIntroDone] = useState(false)
+  const [glassBroken, setGlassBroken] = useState(false)
   const device = useDevice()
 
   useEffect(() => {
-    // Longer intro so everything is visible
-    const timer = setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 500) }, 3500)
+    const timer = setTimeout(() => { 
+      setGlassBroken(true)
+      setTimeout(() => { setShowIntro(false); setTimeout(() => setIntroDone(true), 600) }, 800) 
+    }, 3200)
     return () => clearTimeout(timer)
   }, [])
+
+  // Glass shard pieces
+  const shards = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    x: (i % 4) * 25 - 37.5,
+    y: Math.floor(i / 4) * 33 - 33,
+    rotate: (Math.random() - 0.5) * 60,
+    scaleX: [0.8, 1.2, 1],
+    duration: 0.4 + Math.random() * 0.3
+  }))
 
   return (
     <BrowserRouter basename="/s3rlinux">
@@ -48,7 +61,32 @@ function App() {
           <motion.div key="intro" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:0}}
             style={{ position: 'fixed', inset: 0, background: '#000', zIndex: 9999, overflow: 'hidden' }}>
             
-            {/* SLASH 1 */}
+            {/* GLASS SHARDS FOR BREAKING EFFECT */}
+            {shards.map((shard) => (
+              <motion.div
+                key={shard.id}
+                initial={{ 
+                  left: '50%', top: '50%', 
+                  width: device === 'mobile' ? '60px' : '90px',
+                  height: device === 'mobile' ? '50px' : '70px',
+                  background: 'rgba(255,255,255,0.15)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  backdropFilter: 'blur(2px)',
+                  position: 'absolute',
+                  zIndex: 50
+                }}
+                animate={glassBroken ? {
+                  x: [0, shard.x * (device === 'mobile' ? 1.5 : 2) + (Math.random() - 0.5) * 100],
+                  y: [0, 200 + Math.random() * 150],
+                  rotate: [0, shard.rotate * 3],
+                  opacity: [1, 0],
+                  scaleX: shard.scaleX,
+                  transition: { duration: shard.duration, delay: 0.1, ease: 'easeIn' }
+                } : {}}
+              />
+            ))}
+            
+            {/* SLASH 1 - through glass */}
             <motion.div style={{ position: 'absolute', left: -100, right: -100, height: device === 'mobile' ? '4px' : '10px', background: '#00f0ff', top: '33%', margin: '0 auto', boxShadow: '0 0 80px #00f0ff' }}
               animate={{ x: [0, 100], opacity: [1, 1, 0], transition: { duration: 0.25, ease: 'linear' } }}
             />
@@ -81,38 +119,51 @@ function App() {
               animate={{ scale: [4, 0.9, 1.1, 1], opacity: 1, filter: 'blur(0px)', transition: { duration: 0.6, delay: 0.25 } }}
             >
               <motion.div animate={{ textShadow: ['0 0 30px #00f0ff', '0 0 50px #00f0ff', '0 0 30px #00f0ff'] }} transition={{ duration: 1.2, repeat: Infinity }}
-                style={{ fontSize: device === 'mobile' ? '2rem' : 'clamp(3rem, 14vw, 10rem)', fontWeight: 900, color: '#fff', textAlign: 'center', width: '100%' }}>
+                style={{ fontSize: device === 'mobile' ? '2rem' : 'clamp(3rem, 14vw, 10rem)', fontWeight: 900, color: '#fff', textAlign: 'center' }}>
                 S3RLINUX
               </motion.div>
               <motion.div animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 0.8, repeat: Infinity }}
-                style={{ fontSize: device === 'mobile' ? '0.75rem' : 'clamp(1rem, 2.5vw, 1.5rem)', color: '#ff2d6a', letterSpacing: '0.15em', marginTop: '0.2em', textAlign: 'center' }}>
+                style={{ fontSize: device === 'mobile' ? '0.75rem' : 'clamp(1rem, 2.5vw, 1.5rem)', color: '#ff2d6a', letterSpacing: '0.15em', marginTop: '0.2em' }}>
                 RAVE ALL NIGHT 🌈💀
               </motion.div>
             </motion.div>
             
-            {/* BIGGER MEME IMAGE - centered */}
-            <motion.div style={{ position: 'absolute', top: device === 'mobile' ? '8px' : '15px', left: 0, right: 0, margin: '0 auto', display: 'flex', justifyContent: 'center', zIndex: 100, width: 'fit-content' }}
+            {/* MEME */}
+            <motion.div style={{ position: 'absolute', top: device === 'mobile' ? '8px' : '15px', left: 0, right: 0, margin: '0 auto', display: 'flex', justifyContent: 'center', zIndex: 100 }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: [0, 1.1, 1], opacity: 1, transition: { duration: 0.4, delay: 0.5 } }}
             >
               <img src="https://i.imgur.com/T15Te00h.gif" alt="S3RL Meme" 
-                style={{ 
-                  width: device === 'mobile' ? '140px' : '220px', 
-                  borderRadius: '12px',
-                  boxShadow: '0 0 30px rgba(255,45,106,0.7), 0 0 50px rgba(168,85,247,0.5)',
-                  border: '3px solid #ff2d6a'
-                }} 
+                style={{ width: device === 'mobile' ? '140px' : '220px', borderRadius: '12px', boxShadow: '0 0 30px rgba(255,45,106,0.7)', border: '3px solid #ff2d6a' }} 
               />
             </motion.div>
             
-            {/* BIGGER JUDGEMENT - SLOWER and more visible */}
+            {/* JUDGEMENT */}
             <motion.div 
               style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: device === 'mobile' ? '2rem' : 'clamp(4rem, 22vw, 16rem)', fontWeight: 900, color: '#fff', textShadow: '0 0 50px #fff, 0 0 100px #00f0ff', zIndex: 99 }}
               initial={{ opacity: 0, scale: 5 }}
-              animate={{ opacity: [0, 1, 1, 1, 0], scale: [5, 1.2], transition: { duration: 1.2, delay: 0.3 } }}
+              animate={{ opacity: [0, 1, 1, 1, 0], scale: [5, 1.2], transition: { duration: 1.0, delay: 0.3 } }}
             >
               JUDGEMENT
             </motion.div>
+
+            {/* GLASS PANE THAT FALLS */}
+            <motion.div 
+              style={{ 
+                position: 'absolute', inset: 0, 
+                background: 'rgba(0,0,0,0.3)',
+                border: '2px solid rgba(255,255,255,0.1)',
+                zIndex: 40,
+                backdropFilter: 'blur(1px)'
+              }}
+              initial={{ opacity: 1 }}
+              animate={glassBroken ? {
+                y: [0, 500],
+                rotate: [0, 5 + Math.random() * 5],
+                opacity: [1, 0],
+                transition: { duration: 0.6, delay: 0.1, ease: 'easeIn' }
+              } : {}}
+            />
           </motion.div>
         )}
       </AnimatePresence>
