@@ -33,7 +33,7 @@ export default function Home() {
       <Header />
 
       {/* HERO */}
-      <motion.section className="hero" variants={stariants}>
+      <motion.section className="hero" variants={stagger}>
         <motion.div className="hero-content" variants={fadeUp}>
           <div className="badge">
             <span className="badge-dot"></span>
@@ -73,7 +73,7 @@ export default function Home() {
       </motion.section>
 
       {/* ABOUT */}
-      <motion.section id="about" className="section" variants={stariants}>
+      <motion.section id="about" className="section" variants={stagger}>
         <div className="container">
           <motion.h2 variants={fadeUp}><span className="accent">//</span> {t('about.title')}</motion.h2>
           <div className="cards">
@@ -96,7 +96,7 @@ export default function Home() {
       </motion.section>
 
       {/* FEATURES */}
-      <motion.section id="features" className="section dark" variants={stariants}>
+      <motion.section id="features" className="section dark" variants={stagger}>
         <div className="container">
           <motion.h2 variants={fadeUp}><span className="accent">//</span> {t('features.title')}</motion.h2>
           <div className="features">
