@@ -2,9 +2,9 @@
 # shellcheck disable=SC2034
 
 iso_name="s3rlinux"
-iso_label="S3RL_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
-iso_publisher="S3RLINUX <https://github.com/moonlightOS-Meow/s3rlinux>"
-iso_application="S3RLINUX Rave ISO"
+iso_label="S3RL2_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y%m)"
+iso_publisher="S3RLINUX v2 <https://github.com/moonlightOS-Meow/s3rlinux>"
+iso_application="S3RLINUX v2 Rave ISO"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y.%m.%d)"
 install_dir="s3rlinux"
 buildmodes=('iso')
