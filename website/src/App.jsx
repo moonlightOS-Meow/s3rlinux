@@ -61,15 +61,21 @@ function App() {
               </div>
             </motion.div>
             
-            {/* MEME BUBBLE */}
-            <motion.div style={{ position: 'absolute', top: '12%', right: '8%', background: '#fff', color: '#000', padding: '15px 25px', borderRadius: '25px', zIndex: 100 }}
+            {/* MEME BUBBLE WITH IMAGE */}
+            <motion.div style={{ position: 'absolute', top: '8%', right: '5%', zIndex: 100 }}
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: [0, 1.15, 1], opacity: 1, transition: { duration: 0.3, delay: 0.5 } }}
             >
-              <div style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)', fontWeight: 700 }}>
-                XDDDDD DANTE MUST CRY!
-              </div>
-              <div style={{ position: 'absolute', bottom: '-12px', left: '25px', width: '0', height: '0', borderLeft: '12px solid transparent', borderRight: '12px solid transparent', borderTop: '12px solid #fff' }} />
+              <img 
+                src="/meme.jpg" 
+                alt="DMC Meme" 
+                style={{ 
+                  width: 'clamp(150px, 25vw, 280px)', 
+                  borderRadius: '15px',
+                  boxShadow: '0 0 30px rgba(255,255,255,0.4)',
+                  border: '3px solid #fff'
+                }} 
+              />
             </motion.div>
             
             {/* JUDGEMENT TEXT */}
