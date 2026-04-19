@@ -34,12 +34,10 @@ function App() {
         ))}
       </div>
 
-      <AnimatePresence mode="wait">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/download" element={<Download />} />
-        </Routes>
-      </AnimatePresence>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/download" element={<Download />} />
+      </Routes>
     </div>
   )
 }

@@ -5,6 +5,8 @@ import App from './App.jsx'
 import './i18n'
 import './index.css'
 
+console.log('🚀 S3RLINUX: App starting...')
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
