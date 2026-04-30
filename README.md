@@ -6,6 +6,20 @@
 
 ---
 
+## 🪦 THIS REPO IS ARCHIVED
+
+> **Last updated: 2026** — This project is no longer maintained.
+
+**S3RLinux has moved to [S3RLinux-Atomic](https://github.com/RaveCore-Labs/S3RLinux-Atomic)** — a bootc-based immutable Fedora system. Same vibes. Better tech. 💀
+
+### Why?
+After years of Arch love, I moved to an immutable OSTree-based system (bootc) for better desktop Linux experience — atomic updates, easy rollbacks, and container-native. The future is immutable, baby.
+
+Thanks for the rides, Arch. You were good to us.
+*RAVE ALL NIGHT. Forever. 🌈💀*
+
+---
+
 ## ⚠️ GENTOO IS DEAD. LONG LIVE ARCH.
 
 S3RLINUX v2 ditches the Gentoo Stage 4 approach in favor of **Arch Linux** as the base. Rolling release. AUR support. Way less crying at 3am over USE flags and LLVM compiling for 8 hours.
